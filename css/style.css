@@ -2,11 +2,18 @@
 @import "thuvien.css";
 @import "fonts.css";*/
 
-
 .logo {
   height: 72px;
+  font-size: 30px;
+  cursor: pointer;
 }
 
+.opacity:hover {
+  opacity: 0.4;
+}
+.color {
+  color: #bbb;
+}
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
@@ -17,7 +24,6 @@
   left: 0;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
@@ -31,9 +37,14 @@
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.sidenav-item:hover {
+  background-color: #bbb;
+  border-radius: 0px 20px 20px 0;
+  transform: scale(1.15);
 }
 
 /* Position and style the close button (top right corner) */
@@ -106,10 +117,10 @@ ul {
 }
 
 .class-inf {
-    background-image: url("https://gstatic.com/classroom/themes/img_reachout.jpg");
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    color: #fff;
+  background-image: url("https://gstatic.com/classroom/themes/img_reachout.jpg");
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
 }
 
 .class-title {
@@ -119,8 +130,8 @@ ul {
   max-height: 100px;
 }
 
-.class-main{
-    min-height: 140px;
+.class-main {
+  min-height: 140px;
 }
 
 .class-footer {
@@ -131,72 +142,75 @@ ul {
 /*add class*/
 
 .open-button {
-    background-color: #555;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
 }
 
 /* The popup form - hidden by default */
 .form-popup {
-    display: none;
-    position: fixed;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
+  display: none;
+  position: fixed;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
 }
 
-.full-height{
-    height: 100%;
-    width: 100%;
+.full-height {
+  height: 100%;
+  width: 100%;
 }
 
 /* Add styles to the form container */
 .form-container {
-    height: 100%;
-    max-width: 100%;
-    padding: 10px;
-    background-color: white;
+  height: 100%;
+  max-width: 100%;
+  padding: 10px;
+  background-color: white;
 }
 
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-    opacity: 0.8;
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
 }
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-    background-color: red;
+  background-color: red;
 }
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-    opacity: 1;
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
 }

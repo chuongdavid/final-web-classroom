@@ -27,15 +27,24 @@
         <nav class="navbar navbar-expand bg-dark navbar-dark p-0 sticky-top">
             <ul class="navbar-nav w-100">
                 <!--sidenav-->
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Clients</a>
-                    <a href="#">Contact</a>
+                <div id="mySidenav" class="sidenav p-0">
+                    <div class="text-right">
+                        <i class="fa fa-times-circle fa-2x opacity color" aria-hidden="true" onclick="closeNav()"></i>
+                    </div>
+                    <a href="#" class="sidenav-item">
+                        <div class="class-title ">
+                            Mon aaaaaaaaaaaaaa
+                        </div>
+                        <div>
+                            Thay A
+                        </div>
+                    </a>
+                    <a href="#" class="sidenav-item">Services</a>
+                    <a href="#" class="sidenav-item">Clients</a>
+                    <a href="#" class="sidenav-item">Contact</a>
                 </div>
 
-                <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img class="logo" src="image/logo.png"></span>
+                <span onclick="openNav()"><img class="logo" src="image/logo.png"></span>
 
                 <!--left nav-->
                 <li class="nav-item active">
@@ -51,9 +60,7 @@
                 <!--right nav-->
                 <li class="nav-item ml-auto mr-2">
                     <a class="nav-link" href="#">
-                        <span class="circle">
                             <i class="fa fa-plus-circle fa-2x" onclick="openForm()"></i>
-                        </span>
                     </a>
                 </li>
             </ul>
