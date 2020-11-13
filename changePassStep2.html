@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!--title-->
+    <title>Classroom</title>
+
+    <!--css file-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+    <!--js file-->
+    <script src="main.js"></script>
+
+    <!--Bootstrap 4-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--font-awnsome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body class="change-pass-body">
+    <!--container top-->
+    <div class="top-container">
+      <span><img class="logo" src="image/logov2.png" /></span>
+    </div>
+
+    <!--form start-->
+    <div class="form-container">
+      <form action="#">
+        <div class="form-change-pass-container">
+          <h1>Reset password</h1>
+          <br />
+          <label for="new-pass">New password</label>
+          <input
+            type="text"
+            placeholder="Enter your password"
+            name="new-pass"
+            required
+          /><br />
+          <label for="repass">Verify password</label>
+          <input
+            type="text"
+            placeholder="Enter your password again"
+            name="repass"
+            required
+          /><br />
+          <p class="error-notification">
+            <i class="fa fa-times-circle"></i>Error
+          </p>
+          <button class="btn-change-password">Reset password</button><br />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
