@@ -35,7 +35,7 @@
 
     <!--form start-->
     <div class="form-container">
-      <form action="#">
+      <form action="#" method="post" onsubmit="return validateInputchangePass2()">
         <div class="form-change-pass-container">
           <h1>Reset password</h1>
           <br />
@@ -44,16 +44,17 @@
             type="text"
             placeholder="Enter your password"
             name="new-pass"
-            required
+            id= "new-pass"
+            
           /><br />
           <label for="repass">Verify password</label>
           <input
             type="text"
             placeholder="Enter your password again"
             name="repass"
-            required
+            id = "repass"
           /><br />
-          <p class="error-notification">
+          <p class="error-notification" id="error-message-changepass2">
             <i class="fa fa-times-circle"></i>Error
           </p>
           <button class="btn-change-password">Reset password</button><br />

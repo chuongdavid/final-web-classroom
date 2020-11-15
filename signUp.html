@@ -35,7 +35,7 @@
 
     <!--form start-->
     <div class="form-container">
-      <form action="#">
+      <form action="#" method="post" onsubmit="return validateInputSignUp()">
         <div class="form-signUp-container">
           <h1>Create an account</h1>
           <br />
@@ -44,40 +44,45 @@
             type="text"
             placeholder="Enter your username"
             name="username"
-            required
+            id ="username-signup"
+             
           /><br />
           <label for="psw">Password</label>
           <input
             type="password"
             placeholder="Enter Password"
             name="psw"
-            required
+            id ="psw-signup"
+             
           /><br />
           <label for="fullname">Fullname</label>
           <input
             type="text"
             placeholder="Enter your fullname"
             name="fullname"
-            required
+            id="fullname-signup"
+             
           /><br />
           <label for="birthday">Date of birth</label>
-          <input type="date" name="birthday" /><br />
+          <input type="date" name="birthday" required /><br />
           <label for="email">Email address</label>
           <input
             type="text"
             placeholder="Enter Email"
             name="email"
-            required
+            id ="email-signup"
+             
           /><br />
           <label for="phone">Phone number</label>
           <input
             type="text"
             placeholder="Enter your phone number"
             name="phone"
-            required
+            id="phone-signup"
+             
           /><br />
-          <p class="error-notification">
-            <i class="fa fa-times-circle"></i>Error
+          <p class="error-notification" id="error-message-signup">
+            <i class="fa fa-times-circle"></i>
           </p>
           <button class="btn-signUp">Sign up</button><br />
         </div>

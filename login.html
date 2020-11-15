@@ -34,8 +34,8 @@
     </div>
 
     <!--form start-->
-    <div class="form-container">
-      <form action="#">
+    <div class="form-container" >
+      <form method="post" action="#" onsubmit= "return validateInput()">
         <div class="form-login-container">
           <h1>Sign In</h1>
           <br />
@@ -45,7 +45,8 @@
             type="text"
             placeholder="Enter Email"
             name="email"
-            required
+            id="email"
+            
           /><br />
 
           <label for="psw"><i class="fa fa-lock"></i>Password</label>
@@ -53,10 +54,11 @@
             type="password"
             placeholder="Enter Password"
             name="psw"
-            required
+            id="psw"
+            
           /><br />
-          <p class="error-notification">
-            <i class="fa fa-times-circle"></i>Error
+          <p class="error-notification" id = "error-message" >
+            <i class="fa fa-times-circle"></i> 
           </p>
           <label>
             <input type="checkbox" name="remember" />

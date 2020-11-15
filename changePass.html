@@ -35,7 +35,7 @@
 
     <!--form start-->
     <div class="form-container">
-      <form action="#">
+      <form action="#" method = "post" onsubmit ="return validateInputchangePass()">
         <div class="form-change-pass-container">
           <h1>Reset password</h1>
           <br />
@@ -45,16 +45,17 @@
             type="text"
             placeholder="Enter Email"
             name="email"
-            required
+            id="email-changepass"
           /><br />
           <label for="code-from-mail">Code from mail</label>
           <input
             type="text"
             placeholder="Enter code from your mail"
             name="code-from-mail"
-            required
+            id="code-from-mail"
+            
           /><br />
-          <p class="error-notification">
+          <p class="error-notification" id ="error-message-changepass">
             <i class="fa fa-times-circle"></i>Error
           </p>
           <button class="btn-change-password">Change password</button><br />
