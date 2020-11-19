@@ -1,0 +1,274 @@
+/*@import "default.css";
+@import "thuvien.css";
+@import "fonts.css";*/
+
+.logo {
+  height: 72px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.opacity:hover {
+  opacity: 0.4;
+}
+.color {
+  color: #bbb;
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  text-decoration: none;
+}
+
+.sidenav-item:hover {
+  background-color: #bbb;
+  border-radius: 0px 20px 20px 0;
+  transform: scale(1.15);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 0.5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.nav-link {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.circle :hover {
+  border-radius: 50%;
+  background: transparent;
+  background: #bbb;
+}
+[class*="-icon"] {
+  height: auto;
+  width: 100%;
+}
+
+/*main css*/
+ol,
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1320px !important;
+}
+
+.cell {
+  max-width: 300px;
+  margin: 20px 0 20px 0;
+  text-align: center;
+  box-shadow: 4px 8px 15px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.class-inf {
+  background-image: url("https://gstatic.com/classroom/themes/img_reachout.jpg");
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: #fff;
+}
+
+.class-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-height: 100px;
+}
+
+.class-main {
+  min-height: 140px;
+}
+
+.class-footer {
+  border-top: 1px solid #bbb;
+  max-height: 57px;
+}
+
+/*add class*/
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.full-height {
+  height: 100%;
+  width: 100%;
+}
+
+/* Full-width input fields */
+.form-login-container input[type="text"],
+.form-login-container input[type="password"],
+.form-signUp-container input[type="text"],
+.form-signUp-container input[type="password"],
+.form-signUp-container input[type="date"],
+.form-change-pass-container input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* When the inputs get focus, do something */
+.form-login-container input[type="text"]:focus,
+input[type="password"]:focus,
+.form-signUp-container input[type="text"]:focus,
+.form-signUp-container input[type="password"]:focus,
+.form-signUp-container input[type="date"]:focus,
+.form-change-pass-container input[type="text"]:focus {
+  background-color: #d5f3fc;
+}
+/*lable for login-form and signUp*/
+.form-login-container label,
+.form-signUp-container label,
+.form-change-pass-container label {
+  font-weight: bold;
+  padding: 2px;
+}
+/*icon for login-form*/
+.form-login-container i {
+  margin-right: 4px;
+}
+/*set color for a tag login form*/
+.form-login-container a {
+  color: dodgerblue;
+}
+/*set style error p */
+.error-notification {
+  color: #d8000c;
+  background-color: #ffd6d6;
+  height: 50px;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px;
+}
+.form-change-pass-container i {
+  margin-right: 4px;
+}
+/* Set a style for the submit/login button  and signUp button*/
+.btn-login,
+.btn-signUp,
+.btn-change-password {
+  box-sizing: border-box;
+  background-color: #0071bb;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  border-color: #fff;
+}
+
+/* Add some hover effects to buttons */
+.form-login-container .btn-login:hover,
+.form-signUp-container .btn-signUp:hover {
+  background-color: #045891;
+}
+
+/*Set style for login and signUp form */
+.form-signUp-container,
+.form-login-container,
+.form-change-pass-container {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 500px;
+  box-shadow: 9px 9px 5px #cbc8c8;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+.form-container {
+  display: block;
+  text-align: center;
+  margin: 10px;
+}
+/*Set color-background body login */
+.login-body,
+.signUp-body,
+.change-pass-body {
+  background-color: #eec0c6;
+  background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+}
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
