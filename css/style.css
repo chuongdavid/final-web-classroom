@@ -36,6 +36,13 @@
   display: block;
   transition: 0.3s;
 }
+.navbar{
+  background-image: linear-gradient(315deg, #237483 0%, #5fcccc 90%);
+}
+.index{
+  margin-left: auto;
+}
+
 
 .sidenav a:hover {
   text-decoration: none;
@@ -120,7 +127,7 @@ ul {
   background-image: url("https://gstatic.com/classroom/themes/img_reachout.jpg");
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  color: #fff;
+  background-color: #045891;
 }
 
 .class-title {
@@ -266,6 +273,303 @@ input[type="password"]:focus,
 .change-pass-body {
   background-color: #eec0c6;
   background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+}
+
+/*css giao dien giao vien*/
+.banner{
+  background-color: #db9841;
+  background-image: linear-gradient(315deg, #3ee0a2 0%, #7ee8fa 80%);
+  height: 225px;
+  font-size: 40px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+.banner2{
+  margin-top: 20px;
+  height: 300px;
+  font-size: 40px;
+  border-radius: 15px;
+ 
+}
+.banner3{
+  margin-top: 10px;
+  height: 300px;
+  font-size: 40px;
+  border-radius: 15px;
+  border: 2px solid rgb(187, 183, 183);
+}
+.cell{
+  margin-right: 10px;
+}
+#commute1{
+  height: 150px;
+  border: 2px solid rgb(187, 183, 183);
+  font-size: 20px;
+  padding: 15px;
+  
+}
+#commute2{
+  height: 75px;
+  padding: 10px 20px 20px 20px;
+  font-size: 24px;
+  color: rgb(168, 158, 158);
+
+}
+#commute3{
+  margin-top: 30px;
+  height: 200px;
+  padding: 10px 20px 20px 20px;
+  font-size: 26px;
+}
+
+.classwork{
+  margin-top: 10px;
+  height: 300px;
+  font-size: 40px;
+  border-radius: 15px;
+  border: 1px solid rgb(170, 167, 167);
+  background-color: white;
+}
+#announce{
+  padding-top: 9px;
+  font-size: 22px;
+}
+#viewall{
+  padding-top: 20px;
+  text-align: right;
+  color: orange;
+}
+#cntt{
+  font-size: 20px;
+  padding:10px
+}
+.head{
+  color:white;
+}
+.assign{
+  margin: auto;
+ 
+}
+#assignment{
+  margin: auto;
+  padding:5px;
+  font-size: 16px;
+  text-align: left;
+  font-style: italic;
+}
+label {
+  cursor: pointer;
+}
+#creatework{
+  margin-top: 30px;
+  height : 45px;
+  width: 125px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #26e7bd;
+  color:white;
+  box-shadow: 2px 2px 2px 2px rgba(24, 226, 192, 0.2);
+  border:none;
+}
+#creatework:hover{
+  margin-top: 30px;
+  height : 45px;
+  width: 125px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #74e9d0;
+}
+
+#assignworktoyourclass{
+  color:#26e7bd;
+}
+.teacher{
+  margin-top: 50px;
+  margin-left: 150px;
+  color:#0bbb95;
+}
+#teacheradd{
+  margin-left: 500px;
+}
+#student{
+  margin-top: 60px;
+  
+}
+
+.studentlist{
+  color:black;
+  margin-left: 10px;
+}
+
+#buttonteacher{
+  color:#0bbb95;
+  font-size: 0.6em;
+}
+
+.formtext{
+  
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.input{
+  border: none;
+}
+.input:focus{
+  border-color: white;
+}
+.btnform{
+  color:black;
+  margin-right: 20px;
+  background-color: white;
+  border:none;
+  border-radius: 5px ;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.btnsform{
+  text-align: left;
+  margin-left: 25px;
+}
+.btnform:hover{
+  color:black;
+  margin-right: 20px;
+  background-color: rgb(238, 231, 231);
+  border:none;
+  border-radius: 5px ;
+}
+.teacherform{
+  display: none;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid black;
+  height: 240px;
+  width: 300px;
+  border-radius: 10px;
+  top: -20%;
+  left: 10%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  
+}
+
+#showinvite{
+  display: none;
+}
+#buttonteacher:hover{
+  color:#0b8b70;
+  cursor: pointer;
+}
+
+.assignment:hover{
+  cursor: pointer;
+}
+
+#showinvite:checked ~ .teacherform{
+  display: block;
+  align-items: center;
+}
+#showinvite:checked ~ .container-sm{
+  filter: blur(10px);
+}
+
+#showassignment{
+  display: block;
+}
+
+.createassign{
+  display: none;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid black;
+  height: 50%;
+  width: 100%;
+  border-radius: 10px;
+  top: -50%;
+  left: 0%;
+  background-color: white;
+  font-size: x-large;
+}
+
+#title{
+  width: 70%;
+  margin-left: 15px;
+  
+}
+#titleicon{
+  font-size: 1.5em;
+  color: #919999;
+}
+#instruction{
+  width: 70%;
+  height: 70px;
+  text-align: left;
+  margin-left: 15px;
+}
+#instructionicon{
+  font-size: 1.5em;
+  color: #919999;
+}
+#showassignment:checked ~ .createassign{
+  display: block;
+}
+#showassignment:checked ~ .container-sm{
+  display: none;
+  
+}
+
+
+
+.tableassignment{
+  display: none;
+  border: none;
+  width: 250px;
+  top: -130px;
+  left: 35%;
+  transform: translate(-50%,-50%); 
+}
+
+#showcreate:checked ~ .tableassignment{
+  display: block;
+  
+  width: 150px;
+  
+}
+#showcreate{
+  display: none;
+}
+
+
+
+.tableassignment tr{
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+}
+.assignment:hover{
+  background-color: rgb(216, 210, 210);
+}
+#showcreate:hover{
+  cursor: pointer;
+}
+.table1 td {
+  padding:5px;
+}
+
+.createassign{
+  margin-top: -40px;
+}
+
+#assignmenclasswork{
+  font-weight: 700;
+  font-size: 55px;
+  color: #5fcccc;
+}
+.btnsform-assign{
+  margin-left: 75px;
+  padding-bottom: 20px;
 }
 body,
 html {
