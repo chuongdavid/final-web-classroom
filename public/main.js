@@ -253,3 +253,8 @@ function validateInputchangePass2() {
 }
 
 
+function addannouncement(){
+  document.write("Add");
+}
+
+

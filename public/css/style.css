@@ -16,35 +16,66 @@
 }
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
+  height: 50%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #111; /* Black*/
+  background-color: rgb(146, 212, 207); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  font-weight: 700;
+  
 }
-
+.editclassroom{
+  text-align: center;
+  margin-right: 13px;
+  
+}
+.editclassroom:hover{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 50%;
+  background: transparent;
+  background: rgb(26, 186, 197);
+  transition: background 0.2s;
+  
+  
+}
 /* The navigation menu links */
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #2b2828;
   display: block;
   transition: 0.3s;
 }
+
+.class-info-box{
+  width: 60%;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 7px;
+  padding-left: 15px;
+}
+
 
 .sidenav a:hover {
   text-decoration: none;
 }
 
 .sidenav-item:hover {
-  background-color: #bbb;
+  background-color:none;
   border-radius: 0px 20px 20px 0;
   transform: scale(1.15);
+}
+.nav-item{
+  
 }
 
 /* Position and style the close button (top right corner) */
@@ -117,10 +148,11 @@ ul {
 }
 
 .class-inf {
-  background-image: url("https://gstatic.com/classroom/themes/img_reachout.jpg");
+  /*background-image: url("https://gstatic.com/classroom/themes/img_reachout.jpg");*/
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  color: #fff;
+  background-color: #76e4cc;
+  background-image: linear-gradient(315deg, #7ce6d4, #3dced8  74%);
 }
 
 .class-title {
@@ -266,6 +298,408 @@ input[type="password"]:focus,
 .change-pass-body {
   background-color: #eec0c6;
   background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+}
+
+/*css giao dien giao vien*/
+.banner{
+  background-color: #db9841;
+  background-image: linear-gradient(315deg, #3ee0a2 0%, #7ee8fa 80%);
+  height: 225px;
+  font-size: 40px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+
+.banner2{
+  margin-top: 20px;
+  height: 300px;
+  font-size: 40px;
+  border-radius: 15px;
+ 
+}
+.banner3{
+  margin-top: 10px;
+  height: 300px;
+  font-size: 40px;
+  border-radius: 15px;
+  border: 2px solid rgb(187, 183, 183);
+}
+.cell{
+  margin-right: 10px;
+}
+#commute1{
+  height: 150px;
+  border: 2px solid rgb(187, 183, 183);
+  font-size: 20px;
+  padding: 15px;
+  
+}
+#commute2{
+  height: 75px;
+  padding: 10px 20px 20px 20px;
+  font-size: 24px;
+  color: rgb(168, 158, 158);
+
+}
+#commute3{
+  margin-top: 30px;
+  height: 200px;
+  padding: 10px 20px 20px 20px;
+  font-size: 26px;
+}
+
+.classwork{
+  margin-top: 10px;
+  height: 300px;
+  font-size: 40px;
+  border-radius: 15px;
+  border: 1px solid rgb(170, 167, 167);
+  background-color: white;
+}
+#announce{
+  padding-top: 9px;
+  font-size: 22px;
+}
+#viewall{
+  padding-top: 20px;
+  text-align: right;
+  color: orange;
+}
+#cntt{
+  font-size: 20px;
+  padding:10px
+}
+.head{
+  color:white;
+}
+.assign{
+  margin: auto;
+ 
+}
+#assignment{
+  margin: auto;
+  padding:5px;
+  font-size: 16px;
+  text-align: left;
+  font-style: italic;
+  
+}
+label {
+  cursor: pointer;
+}
+#creatework{
+  margin-top: 30px;
+  height : 45px;
+  width: 125px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #26e7bd;
+  color:white;
+  box-shadow: 2px 2px 2px 2px rgba(24, 226, 192, 0.2);
+  border:none;
+  outline: none;
+}
+#creatework:hover{
+  margin-top: 30px;
+  height : 45px;
+  width: 125px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #74e9d0;
+}
+
+#assignworktoyourclass{
+  color:#26e7bd;
+}
+.teacher{
+  margin-top: 50px;
+  margin-left: 150px;
+  color:#0bbb95;
+}
+#teacheradd{
+  margin-left: 500px;
+}
+#student{
+  margin-top: 60px;
+  
+}
+
+.studentlist{
+  color:black;
+  margin-left: 10px;
+}
+
+#buttonteacher{
+  color:#0bbb95;
+  font-size: 0.6em;
+}
+
+.formtext{
+  
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.input{
+  border: none;
+}
+.input:focus{
+  border-color: white;
+}
+.btnform{
+  color:black;
+  margin-right: 20px;
+  background-color: white;
+  border:none;
+  border-radius: 5px ;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.btnsform{
+  text-align: left;
+  margin-left: 25px;
+}
+.btnform:hover{
+  color:black;
+  margin-right: 20px;
+  background-color: rgb(238, 231, 231);
+  border:none;
+  border-radius: 5px ;
+}
+.teacherform{
+  display: none;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid black;
+  height: 240px;
+  width: 300px;
+  border-radius: 10px;
+  top: -20%;
+  left: 10%;
+  transform: translate(-50%,-50%);
+  background-color: white;
+  
+}
+
+#showinvite{
+  display: none;
+}
+#buttonteacher:hover{
+  color:#0b8b70;
+  cursor: pointer;
+}
+
+.assignment:hover{
+  cursor: pointer;
+}
+
+#showinvite:checked ~ .teacherform{
+  display: block;
+  align-items: center;
+}
+#showinvite:checked ~ .container-sm{
+  filter: blur(10px);
+}
+
+#showassignment{
+  display: block;
+}
+
+.createassign{
+  display: none;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid black;
+  height: 50%;
+  width: 100%;
+  border-radius: 10px;
+  top: -50%;
+  left: 0%;
+  background-color: white;
+  font-size: x-large;
+  
+}
+
+#title{
+  width: 70%;
+  margin-left: 15px;
+  
+}
+#titleicon{
+  font-size: 1.5em;
+  color: #919999;
+}
+#instruction{
+  width: 70%;
+  height: 70px;
+  text-align: left;
+  margin-left: 15px;
+}
+#instructionicon{
+  font-size: 1.5em;
+  color: #919999;
+}
+
+/*table nho cho them assignment*/
+#showassignment:checked ~ .createassign{
+  display: block;
+}
+#showassignment:checked ~ .container-sm{
+  display: none; 
+}
+
+.tableassignment{
+  display: none;
+  border: none;
+  width: 250px;
+  top: -13%;
+  left: 35%;
+  transform: translate(-50%,-50%); 
+  
+}
+
+#showcreate:checked ~ .tableassignment{
+  display: block;
+  
+  width: 150px;
+  
+}
+#search{
+  background-image: linear-gradient(315deg,  #7ce6d4, #7ae3eb 74%);
+  width: 70%;
+  border-color: #0fecbc;
+  outline: none;
+  border-radius: 7px;
+}
+
+/*table nho cho them assignment*/
+
+/*table nho chon them lop hoc hoac vao lop hoc*/
+
+#showaddjoinclassroom{
+  display: none;
+}
+
+.table-add-join-class{
+  display: none;
+  border: none;
+  width: 80%;
+  height: 80%;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px ;
+ 
+}
+
+#showaddannouncement{
+  display: none;
+}
+.addclass:hover{
+  background-color: rgb(7, 106, 119);
+}
+#showaddjoinclassroom:checked ~ .table-add-join-class{
+  display: block;
+}
+#showaddannouncement:checked ~ .index{
+  filter: blur(10px);
+}
+#classcode{
+  width: 20%;
+  margin-left: 0%;
+  border: 1px solid rgb(185, 184, 184);
+  border-radius: 2px;
+}
+.formcode{
+  margin-left: 12%;
+  margin-top: 3%;
+}
+.formcreate{
+  margin-left: 12%;
+  margin-top: -3%;
+}
+.cell:hover{
+  box-shadow: 4px 8px 15px 2px rgba(136, 134, 134, 0.8); 
+  cursor: pointer;
+}
+/*----------------------------------------------*/
+
+/*table nho cho them assignment*/
+.tableassignment tr{
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+/* Them chuc nang add anouncement*/
+
+#showaddannouncement{
+  display: block;
+}
+
+.table-add-join-class{
+  display: none;
+  border: none;
+  width: 80%;
+  height: 80%;
+  top: -25%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px ;
+ 
+}
+.addclass:hover{
+  background-color: rgb(7, 106, 119);
+}
+#showaddannouncement:checked ~ .table-add-join-class{
+  display: block;
+}
+
+/*----------------------------------*/
+.assignment:hover{
+  background-color: rgb(216, 210, 210);
+}
+#showcreate{
+  display: none;
+}
+#showcreate:hover{
+  cursor: pointer;
+}
+.table1 td {
+  padding:5px;
+}
+
+.createassign{
+  margin-top: -2%;
+}
+
+#assignmenclasswork{
+  font-weight: 700;
+  font-size: 55px;
+  color: #5fcccc;
+}
+.btnsform-assign{
+  margin-left: 75px;
+  padding-bottom: 20px;
+}
+
+#buttonstudent{
+  font-size: 20px;
+  color: #2ce6bd;
+}
+#buttonstudent:hover{
+  color: #27a88c;
+}
+
+.navbar{
+  background-image: linear-gradient(315deg, #69d68a 0%, #70e4e4 90%);
+}
+.addnew{
+  width: 100%;
 }
 body,
 html {
