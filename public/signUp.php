@@ -24,28 +24,29 @@
       if(isset($_POST['phone']) && $_POST['phone']!=NULL){
         $phone = $_POST['phone'];
       }
+      $rand = random_int(0,1000);
+      $vkey = md5($username .'+'.$rand);
       $data = [
         "user_name" => $username,
         "password" => $hash,
         "fullname" => $fullname,
         "date" => $date,
         "email" => $email,
-        "phone" => $phone
+        "phone" => $phone,
+        "vkey"  => $vkey
       ];
       //kiểm tra email có tồn tại chưa 
       $check_email = $db -> fetchOne('user',"email = '".$data['email']."'");  
-      if(count($check_email)>0){
+      if($check_email>0){
         $error = "This email has already existed";
       }
       else{
+        //gửi email xác nhận 
         $db -> insert('user',$data);
-        $_SESSION['success'] = "Sign up successful";
-        header("Location:login.php");
+        verify_email($email,$vkey);
+        header("Location:thanksScreen.php");
       }
       
-    }
-    else{
-        //chưa submit
     }
 ?>
 
