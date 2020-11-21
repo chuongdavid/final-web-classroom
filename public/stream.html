@@ -21,7 +21,7 @@
         <!--font-awnsome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
-
+    
     <body>
         <!--navbar-->
         <nav class="navbar navbar-expand bg-primary navbar-dark p-0 sticky-top">
@@ -65,6 +65,7 @@
             </ul>
         </nav>
         <input type ="checkbox" id="showaddannouncement">
+        
         <div class=" stream container-sm">
             <div class="row head">
                 <div class="banner col-12"> 
@@ -88,24 +89,37 @@
                     </div>
                     
                     <div class="banner2 class-anounce col-lg-8">
-                        
+                        <input type ="checkbox" id="showhiddenstreamcontent">
                         <div class="banner3" id="commute2">
                             <label for ="showaddannouncement"><i class=" fas fa-user-graduate"></i> Share something with your class </label>
                         </div>
                         
-                        <div class="banner3" id="commute3">
+                        <div class="banner3 commute" id="commute3">
                             <b>Communicate with your class here</b></br>
                             <div id="announce">
                                 <i class="far fa-comment-alt"> </i>  Create and schedule annnouncements </br>
                                 <i class="far fa-comment"> </i> Respond to student posts
                             </div>
-                        </div>   
+                        </div>
+                        
+                        <div class="banner3 hiddenstreamcontent c" id="commute3">
+                            <i class="fa fa-user "></i> <b>Dang Trung Tin</b>
+                            <p id="datestream"> Nov 21</p>
+
+                            <div id="teachercontent">
+                                fdsfhklsdflksjfl;sdjl;fsk
+                            </div>
+                            <div id="announce">
+                                <input id="classcomment" type="text" placeholder="Add class comment"> </input> <label for="classcomment" ><i class="far fa-paper-plane"></i></label></br> 
+                            </div>
+                            
+                        </div>     
                     </div>
                 </div>
             </div>
         </div>
         <div class="tableshowannouncement col-12">  
-            <form >
+            <form enctype="multipart/form-data" >
                 <div class="formcode">
                     <div class="form-inf"
                         <label> <p id="assignmenclasswork"><b>Share with your class</b> </p></label>
@@ -116,16 +130,20 @@
                             <option value="volvo">All student</option>
                             <option value="saab">Trung Tin</option>
                         </select></br></br>
-                        <input id="inputannounce" type = "text" placeholder="Type here">
+                        <input id="inputannounce" type = "text" placeholder="Type here"></br></br>
+                        <input type="file" id="fileanh" >
                         </div>
                         </br>
                         
-                        <button class="btnform">Post</button>
+                        <label for="showhiddenstreamcontent">  <button class="btnform">Post</button></label>
                         <button class="btnform">Cancel</button>
                     </div>    
                 </div> 
             </form>
         </div>
+        
+        
+        
 
 
     </body>

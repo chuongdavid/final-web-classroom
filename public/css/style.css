@@ -319,7 +319,7 @@ input[type="password"]:focus,
 }
 .banner3{
   margin-top: 10px;
-  height: 300px;
+  height: auto;
   font-size: 40px;
   border-radius: 15px;
   border: 2px solid rgb(187, 183, 183);
@@ -629,7 +629,10 @@ label {
 #showaddannouncement{
   display: none;
 }
-
+#datestream{
+  font-size: 18px;
+  margin-left:4%;
+}
 .tableshowannouncement{
   display: none;
   border: none;
@@ -642,13 +645,11 @@ label {
   border-bottom-left-radius: 15px ;
 
 }
-
+#showaddannouncement:checked ~ .content{
+  filter: blur(30px);
+}
 #showaddannouncement:checked ~ .tableshowannouncement{
   display: block; 
-}
-
-#showaddannouncement:checked ~ .content{
-  display: none;
 }
 
 /*----------------------------------*/
@@ -746,6 +747,38 @@ label {
   filter: blur(30px);
 }
 /*----------------------------------------------*/
+/*table nho chon them lop hoc hoac vao lop hoc*/
+
+#showhiddenstreamcontent{
+  display: block;
+}
+
+.hiddenstreamcontent{
+  display: none;
+}
+
+
+#showhiddenstreamcontent:checked ~ .hiddenstreamcontent{
+  display: block;
+}
+#showhiddenstreamcontent:checked ~ .commute{
+  display: none;
+}
+#showhiddenstreamcontent:checked ~ .index{
+  filter: blur(30px);
+}
+
+/*----------------------------------------------*/
+
+.hiddenstreamcontent{
+  height: auto;
+  width: auto;
+}
+#classcomment{
+  border-radius: 10px;
+  width: 80%;
+  margin-bottom: 30px;
+}
 body,
 html {
   height: 100%;

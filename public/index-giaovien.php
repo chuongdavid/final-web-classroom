@@ -70,7 +70,7 @@
 
                 <li class="nav-item  ml-2 mr-2">
                     <a class="nav-link" href="#">
-                        <label for="showaddjoinclassroom"><i class="fa fa-users fa-2x"></i> </label>
+                        <label for="showaddjoinclassroom"><i class="fa fa-user fa-2x"></i> </label>
                     </a>
                 </li>
                 <li class="nav-item ml-2 mr-2">
@@ -360,7 +360,7 @@
         
 
         <div class="table-add-join-class col-12">  
-            <form >
+            <form enctype="multipart/form-data" >
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
@@ -368,7 +368,9 @@
                         <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
                         <input class="class-info-box" id="class-section" type = "text" placeholder="Section"></br>
                         <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
-                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room">
+                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room"></br>
+                        </br> <b>Chọn ảnh đại diện</b></br>
+                        <input type="file" id="fileanh" >
                     </div>
                     </br>
                     </br></br>

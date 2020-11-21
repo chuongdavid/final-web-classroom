@@ -72,7 +72,13 @@ require_once __DIR__. "/../autoload/autoload.php";
                         <input type="text" id="search">
                     </a>
                 </li>
-                <li class="nav-item ml-auto mr-2">
+
+                <li class="nav-item  ml-2 mr-2">
+                    <a class="nav-link" href="#">
+                        <label for="showaddjoinclassroom"><i class="fa fa-user fa-2x"></i> </label>
+                    </a>
+                </li>
+                <li class="nav-item ml-2 mr-2">
                     <a class="nav-link" href="#">
                         <label for="showaddjoinclassroom"><i class="fa fa-plus fa-2x"></i> </label>
                     </a>
