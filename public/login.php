@@ -8,9 +8,16 @@
       ];
       $data_user = $db -> fetchOne('user',"email = '".$data['email']."'");  
       if (password_verify($data['password'],$data_user['password'])) {
-          $_SESSION['success'] = "Sign up successful";
-          unset($_SESSION['error']);
-          Header("Location:index.html");
+          if(check_role($data['email'])==0){
+            $_SESSION['username'] = $data_user['user_name'];
+            header('Location:index.php');
+              
+          }
+          else{
+            $_SESSION['username'] = $data_user['user_name'];
+            header('Location:index-giaovien.php');
+          }
+
           
       } else {
         $error = "Email or password is incorrect. Please enter again";

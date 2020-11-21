@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,7 +23,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-
+    <input type ="checkbox" id="showeditclassroom">
+    <input type ="checkbox" id="showaddjoinclassroom">
     <body>
         <!--navbar-->
         <nav class="navbar navbar-expand bg-primary navbar-dark p-0 sticky-top">
@@ -66,14 +67,20 @@
                         <input type="text" id="search">
                     </a>
                 </li>
-                <li class="nav-item ml-auto mr-2">
+
+                <li class="nav-item  ml-2 mr-2">
+                    <a class="nav-link" href="#">
+                        <label for="showaddjoinclassroom"><i class="fa fa-users fa-2x"></i> </label>
+                    </a>
+                </li>
+                <li class="nav-item ml-2 mr-2">
                     <a class="nav-link" href="#">
                         <label for="showaddjoinclassroom"><i class="fa fa-plus fa-2x"></i> </label>
                     </a>
                 </li>
             </ul>
         </nav>
-
+        
         <!--add class form-->
         <div class="form-popup full-height" id="myForm">
             <form action="/action_page.php" class="form-container">
@@ -89,7 +96,7 @@
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>
-        <input type ="checkbox" id="showaddjoinclassroom">
+
         <!--classes-->
         <div class=" index container m-0 ">
             <div class="row">
@@ -97,11 +104,203 @@
                     <div class="cell">
 
                         <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                        </div>
                             <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                             <i class="editclassroom far fa-trash-alt"></i>
                         </div>
 
-                        <div class="class-main">
+                        <div class="class-main p-2">
+                            <p class="title"> Jane Dode</p>
+
+                        </div>
+
+                        <div class="class-footer ">
+                            <span class="circle">
+                                <div class="work-icon">
+                                    <i class="fa fa-user-o " aria-hidden="true"></i>
+                                </div>
+                            </span>
+
+                            <span class="circle">
+                                <div class="folder-icon">
+                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="cell">
+
+                        <div class="class-inf">
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                             <i class="editclassroom far fa-trash-alt"></i>
+                        </div>
+
+                        <div class="class-main p-2">
+                            <p class="title"> Jane Dode</p>
+
+                        </div>
+
+                        <div class="class-footer ">
+                            <span class="circle">
+                                <div class="work-icon">
+                                    <i class="fa fa-user-o " aria-hidden="true"></i>
+                                </div>
+                            </span>
+
+                            <span class="circle">
+                                <div class="folder-icon">
+                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="cell">
+
+                        <div class="class-inf">
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                             <i class="editclassroom far fa-trash-alt"></i>
+                        </div>
+
+                        <div class="class-main p-2">
+                            <p class="title"> Jane Dode</p>
+
+                        </div>
+
+                        <div class="class-footer ">
+                            <span class="circle">
+                                <div class="work-icon">
+                                    <i class="fa fa-user-o " aria-hidden="true"></i>
+                                </div>
+                            </span>
+
+                            <span class="circle">
+                                <div class="folder-icon">
+                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="cell">
+
+                        <div class="class-inf">
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                             <i class="editclassroom far fa-trash-alt"></i>
+                        </div>
+
+                        <div class="class-main p-2">
+                            <p class="title"> Jane Dode</p>
+
+                        </div>
+
+                        <div class="class-footer ">
+                            <span class="circle">
+                                <div class="work-icon">
+                                    <i class="fa fa-user-o " aria-hidden="true"></i>
+                                </div>
+                            </span>
+
+                            <span class="circle">
+                                <div class="folder-icon">
+                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="cell">
+
+                        <div class="class-inf">
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                            <i class="editclassroom far fa-trash-alt"></i>
+                        </div>
+
+                        <div class="class-main p-2">
+                            <p class="title"> Jane Dode</p>
+
+                        </div>
+
+                        <div class="class-footer ">
+                            <span class="circle">
+                                <div class="work-icon">
+                                    <i class="fa fa-user-o " aria-hidden="true"></i>
+                                </div>
+                            </span>
+
+                            <span class="circle">
+                                <div class="folder-icon">
+                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="cell">
+
+                        <div class="class-inf">
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                             <i class="editclassroom far fa-trash-alt"></i>
+                        </div>
+
+                        <div class="class-main p-2">
+                            <p class="title"> Jane Dode</p>
+
+                        </div>
+
+                        <div class="class-footer ">
+                            <span class="circle">
+                                <div class="work-icon">
+                                    <i class="fa fa-user-o " aria-hidden="true"></i>
+                                </div>
+                            </span>
+
+                            <span class="circle">
+                                <div class="folder-icon">
+                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="cell">
+
+                        <div class="class-inf">
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                             <i class="editclassroom far fa-trash-alt"></i>
+                        </div>
+
+                        <div class="class-main p-2">
                             <p class="title"> Jane Dode</p>
 
                         </div>
@@ -125,11 +324,15 @@
                     <div class="cell">
 
                         <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1">Môn học  </h1> 
+                        </div>
                             <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <label for ="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
+                             <i class="editclassroom far fa-trash-alt"></i>
                         </div>
 
-                        <div class="class-main">
+                        <div class="class-main p-2">
                             <p class="title"> Jane Dode</p>
 
                         </div>
@@ -149,198 +352,54 @@
                         </div>
                     </div>
                 </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
-
         </div>
+
+        
+        
 
         <div class="table-add-join-class col-12">  
             <form >
-                <div class="formcode">
-                    <label> <p id="assignmenclasswork"><b>Join Class</b> </p></label>
+                <div class="formcreate">
+                    <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
-                    <div class="titleintruction">
-                    <h4> Class code</h4>
-                    <p> Ask your teacher for the class code </p>
-                        <input id="classcode" type = "text" placeholder="Class code">
+                    <div class="class-info">
+                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
+                        <input class="class-info-box" id="class-section" type = "text" placeholder="Section"></br>
+                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
+                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room">
                     </div>
                     </br>
-                    
-                    <button class="btnform">Join</button>
+                    </br></br>
+                    <button class="btnform">Create</button>
                     <button class="btnform">Cancel</button>
                     
                 
                 </div> 
             </form>
         </div>
+
+        
+
+        <div class="tableeditclassroom col-12">  
+            <form >
+                <div class="formcreate">
+                    <label> <p id="assignmenclasswork"><b>Edit Classroom</b> </p></label>
+                    <hr style="width:90%; text-align:left; margin-left:10"></br>
+                    <div class="class-info">
+                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
+                        <input class="class-info-box" id="class-section" type = "text" placeholder="Section"></br>
+                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
+                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room">
+                    </div>
+                    </br>
+                    </br></br>
+                    <button class="btnform">Update</button>
+                    <button class="btnform">Cancel</button>
+                </div> 
+            </form>
+        </div>    
                 <hr style="width:90%; text-align:left; margin-left:10">
                 
                 
