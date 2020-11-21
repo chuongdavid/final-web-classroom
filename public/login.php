@@ -94,7 +94,7 @@
           ><br />
           <button class="btn-login">Sign in</button><br />
           <button class="btn-login">Create an account</button><br />
-          <a href="#" dodgerblue>Forgot your password?</a>
+          <a href="forget_password.php" dodgerblue>Forgot your password?</a>
         </div>
       </form>
     </div>
