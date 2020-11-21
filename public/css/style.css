@@ -444,6 +444,15 @@ label {
 .input{
   border: none;
 }
+#inputannounce{
+  width: 40%;
+  height: 80px;
+  border: 1px solid black;
+  
+}
+#announce-select{
+  border: 1px solid black;
+}
 .input:focus{
   border-color: white;
 }
@@ -503,7 +512,7 @@ label {
 }
 
 #showassignment{
-  display: block;
+  display: none;
 }
 
 .createassign{
@@ -511,14 +520,13 @@ label {
   margin: auto;
   margin-top: 100px;
   border: 1px solid black;
-  height: 50%;
-  width: 100%;
+  height: auto;
+  width: auto;
   border-radius: 10px;
-  top: -50%;
+  top: -20%;
   left: 0%;
   background-color: white;
   font-size: x-large;
-  
 }
 
 #title{
@@ -545,7 +553,10 @@ label {
 #showassignment:checked ~ .createassign{
   display: block;
 }
-#showassignment:checked ~ .container-sm{
+#showassignment:checked ~ .tableassignment{
+  display: none;
+}
+#showassignment:checked ~ .classworkindex{
   display: none; 
 }
 
@@ -575,46 +586,25 @@ label {
 
 /*table nho cho them assignment*/
 
-/*table nho chon them lop hoc hoac vao lop hoc*/
 
-#showaddjoinclassroom{
-  display: none;
-}
-
-.table-add-join-class{
-  display: none;
-  border: none;
-  width: 80%;
-  height: 80%;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%,-50%); 
-  background-color: #ffffff;
-  border-bottom-left-radius: 15px ;
- 
-}
-
-#showaddannouncement{
-  display: none;
-}
-.addclass:hover{
-  background-color: rgb(7, 106, 119);
-}
-#showaddjoinclassroom:checked ~ .table-add-join-class{
-  display: block;
-}
-#showaddannouncement:checked ~ .index{
-  filter: blur(10px);
-}
 #classcode{
   width: 20%;
   margin-left: 0%;
   border: 1px solid rgb(185, 184, 184);
   border-radius: 2px;
 }
+
+.addclass:hover{
+  background-color: rgb(7, 106, 119);
+}
 .formcode{
   margin-left: 12%;
   margin-top: 3%;
+  padding-left: 15%;
+}
+#announceinf{
+  width: 80%;
+  border: none;
 }
 .formcreate{
   margin-left: 12%;
@@ -624,7 +614,7 @@ label {
   box-shadow: 4px 8px 15px 2px rgba(136, 134, 134, 0.8); 
   cursor: pointer;
 }
-/*----------------------------------------------*/
+
 
 /*table nho cho them assignment*/
 .tableassignment tr{
@@ -637,26 +627,28 @@ label {
 /* Them chuc nang add anouncement*/
 
 #showaddannouncement{
-  display: block;
+  display: none;
 }
 
-.table-add-join-class{
+.tableshowannouncement{
   display: none;
   border: none;
   width: 80%;
   height: 80%;
-  top: -25%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%,-50%); 
   background-color: #ffffff;
   border-bottom-left-radius: 15px ;
- 
+
 }
-.addclass:hover{
-  background-color: rgb(7, 106, 119);
+
+#showaddannouncement:checked ~ .tableshowannouncement{
+  display: block; 
 }
-#showaddannouncement:checked ~ .table-add-join-class{
-  display: block;
+
+#showaddannouncement:checked ~ .content{
+  display: none;
 }
 
 /*----------------------------------*/
@@ -673,10 +665,10 @@ label {
   padding:5px;
 }
 
-.createassign{
-  margin-top: -2%;
-}
 
+.addclass:hover{
+  background-color: rgb(7, 106, 119);
+}
 #assignmenclasswork{
   font-weight: 700;
   font-size: 55px;
@@ -701,6 +693,59 @@ label {
 .addnew{
   width: 100%;
 }
+
+/*sua index giao vien*/
+#showeditclassroom{
+  display: none;
+}
+
+.tableeditclassroom{
+  display: none;
+  border: none;
+  width: 80%;
+  height: 80%;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px ;
+ 
+}
+
+#showeditclassroom:checked ~ .index{
+  filter: blur(50px);
+}
+#showeditclassroom:checked ~ .tableeditclassroom{
+  display: block;
+}
+/*-------------------------------*/
+/*table nho chon them lop hoc hoac vao lop hoc*/
+
+#showaddjoinclassroom{
+  display: none;
+}
+
+.table-add-join-class{
+  display: none;
+  border: none;
+  width: 80%;
+  height: 80%;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px ;
+ 
+}
+
+
+#showaddjoinclassroom:checked ~ .table-add-join-class{
+  display: block;
+}
+#showaddjoinclassroom:checked ~ .index{
+  filter: blur(30px);
+}
+/*----------------------------------------------*/
 body,
 html {
   height: 100%;
