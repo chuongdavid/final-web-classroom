@@ -60,13 +60,19 @@
                 </li>
 
                 <!--right nav-->
-                <li class="nav-item ml-5 mr-8"> 
+                <li class="nav-item ml-auto mr-0"> 
                     <a class="nav-link" href="#">
                         <label for="search"><i class="fa fa-search fa-2x"></i> </label> 
                         <input type="text" id="search">
                     </a>
                 </li>
-                <li class="nav-item ml-auto mr-2">
+
+                <li class="nav-item  ml-2 mr-2">
+                    <a class="nav-link" href="#">
+                        <label for="showaddjoinclassroom"><i class="fa fa-users fa-2x"></i> </label>
+                    </a>
+                </li>
+                <li class="nav-item ml-2 mr-2">
                     <a class="nav-link" href="#">
                         <label for="showaddjoinclassroom"><i class="fa fa-plus fa-2x"></i> </label>
                     </a>
