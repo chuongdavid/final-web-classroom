@@ -80,8 +80,8 @@ function verify_email($email,$vkey){
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username   = 'chuongddavid@gmail.com';                     // SMTP username
         $mail->Password   = 'ieibumydddhemnei';                               // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
         //Recipients
         $mail->setFrom('chuongddavid@gmail.com', 'Classroom');
@@ -138,8 +138,8 @@ function send_reset_password_email($email,$token){
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
         $mail->Username   = 'chuongddavid@gmail.com';                     // SMTP username
         $mail->Password   = 'ieibumydddhemnei';                               // SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+        $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
         //Recipients
         $mail->setFrom('chuongddavid@gmail.com', 'Classroom');
@@ -164,6 +164,18 @@ function send_reset_password_email($email,$token){
     }
     catch (Exception $e) {
         return false;
+    }
+}
+function check_role($email){
+    $db = new Database;
+    $data_user =  $db -> fetchOne('user',"email = '".$email."'");
+    if($data_user['role']==0){
+        return 0;
+    }elseif($data_user['role']==1){
+        return 1;
+    }
+    else{
+        return 2;
     }
 }
  ?>

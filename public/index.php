@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+
+require_once __DIR__. "/../autoload/autoload.php";
+var_dump($_SESSION['username']);
+
+?>
+
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
