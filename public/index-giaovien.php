@@ -25,6 +25,7 @@
     </head>
     <input type ="checkbox" id="showeditclassroom">
     <input type ="checkbox" id="showaddjoinclassroom">
+    <input type ="checkbox" id="showphanquyen">
     <body>
         <!--navbar-->
         <nav class="navbar navbar-expand bg-primary navbar-dark p-0 sticky-top">
@@ -70,7 +71,7 @@
 
                 <li class="nav-item  ml-2 mr-2">
                     <a class="nav-link" href="#">
-                        <label for="showaddjoinclassroom"><i class="fa fa-user fa-2x"></i> </label>
+                        <label for="showphanquyen"><i class="fa fa-user fa-2x"></i> </label>
                     </a>
                 </li>
                 <li class="nav-item ml-2 mr-2">
@@ -356,8 +357,7 @@
             </div>
         </div>
 
-        
-        
+
 
         <div class="table-add-join-class col-12">  
             <form enctype="multipart/form-data" >
@@ -375,6 +375,31 @@
                     </br>
                     </br></br>
                     <button class="btnform">Create</button>
+                    <button class="btnform">Cancel</button>
+                    
+                
+                </div> 
+            </form>
+        </div>
+        <div class="tablephanquyen col-12">  
+            <form enctype="multipart/form-data" >
+                <div class="formcreate">
+                    <label> <p id="assignmenclasswork"><b>Decentralization</b> </p></label>
+                    <hr style="width:90%; text-align:left; margin-left:10"></br>
+                    <div class="class-info">
+                        <input class="class-info-box" id="class-name" type = "text" placeholder="Email (required)"></br>
+                        
+                        </br> <b>Chọn quyền đăng nhập</b></br>
+                        <select id="announce-select" name="carlist" form="carform">
+                            <option value="volvo"><b>Admin</b></option>
+                            <option value="saab">Giáo viên</option>
+                            <option value="saab">Học viên</option>
+                        </select>
+
+                    </div>
+                    </br>
+                    </br>
+                    <button class="btnform">Update</button>
                     <button class="btnform">Cancel</button>
                     
                 

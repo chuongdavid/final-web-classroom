@@ -451,7 +451,8 @@ label {
   
 }
 #announce-select{
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 .input:focus{
   border-color: white;
@@ -765,6 +766,37 @@ label {
   display: none;
 }
 #showhiddenstreamcontent:checked ~ .index{
+  filter: blur(30px);
+}
+
+/*----------------------------------------------*/
+/*table phan quyen*/
+
+#showphanquyen{
+  display: none;
+}
+
+.tablephanquyen{
+  display: none;
+  display: none;
+  border: none;
+  width: 80%;
+  height: 80%;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px ;
+}
+
+
+#showphanquyen:checked ~ .tablephanquyen{
+  display: block;
+}
+#showphanquyen:checked ~ .commute{
+  display: none;
+}
+#showphanquyen:checked ~ .index{
   filter: blur(30px);
 }
 
