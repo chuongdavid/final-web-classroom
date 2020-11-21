@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2020 lúc 11:23 AM
+-- Thời gian đã tạo: Th10 21, 2020 lúc 03:05 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -80,7 +80,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `user_name`, `fullname`, `password`, `date`, `email`, `phone`, `vkey`, `verified`, `role`, `created_at`, `updated_at`) VALUES
-(19, 'chuongdavid', 'Dương Thụy Chương', '$2y$10$/u2mA9H8UsaYjaczf9iT4.uzQ9j1d4xd2cOY1WGSumFen8QL9/KJm', '2020-11-25', 'cameraquangthuy@gmail.com', '0387845823', '', 1, 0, NULL, '2020-11-21 06:41:12');
+(19, 'chuongdavid', 'Dương Thụy Chương', '$2y$10$/u2mA9H8UsaYjaczf9iT4.uzQ9j1d4xd2cOY1WGSumFen8QL9/KJm', '2020-11-25', 'cameraquangthuy@gmail.com', '0387845823', '', 1, 0, NULL, '2020-11-21 06:41:12'),
+(20, 'Tín Cao', 'Trung Tín', '$2y$10$M.lK9/36B9liPi0CMjrVZe7EIa/iMtU2bZPealv5Ew7ID1I.oRe3m', '2020-11-26', 'chuong@gmail.com', '0387845823', NULL, 1, 1, NULL, '2020-11-21 12:27:59'),
+(21, 'admin', 'admin', '$2y$10$g4scKl0..ydwHnjgroLDTuV2r2Z8DwTQZ6X3jPUAzdbj5tnDXTHE6', '2020-11-17', 'admin@gmail.com', '0387845823', NULL, 1, 2, NULL, '2020-11-21 12:28:01');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -106,7 +108,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
