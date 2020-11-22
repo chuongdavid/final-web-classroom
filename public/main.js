@@ -212,6 +212,161 @@ function validateInputchangePass() {
   }
 }
 
+//function validate phân quyền
+
+function hideErrorphanquyen() {
+  let errorField = document.getElementById("error-message-phanquyen");
+  errorField.style.display = "none";
+  console.log("Hide error");
+}
+
+function displayErrorphanquyen(message) {
+  let errorField = document.getElementById("error-message-phanquyen");
+  errorField.style.display = "";
+  errorField.innerHTML = message;
+  console.log("display phan quyen");
+}
+window.addEventListener("load", () => {
+  hideErrorphanquyen();
+});
+
+function validateInputphanquyen() {
+  try {
+    let emailField = document.getElementById("email-phanquyen");
+    let errorField = document.getElementById("error-message-phanquyen");
+    let selectField = document.getElementById("permission");
+
+    let email = emailField.value;
+    let select = selectField.value;
+
+    if (email.length === 0) {
+      displayErrorphanquyen('<i class="fa fa-times-circle"></i> Please enter email');
+      emailField.focus();
+      return false;
+    } else if (!email.includes("@gmail.com")) {
+      displayErrorphanquyen('<i class="fa fa-times-circle"></i> Your email is not valid');
+      emailField.focus();
+      return false;
+    } else if (select === "") {
+      displayErrorphanquyen('<i class="fa fa-times-circle"></i> Please choose permission');
+      selectField.focus();
+      return false;
+    }
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// function Create class
+function hideErroraddClass() {
+  let errorField = document.getElementById("error-message-addClass");
+  errorField.style.display = "none";
+  console.log("Hide error");
+}
+
+function displayErroraddClass(message) {
+  let errorField = document.getElementById("error-message-addClass");
+  errorField.style.display = "";
+  errorField.innerHTML = message;
+  console.log("display phan quyen");
+}
+window.addEventListener("load", () => {
+  hideErroraddClass();
+});
+
+function validateInputaddClass() {
+  try {
+    let nameField = document.getElementById("class-name");
+    let subjectField = document.getElementById("class-subject");
+    let roomField = document.getElementById("class-room");
+    let fileanhField = document.getElementById("fileanh");
+    let errorField = document.getElementById("error-message-addClass");
+
+    let name = nameField.value;
+    let subject =subjectField.value;
+    let room =roomField.value;
+    let fileanh = fileanhField.value;
+
+    if (name.length === 0) {
+      displayErroraddClass('<i class="fa fa-times-circle"></i> Please enter your Class name');
+      nameField.focus();
+      return false;
+    } else if (subject === "") {
+      displayErroraddClass('<i class="fa fa-times-circle"></i> Please enter your Subject');
+      subjectField.focus();
+      return false;
+    }else if (room === "") {
+      displayErroraddClass('<i class="fa fa-times-circle"></i> Please enter your Room');
+      roomField.focus();
+      return false;
+    }else if (fileanh === "") {
+      displayErroraddClass('<i class="fa fa-times-circle"></i> Please choose your avatar');
+      return false;
+    }else if (!fileanh.includes("JPG") ) {
+      displayErroraddClass('<i class="fa fa-times-circle"></i> Please choose a JPG file');
+      return false;
+    }
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+
+// function Edit classroom
+function hideErrorEditClass() {
+  let errorField = document.getElementById("error-message-edit");
+  errorField.style.display = "none";
+}
+
+function displayErrorEditClass(message) {
+  let errorField = document.getElementById("error-message-edit");
+  errorField.style.display = "";
+  errorField.innerHTML = message;
+}
+window.addEventListener("load", () => {
+  hideErrorEditClass();
+});
+
+function validateInputEditClass() {
+  try {
+    let nameField = document.getElementById("class-name-edit");
+    let subjectField = document.getElementById("class-subject-edit");
+    let roomField = document.getElementById("class-room-edit");
+    let fileanhField = document.getElementById("fileanh-edit");
+    let errorField = document.getElementById("error-message-edit");
+
+    let name = nameField.value;
+    let subject =subjectField.value;
+    let room =roomField.value;
+    let fileanh = fileanhField.value;
+
+    if (name.length === 0) {
+      displayErrorEditClass('<i class="fa fa-times-circle"></i> Please enter your Class name');
+      nameField.focus();
+      return false;
+    } else if (subject === "") {
+      displayErrorEditClass('<i class="fa fa-times-circle"></i> Please enter your Subject');
+      subjectField.focus();
+      return false;
+    }else if (room === "") {
+      displayErrorEditClass('<i class="fa fa-times-circle"></i> Please enter your Room');
+      roomField.focus();
+      return false;
+    }else if (fileanh === "") {
+      displayErrorEditClass('<i class="fa fa-times-circle"></i> Please choose your avatar');
+      return false;
+    }else if (!fileanh.includes("JPG") ) {
+      displayErrorEditClass('<i class="fa fa-times-circle"></i> Please choose a JPG file');
+      return false;
+    }
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 //function change Pass step 2page
 function hideErrorchangePass2() {
   let errorField = document.getElementById("error-message-changepass2");
@@ -268,6 +423,3 @@ function validateInputchangePass2() {
   }
 }
 
-function addannouncement() {
-  document.write("Add");
-}
