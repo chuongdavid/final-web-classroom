@@ -26,7 +26,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--title-->
         <title>Classroom</title>
         
@@ -137,10 +137,10 @@
                     <div class="cell">
 
                         <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div >
+                                <h1 class="class-title text-left ml-3 mb-1">Môn học </h1> 
+                            </div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50%"> Thầy A</div>
                             <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                              <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -173,7 +173,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50% "> Thầy A</div>
                             <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                              <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -204,7 +204,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50% "> Thầy A</div>
                             <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                              <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -235,7 +235,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50% "> Thầy A</div>
                             <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                              <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -266,7 +266,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50% "> Thầy A</div>
                             <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                             <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -297,7 +297,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50% "> Thầy A</div>
                             <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                              <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -328,7 +328,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50% "> Thầy A</div>
                             <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                              <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -360,7 +360,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1">Môn học  </h1> 
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
+                            <div class="text-left ml-3 mt-0"><img src="image/avatar.png" class="avatar" style="width:13%; border-radius: 50% "> Thầy A</div>
                             <label for ="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
                              <i class="editclassroom far fa-trash-alt"></i>
                         </div>
@@ -463,7 +463,7 @@
                         <i class="fa fa-times-circle"></i> 
                     </p>
                     <button class="btnform">Update</button>
-                    <button class="btnform">Cancel</button>
+                    <button class="btnform" type="cancel"> Cancel</button>
                 </div> 
             </form>
         </div>    
