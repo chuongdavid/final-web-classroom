@@ -390,29 +390,29 @@
         </div>
 
 
-
+        <!-- form tạo lớp -->
         <div class="table-add-join-class col-12">  
             <form enctype="multipart/form-data" >
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="class-info">
-                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
-                        <input class="class-info-box" id="class-section" type = "text" placeholder="Section"></br>
-                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
-                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room"></br>
-                        </br> <b>Chọn ảnh đại diện</b></br>
+                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)" name="class_name"></br>
+                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject" name="class_subject"></br>
+                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room" name="class_name"></br>
+                        </br> <b>Choose avatar</b></br>
                         <input type="file" id="fileanh" >
                     </div>
                     </br>
                     </br></br>
-                    <button class="btnform">Create</button>
-                    <button class="btnform">Cancel</button>
+                    <button class="btn btn-primary">Create</button>
+                    <button class="btn btn-warning">Cancel</button>
                     
                 
                 </div> 
             </form>
         </div>
+        <!-- form phân quyền -->
         <div class="tablephanquyen col-12">  
             <form action="" method="POST" >
                 <div class="formcreate">
@@ -438,7 +438,7 @@
         </div>
 
         
-
+        <!-- form edit lớp -->
         <div class="tableeditclassroom col-12">  
             <form >
                 <div class="formcreate">
@@ -446,9 +446,9 @@
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="class-info">
                         <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
-                        <input class="class-info-box" id="class-section" type = "text" placeholder="Section"></br>
                         <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
                         <input class="class-info-box" id="class-room" type = "text" placeholder="Room">
+                        <input class="class-info-box" id="class-section" type = "text" placeholder="Avatar"></br>
                     </div>
                     </br>
                     </br></br>
@@ -458,11 +458,6 @@
             </form>
         </div>    
                 <hr style="width:90%; text-align:left; margin-left:10">
-                
-                
-                
-                   
-            
         </div>
     </body>
 </html>
