@@ -3,8 +3,23 @@
 
     require_once __DIR__. "/../autoload/autoload.php";
     $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
-    
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $data = [
+            "role" => (int)postInput('permission'),
+        ];
+        $error = [];
+        $success =[];
+            if($db->fetchOne('user',"email = '".$_POST["email_permission"]."'")==0){
+                $error['email_not_exist'] = " Email does not exist ";
+            }
+            else{//no error
+                if(empty($error)){
+                    $db -> update('user',$data,array('email'=>$_POST["email_permission"]));
+                    $success['permission'] = "Give permission successfully";
+                }
+            }
 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -77,12 +92,18 @@
                         <input type="text" id="search">
                     </a>
                 </li>
-
-                <li class="nav-item  ml-2 mr-2">
+                <!--only available for admin-->
+                <?php if(check_role($data_user['email'])==2){
+                    ?> 
+                    
+                    <li class="nav-item  ml-2 mr-2">
                     <a class="nav-link" href="#">
                         <label for="showphanquyen"><i class="fa fa-user fa-2x"></i> </label>
                     </a>
-                     </li>
+                </li><?php
+                }
+                ?>
+                
                  <!--end this button-->
                 <li class="nav-item ml-2 mr-2">
                     <a class="nav-link" href="#">
@@ -91,6 +112,24 @@
                 </li>
             </ul>
         </nav>
+        <!--Success message-->
+        <?php if(!empty($success)){
+            ?>
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong> <?php echo $success['permission'] ?>.
+            </div>
+            <?php
+        } ?>
+        <?php if(!empty($error['email_not_exist'])){
+            ?>
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Fail</strong> <?php echo $error['email_not_exist'] ?>.
+            </div>
+            <?php
+        } ?>
+        
         <!--classes-->
         <div class=" index container m-0 ">
             <div class="row">
@@ -375,27 +414,25 @@
             </form>
         </div>
         <div class="tablephanquyen col-12">  
-            <form enctype="multipart/form-data" >
+            <form action="" method="POST" >
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Decentralization</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
-                    <div class="class-info">
-                        <input class="class-info-box" id="class-name" type = "text" placeholder="Email (required)"></br>
-                        
-                        </br> <b>Chọn quyền đăng nhập</b></br>
-                        <select id="announce-select" name="carlist" form="carform">
-                            <option value="volvo"><b>Admin</b></option>
-                            <option value="saab">Giáo viên</option>
-                            <option value="saab">Học viên</option>
-                        </select>
-
+                    <input type="text" class="form-control col-md-4 mb-2" placeholder="Enter email to give permission" name="email_permission">
+                    <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        <select name="permission" class="form-control col-md-3">
+                                            <option value="">--Please choose permission--</option>
+                                            <option value="2">Admin</option>
+                                            <option value="1">Teacher</option>
+                                            <option value="0">Student</option>
+                                        </select>
+                                    </div>
                     </div>
                     </br>
                     </br>
-                    <button class="btnform">Update</button>
-                    <button class="btnform">Cancel</button>
-                    
-                
+                    <button class="btn btn-success">Update</button>
+                    <button class="btn btn-warning">Cancel</button>
                 </div> 
             </form>
         </div>
