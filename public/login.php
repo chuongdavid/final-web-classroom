@@ -9,12 +9,12 @@
       $data_user = $db -> fetchOne('user',"email = '".$data['email']."'");  
       if (password_verify($data['password'],$data_user['password'])) {
           if(check_role($data['email'])==0){
-            $_SESSION['username'] = $data_user['user_name'];
+            $_SESSION['email'] = $data_user['email'];
             header('Location:index.php');
               
           }
           else{
-            $_SESSION['username'] = $data_user['user_name'];
+            $_SESSION['email'] = $data_user['email'];
             header('Location:index-giaovien.php');
           }
 

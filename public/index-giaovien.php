@@ -1,3 +1,12 @@
+
+<?php 
+
+    require_once __DIR__. "/../autoload/autoload.php";
+    $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
+    
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,12 +76,17 @@
                         <input type="text" id="search">
                     </a>
                 </li>
-
-                <li class="nav-item  ml-2 mr-2">
-                    <a class="nav-link" href="#">
-                        <label for="showaddjoinclassroom"><i class="fa fa-user fa-2x"></i> </label>
+                <!--only admin can see this button-->
+                <?php if(check_role($data_user['email'])==2) {
+                    ?>
+                    <li class="nav-item  ml-2 mr-2">
+                    <a class="nav-link" href="give-permission.php">
+                        <label for="showphanquyen"><i class="fa fa-user fa-2x"></i> </label>
                     </a>
-                </li>
+                     </li>
+                    <?php
+                } ?>
+                 <!--end this button-->
                 <li class="nav-item ml-2 mr-2">
                     <a class="nav-link" href="#">
                         <label for="showaddjoinclassroom"><i class="fa fa-plus fa-2x"></i> </label>
@@ -80,23 +94,6 @@
                 </li>
             </ul>
         </nav>
-        
-        <!--add class form-->
-        <div class="form-popup full-height" id="myForm">
-            <form action="/action_page.php" class="form-container">
-                <h1>Login</h1>
-
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <button type="submit" class="btn">Login</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-        </div>
-
         <!--classes-->
         <div class=" index container m-0 ">
             <div class="row">
