@@ -157,6 +157,20 @@
             $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchOne " .mysqli_error($this->link));
             return mysqli_fetch_assoc($result);
         }
+        public function fetchAllCondition($table , $query)
+        {
+            $sql = "SELECT * FROM {$table} WHERE $query" ;
+            $result = mysqli_query($this->link,$sql) or die("Lỗi Truy Vấn fetchAll " .mysqli_error($this->link));
+            $data = [];
+            if( $result)
+            {
+                while ($num = mysqli_fetch_assoc($result))
+                {
+                    $data[] = $num;
+                }
+            }
+            return $data;
+        }
 
         public function deletesql ($table ,  $sql )
         {

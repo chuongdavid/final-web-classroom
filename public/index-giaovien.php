@@ -390,13 +390,25 @@
         </div>
 
 
-
+        <!-- form tạo lớp -->
         <div class="table-add-join-class col-12">  
             <form method="post" action="#" onsubmit= "return validateInputaddClass()" enctype="multipart/form-data" >
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="class-info">
+<<<<<<< HEAD
+                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)" name="class_name"></br>
+                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject" name="class_subject"></br>
+                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room" name="class_name"></br>
+                        </br> <b>Choose avatar</b></br>
+                        <input type="file" id="fileanh" >
+                    </div>
+                    </br>
+                    </br></br>
+                    <button class="btn btn-primary">Create</button>
+                    <button class="btn btn-warning">Cancel</button>
+=======
                         <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
                         <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
                         <input class="class-info-box" id="class-room" type = "text" placeholder="Room"></br>
@@ -411,11 +423,13 @@
                     
                     <button class="btnform">Create</button>
                     <button class="btnform">Cancel</button>
+>>>>>>> a374f2b752ac9db019ce293ea9ac9773ebb9c872
                     
                 
                 </div> 
             </form>
         </div>
+        <!-- form phân quyền -->
         <div class="tablephanquyen col-12">  
             <form method="post" action="#" onsubmit= "return validateInputphanquyen()">
                 <div class="formcreate">
@@ -444,18 +458,25 @@
         </div>
 
         
-
+        <!-- form edit lớp -->
         <div class="tableeditclassroom col-12">  
             <form method="post" action="#" onsubmit= "return validateInputEditClass()" enctype="multipart/form-data">
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Edit Classroom</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="class-info">
+<<<<<<< HEAD
+                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
+                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
+                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room">
+                        <input class="class-info-box" id="class-section" type = "text" placeholder="Avatar"></br>
+=======
                         <input class="class-info-box" id="class-name-edit" type = "text" placeholder="Class name (required)"></br>
                         <input class="class-info-box" id="class-subject-edit" type = "text" placeholder="Subject"></br>
                         <input class="class-info-box" id="class-room-edit" type = "text" placeholder="Room"></br>
                         </br> <b>Chọn ảnh đại diện</b></br>
                         <input type="file" id="fileanh-edit" >
+>>>>>>> a374f2b752ac9db019ce293ea9ac9773ebb9c872
                     </div>
                     </br>
                     </br>
@@ -468,11 +489,6 @@
             </form>
         </div>    
                 <hr style="width:90%; text-align:left; margin-left:10">
-                
-                
-                
-                   
-            
         </div>
     </body>
 </html>
