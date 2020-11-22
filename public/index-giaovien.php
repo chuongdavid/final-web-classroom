@@ -392,20 +392,23 @@
 
 
         <div class="table-add-join-class col-12">  
-            <form enctype="multipart/form-data" >
+            <form method="post" action="#" onsubmit= "return validateInputaddClass()" enctype="multipart/form-data" >
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="class-info">
                         <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
-                        <input class="class-info-box" id="class-section" type = "text" placeholder="Section"></br>
                         <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
                         <input class="class-info-box" id="class-room" type = "text" placeholder="Room"></br>
                         </br> <b>Chọn ảnh đại diện</b></br>
                         <input type="file" id="fileanh" >
                     </div>
                     </br>
-                    </br></br>
+                    <p class="error-notification" id = "error-message-addClass" >
+                        <i class="fa fa-times-circle"></i> 
+                    </p>
+                    </br>
+                    
                     <button class="btnform">Create</button>
                     <button class="btnform">Cancel</button>
                     
@@ -414,14 +417,14 @@
             </form>
         </div>
         <div class="tablephanquyen col-12">  
-            <form action="" method="POST" >
+            <form method="post" action="#" onsubmit= "return validateInputphanquyen()">
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Decentralization</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
-                    <input type="text" class="form-control col-md-4 mb-2" placeholder="Enter email to give permission" name="email_permission">
+                    <input type="text" class="form-control col-md-4 mb-2" placeholder="Enter email to give permission" id="email-phanquyen">
                     <div class="form-group row">
                                     <div class="col-sm-10">
-                                        <select name="permission" class="form-control col-md-3">
+                                        <select id ="permission" name="permission" class="form-control col-md-3">
                                             <option value="">--Please choose permission--</option>
                                             <option value="2">Admin</option>
                                             <option value="1">Teacher</option>
@@ -431,6 +434,9 @@
                     </div>
                     </br>
                     </br>
+                    <p class="error-notification" id = "error-message-phanquyen" >
+                        <i class="fa fa-times-circle"></i> 
+                    </p>
                     <button class="btn btn-success">Update</button>
                     <button class="btn btn-warning">Cancel</button>
                 </div> 
@@ -440,18 +446,22 @@
         
 
         <div class="tableeditclassroom col-12">  
-            <form >
+            <form method="post" action="#" onsubmit= "return validateInputEditClass()" enctype="multipart/form-data">
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Edit Classroom</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="class-info">
-                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
-                        <input class="class-info-box" id="class-section" type = "text" placeholder="Section"></br>
-                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
-                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room">
+                        <input class="class-info-box" id="class-name-edit" type = "text" placeholder="Class name (required)"></br>
+                        <input class="class-info-box" id="class-subject-edit" type = "text" placeholder="Subject"></br>
+                        <input class="class-info-box" id="class-room-edit" type = "text" placeholder="Room"></br>
+                        </br> <b>Chọn ảnh đại diện</b></br>
+                        <input type="file" id="fileanh-edit" >
                     </div>
                     </br>
-                    </br></br>
+                    </br>
+                    <p class="error-notification" id = "error-message-edit" >
+                        <i class="fa fa-times-circle"></i> 
+                    </p>
                     <button class="btnform">Update</button>
                     <button class="btnform">Cancel</button>
                 </div> 

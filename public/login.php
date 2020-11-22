@@ -68,7 +68,7 @@
       <form method="post" action="#" onsubmit= "return validateInput()">
         <div class="form-login-container">
           <h1>Sign In</h1>
-          <br />
+          <br/>
 
           <label for="email"><i class="fa fa-envelope"></i>Email address</label>
           <input
