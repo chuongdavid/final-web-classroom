@@ -133,20 +133,20 @@
                 <div class="formcode">
                     <div class="form-inf">
                         <label> <p id="assignmenclasswork"><b>Share with your class</b> </p></label>
-                        <hr style="width:90%; text-align:left; margin-left:10"></br>
-                        <div class="titleintruction">
+                        <hr style="width:60%; text-align:center; margin-left:0">
                         <h4> For</h4>
                         <select id="announce-select" name="carlist" form="carform">
                             <option value="volvo">All student</option>
                             <option value="saab">Trung Tin</option>
                         </select></br></br>
-                        <input id="inputannounce" type = "text" placeholder="Type here"></br></br>
+                        <textarea class="class-inform-textarea" placeholder="Type here"></textarea></br></br>
+                        <b> Chọn ảnh</b></br>
                         <input type="file" id="fileanh" >
-                        </div>
-                        </br>
+                        
+                        </br></br>
                         <label for="showhiddenstreamcontent">  <button class="btnform">Post</button></label>
-                        <button class="btnform">Cancel</button>
-                        <hr style="width:90%; text-align:left; margin-left:10"></br>
+                        <button class="btnform" type="reset">Reset</button>
+                        <hr style="width:60%; text-align:center; margin-left:0"></br>
                     </div>    
                 </div> 
             </form>
