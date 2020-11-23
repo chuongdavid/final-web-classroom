@@ -37,7 +37,7 @@
       ];
       //kiểm tra email có tồn tại chưa 
       $check_email = $db -> fetchOne('user',"email = '".$data['email']."'");  
-      if($check_email>0){
+      if(count($check_email)>0){
         $error = "This email has already existed";
       }
       else{

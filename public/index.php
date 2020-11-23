@@ -9,21 +9,26 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $class_code = $_POST['class_code'];
         $code = $db -> fetchOne('class',"id = '".$class_code."'");
         if($code > 0){
-            $data = ['id_student'=>$id_student,
-            'id_class' => $class_code
-        ];
-            $insert_class = $db -> insert('student_class',$data);
-            if($insert_class>0){
-                $_SESSION['success']='Join class successfully!';
+            $data = [
+            'id_student'=>$id_student,
+            'id_class' => $class_code];
+            
+            $check_duplicate = $db -> fetchAllCondition('student_class',"id_student = ".$id_student." AND id_class = '".$class_code."'"); 
+            if(count($check_duplicate)>0){
+                $_SESSION['error'] ='You have already joined this class';
+            }      
+            else{
+                $insert_class = $db -> insert('student_class',$data);
+                if(count($insert_class)>0){
+                    $_SESSION['success']='Join class successfully!';
+                }
+                else{
+                    $_SESSION['error'] ='Join class fail!';
+                }
             }
-            // else{
-            //     $_SESSION['error'] ='Join class fail!';
-            // }
-
         }
         else{
-            //error
-            $_SESSION['error'] ='Class code does not exist';
+            $_SESSION['error'] ='Code class does not exist';
         }
     }
 }

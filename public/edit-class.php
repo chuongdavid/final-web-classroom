@@ -29,7 +29,7 @@
             }
         }
         $id_insert = $db -> update("class",$data_class,array('id' => $id));
-        if($id_insert>0){
+        if(count($id_insert)>0){
             $_SESSION['success'] = 'Update successfully';
             header('Location:index-giaovien.php');
         }

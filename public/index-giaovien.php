@@ -45,7 +45,7 @@
             "created_by_id" => $data_user["id"]
         ];
         $isset = $db -> fetchOne('class',"id = '" .$data_class['id']. "'");
-        if($isset>0){ //data bi trùng
+        if(count($isset)>0){ //data bi trùng
             $_SESSION['error'] = "Class id adready exist in data base !";
         }else{
             if(isset($_FILES['class_image'])){
@@ -194,7 +194,7 @@
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0"><?php echo $item['created_by_who'] ?></div>
+                            <div class="text-left ml-3 mt-0"><?php echo $item['teacher'] ?></div>
                             <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?></div>
                             <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen"></i></a>
                             <a href="delete-class.php?id=<?php echo $item['id']?>"><i class="editclassroom far fa-trash-alt"></i></a>
