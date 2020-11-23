@@ -56,7 +56,12 @@
   display: block;
   transition: 0.3s;
 }
-
+a:link{
+  color: black;
+}
+a:link:hover{
+  color: black;
+}
 .class-info-box{
   width: 60%;
   height: 50px;
@@ -579,7 +584,7 @@ label {
   
 }
 #search{
-  background-image: linear-gradient(315deg,  #7ce6d4, #7ae3eb 74%);
+  background-image: linear-gradient(315deg,  #75f395, #9aec8a 74%);
   width: 70%;
   border-color: #0fecbc;
   outline: none;
@@ -635,18 +640,7 @@ label {
   font-size: 18px;
   margin-left:4%;
 }
-.tableshowannouncement{
-  display: none;
-  border: none;
-  width: 80%;
-  height: 80%;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%,-50%); 
-  background-color: #ffffff;
-  border-bottom-left-radius: 15px ;
 
-}
 #showaddannouncement:checked ~ .content{
   filter: blur(30px);
 }
@@ -733,7 +727,7 @@ label {
   border: none;
   width: 80%;
   height: 80%;
-  top: -20%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%,-50%); 
   background-color: #ffffff;
@@ -741,6 +735,17 @@ label {
  
 }
 
+.editclassroom{
+  margin-bottom: 13px;
+  margin-top: 8px;
+}
+
+.avatar{
+  margin-right: 8px;
+}
+.class-title{
+  margin-bottom: 20px;
+}
 
 #showaddjoinclassroom:checked ~ .table-add-join-class{
   display: block;
@@ -752,21 +757,32 @@ label {
 /*table nho chon them lop hoc hoac vao lop hoc*/
 
 #showhiddenstreamcontent{
-  display: block;
+  display: none;
 }
 
 .hiddenstreamcontent{
   display: none;
 }
 
+.tableshowannouncement{
+  display: none;
+  border: none;
+  width: 80;
+  height: 80%;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px ;
 
-#showhiddenstreamcontent:checked ~ .hiddenstreamcontent{
+}
+#showhiddenstreamcontent:checked ~ .tableshowannouncement{
   display: block;
 }
 #showhiddenstreamcontent:checked ~ .commute{
   display: none;
 }
-#showhiddenstreamcontent:checked ~ .index{
+#showhiddenstreamcontent:checked ~ .content{
   filter: blur(30px);
 }
 
@@ -783,7 +799,7 @@ label {
   border: none;
   width: 80%;
   height: 80%;
-  top: -20%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%,-50%); 
   background-color: #ffffff;
@@ -800,8 +816,12 @@ label {
 #showphanquyen:checked ~ .index{
   filter: blur(30px);
 }
-
-
+.btn{
+  margin-right: 12px;
+}
+.create-form{
+  top: 10%;
+}
 /*----------------------------------------------*/
 
 .hiddenstreamcontent{

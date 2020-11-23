@@ -140,7 +140,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         </div>
         <input type ="checkbox" id="showaddjoinclassroom">
         <!--classes-->
-        <div class=" index container m-0 ">
+        <div class=" index container">
             <div class="row">
                 <!-- each class -->
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
