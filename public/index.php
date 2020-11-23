@@ -3,6 +3,22 @@
 require_once __DIR__. "/../autoload/autoload.php";
 $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
 $id_student = $data_user['id'];
+//get information class student did join
+$sql = "SELECT class.*
+FROM student_class 
+INNER JOIN class 
+ON class.id = student_class.id_class 
+WHERE student_class.id_student = ".$id_student."";
+$data = [];
+$result = mysqli_query($db->link,$sql) or die("Lỗi Truy Vấn fetchAll " .mysqli_error($db->link));
+if( $result)
+{
+    while ($num = mysqli_fetch_assoc($result))
+    {
+        $data[] = $num;
+    }
+}
+$class = $data;
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(isset($_POST['class_code'])){
@@ -142,19 +158,24 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <!--classes-->
         <div class=" index container m-0 ">
             <div class="row">
+            <?php foreach ($class as $item):?>
                 <!-- each class -->
+                <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="cell">
 
                         <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0"><?php echo $item['teacher'] ?></div>
+                            <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?></div>
+                            <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen"></i></a>
+                            <a href="delete-class.php?id=<?php echo $item['id']?>"><i class="editclassroom far fa-trash-alt"></i></a>
                         </div>
 
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
+                        <div class="class-main p-2">
+                            <p class="title"> <?php echo $item['subject'] ?></p>
                         </div>
 
                         <div class="class-footer ">
@@ -172,6 +193,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         </div>
                     </div>
                 </div>
+                </a>
+                <?php endforeach ?>
+                <!-- end each class --> 
+            
             </div>
 
         </div>
