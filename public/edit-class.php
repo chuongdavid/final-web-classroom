@@ -66,7 +66,7 @@
     </head>
 <body>
     <!-- form edit lớp -->
-    <div class="col-12 m-2">  
+    <div class="create-form col-12 m-2">  
                 <form method="post" action="#" onsubmit= "return validateInputEditClass()" enctype="multipart/form-data">
                     <div class="formcreate">
                         <label> <p id="assignmenclasswork"><b>Edit Classroom</b> </p></label>

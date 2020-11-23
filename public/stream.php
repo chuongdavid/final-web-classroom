@@ -144,9 +144,9 @@
                         <input type="file" id="fileanh" >
                         </div>
                         </br>
-                        
                         <label for="showhiddenstreamcontent">  <button class="btnform">Post</button></label>
                         <button class="btnform">Cancel</button>
+                        <hr style="width:90%; text-align:left; margin-left:10"></br>
                     </div>    
                 </div> 
             </form>
