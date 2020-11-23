@@ -123,7 +123,7 @@
 
                 <!--left nav-->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index-giaovien.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">To-do</a>
@@ -186,6 +186,7 @@
             <div class="row">
                 <?php foreach ($class as $item):?>
                 <!-- each class -->
+                <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="cell">
 
@@ -201,7 +202,6 @@
 
                         <div class="class-main p-2">
                             <p class="title"> <?php echo $item['subject'] ?></p>
-
                         </div>
 
                         <div class="class-footer ">
@@ -219,6 +219,7 @@
                         </div>
                     </div>
                 </div>
+                </a>
                 <?php endforeach ?>
                 <!-- end each class -->
             </div>

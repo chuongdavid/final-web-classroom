@@ -1,3 +1,13 @@
+<?php 
+
+    require_once __DIR__. "/../autoload/autoload.php";
+    $id = $_GET['id'];
+    $EditClass = $db -> fetchOne('class',"id = '".$id."'");
+    if(empty($EditClass)){
+        $_SESSION['error'] = "Class does not exist";
+        header('Location:index-giaovien.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -69,10 +79,10 @@
         <div class=" stream container-sm">
             <div class="row head">
                 <div class="banner col-12"> 
-                <b>Trung Tin</b></br>
+                <b><?php echo $EditClass['teacher'] ?></b></br>
                 <p id="cntt">
-                    CNTT</br>
-                    <b>Class code: </b> 4ofah5k  <i class="far fa-paper-plane"></i>
+                <?php echo $EditClass['subject'] ?></br>
+                    <b>Class code: </b> <?php echo $EditClass['id'] ?>  <i class="far fa-paper-plane"></i>
                 </p>
                 </div>
             </div>
@@ -121,7 +131,7 @@
         <div class="tableshowannouncement col-12">  
             <form enctype="multipart/form-data" >
                 <div class="formcode">
-                    <div class="form-inf"
+                    <div class="form-inf">
                         <label> <p id="assignmenclasswork"><b>Share with your class</b> </p></label>
                         <hr style="width:90%; text-align:left; margin-left:10"></br>
                         <div class="titleintruction">
