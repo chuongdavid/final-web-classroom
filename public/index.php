@@ -168,10 +168,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         <div>
                             <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0"><?php echo $item['teacher'] ?></div>
-                            <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?></div>
-                            <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen"></i></a>
-                            <a href="delete-class.php?id=<?php echo $item['id']?>"><i class="editclassroom far fa-trash-alt"></i></a>
+                            <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
+                            
                         </div>
 
                         <div class="class-main p-2">
@@ -195,10 +193,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 </div>
                 </a>
                 <?php endforeach ?>
-                <!-- end each class --> 
-            
-            </div>
-
         </div>
         <!-- form-join-class -->
         <div class="table-add-join-class col-12">  
