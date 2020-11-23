@@ -182,7 +182,7 @@
                         <?php endif ?>
                     </div>
         <!--classes-->
-        <div class=" index container m-0 ">
+        <div class=" index container">
             <div class="row">
                 <?php foreach ($class as $item):?>
                 <!-- each class -->
