@@ -29,6 +29,7 @@
   border-top-right-radius: 10px;
   font-weight: 700;
 }
+
 .editclassroom {
   text-align: center;
   margin-right: 13px;
@@ -68,8 +69,6 @@
   background-color: none;
   border-radius: 0px 20px 20px 0;
   transform: scale(1.15);
-}
-.nav-item {
 }
 
 /* Position and style the close button (top right corner) */
@@ -784,7 +783,6 @@ td {
   border: 1px solid #ccc;
   width: 700px;
   margin: 0 auto;
-  padding: 25px;
 }
 #user-info table {
   margin: 10px auto 0 auto;

@@ -1,7 +1,32 @@
 ﻿<?php 
 
 require_once __DIR__. "/../autoload/autoload.php";
+$data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
+$id_student = $data_user['id'];
 
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    if(isset($_POST['class_code'])){
+        $class_code = $_POST['class_code'];
+        $code = $db -> fetchOne('class',"id = '".$class_code."'");
+        if($code > 0){
+            $data = ['id_student'=>$id_student,
+            'id_class' => $class_code
+        ];
+            $insert_class = $db -> insert('student_class',$data);
+            if($insert_class>0){
+                $_SESSION['success']='Join class successfully!';
+            }
+            // else{
+            //     $_SESSION['error'] ='Join class fail!';
+            // }
+
+        }
+        else{
+            //error
+            $_SESSION['error'] ='Class code does not exist';
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +104,20 @@ require_once __DIR__. "/../autoload/autoload.php";
                 </li>
             </ul>
         </nav>
-
+        <div class="clearfix" >
+                        <?php if(isset($_SESSION['success'])): ?>
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['success']; unset($_SESSION['success']) ?>
+                            </div>
+                        <?php endif ?>
+                        <?php if(isset($_SESSION['error'])): ?>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['error']; unset($_SESSION['error']) ?>
+                            </div>
+                        <?php endif ?>
+                    </div>
         <!--add class form-->
         <div class="form-popup full-height" id="myForm">
             <form action="/action_page.php" class="form-container">
@@ -99,202 +137,7 @@ require_once __DIR__. "/../autoload/autoload.php";
         <!--classes-->
         <div class=" index container m-0 ">
             <div class="row">
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học</h1>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                        </div>
-
-                        <div class="class-main">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                <!-- each class -->
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="cell">
 
@@ -327,21 +170,21 @@ require_once __DIR__. "/../autoload/autoload.php";
             </div>
 
         </div>
-
+        <!-- form-join-class -->
         <div class="table-add-join-class col-12">  
-            <form >
+            <form method="POST">
                 <div class="formcode">
                     <label> <p id="assignmenclasswork"><b>Join Class</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="titleintruction">
                     <h4> Class code</h4>
                     <p> Ask your teacher for the class code </p>
-                        <input id="classcode" type = "text" placeholder="Class code">
+                        <input id="classcode" type = "text" placeholder="Class code" name="class_code">
                     </div>
                     </br>
                     
-                    <button class="btnform">Join</button>
-                    <button class="btnform">Cancel</button>
+                    <button class="btn btn-primary">Join</button>
+                    <button class="btn btn-warning">Cancel</button>
                     
                 
                 </div> 

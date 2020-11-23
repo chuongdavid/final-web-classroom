@@ -3,30 +3,77 @@
 
     require_once __DIR__. "/../autoload/autoload.php";
     $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
-    if($_SERVER["REQUEST_METHOD"]=="POST"){
+    //load class with specific role
+    if(check_role($_SESSION['email'])==2){
+        $class = $db ->fetchAll('class');
+    }
+    if(check_role($_SESSION['email'])==1){
+        $class = $db -> fetchAllCondition('class',"created_by_id = '".$data_user['id']."'"); 
+    }
+    
+    //give permission php
+    if(isset($_POST['permission']) && isset($_POST['email_permission'])){
         $data = [
             "role" => (int)postInput('permission'),
         ];
         $error = [];
-        $success =[];
             if($db->fetchOne('user',"email = '".$_POST["email_permission"]."'")==0){
                 $error['email_not_exist'] = " Email does not exist ";
             }
             else{//no error
                 if(empty($error)){
                     $db -> update('user',$data,array('email'=>$_POST["email_permission"]));
-                    $success['permission'] = "Give permission successfully";
+                    $_SESSION['success'] = "Give permission successfully";
                 }
             }
 
     }
+    //create class php
+    if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST['class_room']) && isset($_POST['class_teacher'])){
+        $id = uniqid(); 
+        $class_name = $_POST['class_name'];
+        $class_subject = $_POST['class_subject'];
+        $class_teacher = $_POST['class_teacher'];
+        $class_room = $_POST['class_room'];
+        $data_class = [
+            "id"     => $id,
+            "name"   => $class_name,
+            "subject"=> $class_subject,
+            "teacher"=> $class_teacher,
+            "room" => $class_room,
+            "created_by_who" => $data_user["fullname"],
+            "created_by_id" => $data_user["id"]
+        ];
+        $isset = $db -> fetchOne('class',"id = '" .$data_class['id']. "'");
+        if(count($isset)>0){ //data bi trùng
+            $_SESSION['error'] = "Class id adready exist in data base !";
+        }else{
+            if(isset($_FILES['class_image'])){
+                $file_name = $_FILES['class_image']['name'];
+                $file_tmp = $_FILES['class_image']['tmp_name'];
+                $file_type = $_FILES['class_image']['type'];
+                $file_error = $_FILES['class_image']['error'];
+                if($file_error == 0){
+                    $part = ROOT ."class/";
+                    $data_class['image'] = $file_name;
+                    move_uploaded_file($file_tmp,$part.$file_name);
+                }
+            }
+            $id_insert = $db -> insert("class",$data_class);
+            $_SESSION['success'] = "Create class successfully";
+            header("refresh: 0.5"); 
+        }
+        
+    }
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--title-->
         <title>Classroom</title>
         
@@ -76,7 +123,7 @@
 
                 <!--left nav-->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index-giaovien.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">To-do</a>
@@ -112,15 +159,6 @@
                 </li>
             </ul>
         </nav>
-        <!--Success message-->
-        <?php if(!empty($success)){
-            ?>
-            <div class="alert alert-success alert-dismissible">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Success!</strong> <?php echo $success['permission'] ?>.
-            </div>
-            <?php
-        } ?>
         <?php if(!empty($error['email_not_exist'])){
             ?>
             <div class="alert alert-danger alert-dismissible">
@@ -129,25 +167,40 @@
             </div>
             <?php
         } ?>
-        
+        <div class="clearfix" >
+                        <?php if(isset($_SESSION['success'])): ?>
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['success']; unset($_SESSION['success']) ?>
+                            </div>
+                        <?php endif ?>
+                        <?php if(isset($_SESSION['error'])): ?>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['error']; unset($_SESSION['error']) ?>
+                            </div>
+                        <?php endif ?>
+                    </div>
         <!--classes-->
-        <div class=" index container m-0 ">
+        <div class=" index container">
             <div class="row">
+                <?php foreach ($class as $item):?>
+                <!-- each class -->
+                <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="cell">
 
                         <div class="class-inf">
                         <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
+                            <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
                         </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                             <i class="editclassroom far fa-trash-alt"></i>
+                            <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
+                            <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen"></i></a>
+                            <a href="delete-class.php?id=<?php echo $item['id']?>"><i class="editclassroom far fa-trash-alt"></i></a>
                         </div>
 
                         <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
+                            <p class="title"> <?php echo $item['subject'] ?></p>
                         </div>
 
                         <div class="class-footer ">
@@ -165,227 +218,11 @@
                         </div>
                     </div>
                 </div>
+                </a>
+                <?php endforeach ?>
 
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                             <i class="editclassroom far fa-trash-alt"></i>
-                        </div>
-
-                        <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                             <i class="editclassroom far fa-trash-alt"></i>
-                        </div>
-
-                        <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                             <i class="editclassroom far fa-trash-alt"></i>
-                        </div>
-
-                        <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                            <i class="editclassroom far fa-trash-alt"></i>
-                        </div>
-
-                        <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                             <i class="editclassroom far fa-trash-alt"></i>
-                        </div>
-
-                        <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div><div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học </h1>
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                             <i class="editclassroom far fa-trash-alt"></i>
-                        </div>
-
-                        <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                    <div class="cell">
-
-                        <div class="class-inf">
-                        <div>
-                            <h1 class="class-title text-left ml-3 mb-1">Môn học  </h1> 
-                        </div>
-                            <div class="text-left ml-3 mt-0">Thầy A</div>
-                            <label for ="showeditclassroom"> <i class="editclassroom fas fa-pen"></i></label>
-                             <i class="editclassroom far fa-trash-alt"></i>
-                        </div>
-
-                        <div class="class-main p-2">
-                            <p class="title"> Jane Dode</p>
-
-                        </div>
-
-                        <div class="class-footer ">
-                            <span class="circle">
-                                <div class="work-icon">
-                                    <i class="fa fa-user-o " aria-hidden="true"></i>
-                                </div>
-                            </span>
-
-                            <span class="circle">
-                                <div class="folder-icon">
-                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
+                <!-- end each class -->
+            
             </div>
         </div>
 
@@ -397,23 +234,12 @@
                     <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
                     <div class="class-info">
-<<<<<<< HEAD
                         <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)" name="class_name"></br>
                         <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject" name="class_subject"></br>
-                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room" name="class_name"></br>
-                        </br> <b>Choose avatar</b></br>
-                        <input type="file" id="fileanh" >
-                    </div>
-                    </br>
-                    </br></br>
-                    <button class="btn btn-primary">Create</button>
-                    <button class="btn btn-warning">Cancel</button>
-=======
-                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
-                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
-                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room"></br>
-                        </br> <b>Chọn ảnh đại diện</b></br>
-                        <input type="file" id="fileanh" >
+                        <input class="class-info-box" id="class-teacher" type = "text" placeholder="Teacher's name" name="class_teacher"></br>
+                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room" name="class_room"></br>
+                        </br> <b>Choose image for classr</b></br>
+                        <input type="file" id="fileanh" name="class_image" >
                     </div>
                     </br>
                     <p class="error-notification" id = "error-message-addClass" >
@@ -421,9 +247,8 @@
                     </p>
                     </br>
                     
-                    <button class="btnform">Create</button>
-                    <button class="btnform">Cancel</button>
->>>>>>> a374f2b752ac9db019ce293ea9ac9773ebb9c872
+                    <button class="btn btn-primary">Create</button>
+                    <button class="btn btn-warning">Cancel</button>
                     
                 
                 </div> 
@@ -435,7 +260,8 @@
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Decentralization</b> </p></label>
                     <hr style="width:90%; text-align:left; margin-left:10"></br>
-                    <input type="text" class="form-control col-md-4 mb-2" placeholder="Enter email to give permission" id="email-phanquyen">
+                    <input type="text" class="form-control col-md-4 mb-2" 
+                    placeholder="Enter email to give permission" id="email-phanquyen" name="email_permission">
                     <div class="form-group row">
                                     <div class="col-sm-10">
                                         <select id ="permission" name="permission" class="form-control col-md-3">
@@ -457,37 +283,6 @@
             </form>
         </div>
 
-        
-        <!-- form edit lớp -->
-        <div class="tableeditclassroom col-12">  
-            <form method="post" action="#" onsubmit= "return validateInputEditClass()" enctype="multipart/form-data">
-                <div class="formcreate">
-                    <label> <p id="assignmenclasswork"><b>Edit Classroom</b> </p></label>
-                    <hr style="width:90%; text-align:left; margin-left:10"></br>
-                    <div class="class-info">
-<<<<<<< HEAD
-                        <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)"></br>
-                        <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject"></br>
-                        <input class="class-info-box" id="class-room" type = "text" placeholder="Room">
-                        <input class="class-info-box" id="class-section" type = "text" placeholder="Avatar"></br>
-=======
-                        <input class="class-info-box" id="class-name-edit" type = "text" placeholder="Class name (required)"></br>
-                        <input class="class-info-box" id="class-subject-edit" type = "text" placeholder="Subject"></br>
-                        <input class="class-info-box" id="class-room-edit" type = "text" placeholder="Room"></br>
-                        </br> <b>Chọn ảnh đại diện</b></br>
-                        <input type="file" id="fileanh-edit" >
->>>>>>> a374f2b752ac9db019ce293ea9ac9773ebb9c872
-                    </div>
-                    </br>
-                    </br>
-                    <p class="error-notification" id = "error-message-edit" >
-                        <i class="fa fa-times-circle"></i> 
-                    </p>
-                    <button class="btnform">Update</button>
-                    <button class="btnform">Cancel</button>
-                </div> 
-            </form>
-        </div>    
                 <hr style="width:90%; text-align:left; margin-left:10">
         </div>
     </body>
