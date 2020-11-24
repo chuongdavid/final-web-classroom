@@ -34,13 +34,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $_SESSION['error'] ='You have already joined this class';
             }      
             else{
-                $insert_class = $db -> insert('student_class',$data);
-                if(count($insert_class)>0){
-                    $_SESSION['success']='Join class successfully!';
-                }
-                else{
-                    $_SESSION['error'] ='Join class fail!';
-                }
+                //get information who created this class
+                // var_dump($code);
+                // $create_class_by = $db -> fetchOne('user',"id = '".$code['created_by_id']."'");
+                // send_join_request($id_student,$data_user['name'],$class_code,$create_class_by['email']);
+                // $insert_class = $db -> insert('student_class',$data);
+                // if(count($insert_class)>0){
+                //     $_SESSION['success']='Join class successfully!';
+                //     header("refresh: 0.5"); 
+                // }
+                // else{
+                //     $_SESSION['error'] ='Join class fail!';
+                // }
             }
         }
         else{
@@ -115,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 <li class="nav-item col-md-4 ml-auto mr-0"> 
                     <a class="nav-link" href="#">
                         <label for="search"><i class="fa fa-search fa-2x"></i> </label> 
-                        <input type="text" id="search">
+                        <input type="text" id="search" class="search">
                     </a>
                 </li>
                 <li class="nav-item ml-2 mr-2">
@@ -157,6 +162,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <input type ="checkbox" id="showaddjoinclassroomsinhvien">
         <!--classes-->
         <div class=" index container">
+        <div class="class-place">
             <div class="row">
                 <?php foreach ($class as $item):?>
                     <!-- each class -->
@@ -193,7 +199,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         </div>
                     </a>
                 <?php endforeach ?>
+                <!-- end each class -->
             </div>
+            </div> 
+                <!-- div class class-place -->
         </div>
         <!-- form-join-class -->
         <div class="table-add-join-class-sinhvien col-12">  
@@ -209,7 +218,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     </br>
                     
                     <button class="btn btn-primary">Join</button>
-                    <button class="btn btn-warning">Cancel</button>
+                    <a class="btn btn-warning" href="index-sinhvien.php">Cancel</a>
                     
                 
                 </div> 
