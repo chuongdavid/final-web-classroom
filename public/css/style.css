@@ -769,7 +769,7 @@ label {
   display: block;
 }
 #showaddjoinclassroomsinhvien{
-  display: none;
+  display: block;
 }
 
 #showaddjoinclassroomsinhvien:checked ~ .table-add-join-class-sinhvien{
