@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <!--title-->
+        <title>Classroom</title>
+        
+        <!--css file-->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+        <!--js file-->
+        <script src="main.js"></script>
+
+        <!--Bootstrap 4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <!--font-awnsome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+   
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-expand bg-primary navbar-dark p-0 sticky-top">
+            <ul class="navbar-nav w-100">
+                <!--sidenav-->
+                <div id="mySidenav" class="sidenav p-0">
+                    <div class="text-right">
+                        <i class="fa fa-times-circle fa-2x opacity color" aria-hidden="true" onclick="closeNav()"></i>
+                    </div>
+                    <a href="#" class="sidenav-item">
+                        <div class="class-title ">
+                            Mon aaaaaaaaaaaaaa
+                        </div>
+                        <div>
+                            Thay A
+                        </div>
+                    </a>
+                    <a href="#" class="sidenav-item">Services</a>
+                    <a href="#" class="sidenav-item">Clients</a>
+                    <a href="#" class="sidenav-item">Contact</a>
+                </div>
+
+                <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
+
+                <!--left nav-->
+                
+                
+                <li class="nav-item active">
+                    <a class="nav-link anouncementnav" href="#">
+                       <b id="tenlopannounce">Lập trình web và ứng dụng</b> </br>
+                       Mai Văn Mạnh 
+                    </a>
+                </li>
+               
+                <!--right nav-->
+                
+            </ul>
+        </nav>
+        <input type ="checkbox" id="showassignment">
+        <input type ="checkbox" id="showcreate">
+        
+        <div class=" anouncement container-sm col-lg-8">
+            </br>
+            <p id="tenannounce"> <i class="far fa-window-maximize"></i> Dang Trung Tin  <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label></p>
+            <p id="dateannounce"> Mai Văn Mạnh . Nov 24</p>
+            <hr style="width:80%; text-align:center; margin-left:0"> 
+            <div id="teachercontent">
+                fdsfhklsdflksjfl;sdjl;fsk
+                
+            </div>
+            
+            <div id="announce">
+                <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
+            </div>
+
+        </div>
+        
+        
+      
+        
+        
+    </body>
+</html>
