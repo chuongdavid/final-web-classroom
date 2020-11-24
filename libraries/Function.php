@@ -98,7 +98,7 @@ function verify_email($email,$vkey){
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Verify your account for classroom';
-        $mail->Body    = "<p><a href='http://localhost/Code/final-web-classroom/public/verify.php?email=$email&vkey=$vkey'>Click here</a> to verify your classroom account.</p>";
+        $mail->Body    = "<p><a href='".base_url()."/public/verify.php?email=$email&vkey=$vkey'>Click here</a> to verify your classroom account.</p>";
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
@@ -136,7 +136,7 @@ function send_join_request($id_student,$student_name,$id_class,$email){
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Accept to join in your';
-        $mail->Body    = "<p><a href='".base_url()."http://localhost/Code/final-web-classroom/public/verify.php'>Click here</a> to verify your classroom account.</p>";
+        $mail->Body    = "<p><a href='".base_url()."/public/verify.php'>Click here</a> to verify your classroom account.</p>";
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
