@@ -46,8 +46,6 @@
   background: transparent;
   background: rgb(26, 186, 197);
   transition: background 0.2s;
-  
-  
 }
 /* The navigation menu links */
 .sidenav a {
@@ -637,6 +635,7 @@ label {
 #showaddannouncement{
   display: block ;
 }
+
 #datestream{
   font-size: 18px;
   margin-left:4%;
@@ -785,7 +784,7 @@ label {
 /*table nho chon them lop hoc hoac vao lop hoc*/
 
 #showhiddenstreamcontent{
-  display: none;
+  display: block;
 }
 
 .hiddenstreamcontent{
