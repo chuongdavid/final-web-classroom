@@ -155,7 +155,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <input type ="checkbox" id="showaddjoinclassroomsinhvien">
         <!--classes-->
         <div class=" index container">
-<<<<<<< HEAD
         <div class="class-place">
             <div class="row">
                 <?php foreach ($class as $item):?>
@@ -167,47 +166,34 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                                 <div class="class-inf">
                                     <div>
                                         <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
-=======
-            <div class="class-place">
-                <div class="row">
-                    <?php foreach ($class as $item):?>
-                        <!-- each class -->
-                        <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
-                            <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="cell">
+                                    </div>
+                                    <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
+                                    <a></a>
+                                </div>
 
-                                    <div class="class-inf">
-                                        <div>
-                                            <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
+                                <div class="class-main p-2">
+                                    <p class="title"> <?php echo $item['subject'] ?></p>
+                                </div>
+
+                                <div class="class-footer ">
+                                    <span class="circle">
+                                        <div class="work-icon">
+                                            <i class="fa fa-user-o " aria-hidden="true"></i>
                                         </div>
-                                        <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
-                                        <a></a>
->>>>>>> 032ef50f1d519890a755a4ab4954ff521d8f1492
-                                    </div>
+                                    </span>
 
-                                    <div class="class-main p-2">
-                                        <p class="title"> <?php echo $item['subject'] ?></p>
-                                    </div>
-
-                                    <div class="class-footer ">
-                                        <span class="circle">
-                                            <div class="work-icon">
-                                                <i class="fa fa-user-o " aria-hidden="true"></i>
-                                            </div>
-                                        </span>
-
-                                        <span class="circle">
-                                            <div class="folder-icon">
-                                                <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                            </div>
-                                        </span>
-                                    </div>
+                                    <span class="circle">
+                                        <div class="folder-icon">
+                                            <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                        </div>
+                                    </span>
                                 </div>
                             </div>
-                        </a>
-                    <?php endforeach ?>
-                    <!-- end each class -->
-                </div>
+                        </div>
+                    </a>
+                <?php endforeach ?>
+                <!-- end each class -->
+            </div>
             </div> 
                 <!-- div class class-place -->
         </div>

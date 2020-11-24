@@ -615,28 +615,17 @@ label {
 
 /* Them chuc nang add anouncement*/
 
-<<<<<<< HEAD
 #showaddannouncement {
-  display: block;
+  display: none;
 }
 
 #datestream {
-  font-size: 18px;
-  margin-left: 4%;
-=======
-#showaddannouncement{
-  display: none ;
-}
-
-#datestream{
   font-size: 14px;
   margin-left: 42px;
   margin-top: -10px;
 }
-.fa-window-maximize{
+.fa-window-maximize {
   margin-right: 10px;
-  
->>>>>>> 032ef50f1d519890a755a4ab4954ff521d8f1492
 }
 
 #showaddannouncement:checked ~ .content {
@@ -781,13 +770,8 @@ label {
   display: block;
 }
 
-<<<<<<< HEAD
-.hiddenstreamcontent {
-  display: none;
-=======
-.classanounce{
+.classanounce {
   box-shadow: 4px 4px 15px 2px rgba(0, 0, 0, 0.2);
->>>>>>> 032ef50f1d519890a755a4ab4954ff521d8f1492
 }
 
 .tableshowannouncement {
@@ -807,40 +791,36 @@ label {
 #showhiddenstreamcontent:checked ~ .commute {
   display: none;
 }
-<<<<<<< HEAD
-#showhiddenstreamcontent:checked ~ .content {
-=======
-#showhiddenstreamcontent:checked ~ .hiddenstreamcontent{
+#showhiddenstreamcontent:checked ~ .hiddenstreamcontent {
   display: block;
 }
-#showhiddenstreamcontent:checked ~ .content{
->>>>>>> 032ef50f1d519890a755a4ab4954ff521d8f1492
+#showhiddenstreamcontent:checked ~ .content {
   filter: blur(30px);
 }
 #more {
   margin-left: 450px;
 }
 /*---------Stream edit delete-------------*/
-#show-stream-edit-delete{
+#show-stream-edit-delete {
   display: none;
 }
-.assignment-stream{
+.assignment-stream {
   border: 1px solid rgb(187, 186, 186);
   border-radius: 15px;
 }
-.assignment-stream:hover{
+.assignment-stream:hover {
   background-color: rgb(180, 177, 177);
 }
-.stream-edit-delete{
+.stream-edit-delete {
   display: none;
   top: -20%;
   left: 71.5%;
   width: 0px;
 }
-#show-stream-edit-delete:checked ~ .stream-edit-delete{
+#show-stream-edit-delete:checked ~ .stream-edit-delete {
   display: block;
 }
-.table-stream{
+.table-stream {
   border-radius: 20px;
 }
 /*----------------------------------------------*/
@@ -885,24 +865,19 @@ label {
   height: 80px;
   width: 300px;
 }
-<<<<<<< HEAD
 .hiddenstreamcontent {
-  height: auto;
-=======
-.hiddenstreamcontent{
-  display:none;
+  display: none;
   margin-top: 20px;
-  height: 74px; 
->>>>>>> 032ef50f1d519890a755a4ab4954ff521d8f1492
+  height: 74px;
   width: auto;
   box-sizing: auto;
-  border:1px solid rgb(177, 174, 174);  
+  border: 1px solid rgb(177, 174, 174);
   border-radius: 15px;
   vertical-align: middle;
   font-size: 24px;
 }
 
-#hiddenstreamcontent-content{
+#hiddenstreamcontent-content {
   margin-top: 8px;
   margin-left: 25px;
   vertical-align: middle;
@@ -914,37 +889,37 @@ label {
   margin-bottom: 30px;
   margin-left: 20px;
 }
-#tengiaovien{
+#tengiaovien {
   font-size: 28px;
   margin-left: 8px;
 }
-#tenlophoc{
+#tenlophoc {
   margin-left: 8px;
   display: inline;
 }
-.anouncementnav{
+.anouncementnav {
   margin-left: 15px;
 }
-.tenlopannounce:hover{
+.tenlopannounce:hover {
   text-decoration: underline;
 }
-#tenlopannounce{
+#tenlopannounce {
   font-size: larger;
 }
-#tenannounce{
+#tenannounce {
   font-size: 40px;
   color: #515252;
 }
-#more-announce{
+#more-announce {
   font-size: 24px;
   margin-left: 400px;
 }
-#dateannounce{
+#dateannounce {
   margin-top: -20px;
   margin-left: 66px;
   color: rgb(153, 152, 152);
 }
-#teachercontent{
+#teachercontent {
   padding: 30px;
   margin-left: 40px;
 }
