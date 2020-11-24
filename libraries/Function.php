@@ -108,7 +108,7 @@ function verify_email($email,$vkey){
         return false;
     }
 }
-function send_join_request($id_student,$student_name,$id_class,$email){
+function send_join_request($id_student,$id_class,$email){
     $mail = new PHPMailer(true);
     try{
         //Server settings
@@ -135,8 +135,8 @@ function send_join_request($id_student,$student_name,$id_class,$email){
 
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Accept to join in your';
-        $mail->Body    = "<p><a href='".base_url()."/public/verify.php'>Click here</a> to verify your classroom account.</p>";
+        $mail->Subject = 'Accept student to join in your class';
+        $mail->Body    = "<p><a href='".base_url()."/public/request-join-class.php?email=$email&id_student=$id_student&id_class=$id_class'>Click here</a> to accept your student request.</p>";
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
@@ -194,7 +194,7 @@ function send_reset_password_email($email,$token){
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Reset your password for classroom';
-        $mail->Body    = "<p><a href='http://localhost/Code/final-web-classroom/public/reset_pass.php?email=$email&token=$token'>Click here</a> to reset your password.</p>";
+        $mail->Body    = "<p><a href='".base_url()."/public/reset_pass.php?email=$email&token=$token'>Click here</a> to reset your classroom password account.</p>";
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();

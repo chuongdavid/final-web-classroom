@@ -30,15 +30,14 @@
   font-weight: 700;
   padding-bottom: 20px;
 }
-#mySidenav{
+#mySidenav {
   height: 100%;
 }
-.editclassroom{
+.editclassroom {
   text-align: center;
   margin-right: 13px;
-  
 }
-.editclassroom:hover{
+.editclassroom:hover {
   width: 30px;
   height: 30px;
   display: inline-block;
@@ -56,13 +55,13 @@
   display: block;
   transition: 0.3s;
 }
-a:link{
+a:link {
   color: black;
 }
-a:link:hover{
+a:link:hover {
   color: black;
 }
-.class-info-box{
+.class-info-box {
   width: 60%;
   height: 50px;
   margin-top: 20px;
@@ -70,13 +69,12 @@ a:link:hover{
   padding-left: 15px;
 }
 
-
 .sidenav a:hover {
   text-decoration: none;
 }
 
 .sidenav-item:hover {
-  background-color:none;
+  background-color: none;
   border-radius: 0px 20px 20px 0;
   transform: scale(1.15);
 }
@@ -155,9 +153,9 @@ ul {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background-color: #76e4cc;
-  background-image: linear-gradient(315deg, #7ce6d4, #3dced8  74%);
+  background-image: linear-gradient(315deg, #7ce6d4, #3dced8 74%);
 }
-.sinhvien-title{
+.sinhvien-title {
   padding-bottom: 10px;
 }
 .class-title {
@@ -306,7 +304,7 @@ input[type="password"]:focus,
 }
 
 /*css giao dien giao vien*/
-.banner{
+.banner {
   background-color: #db9841;
   background-image: linear-gradient(315deg, #3ee0a2 0%, #7ee8fa 80%);
   height: 225px;
@@ -315,45 +313,42 @@ input[type="password"]:focus,
   margin-top: 30px;
 }
 
-.banner2{
+.banner2 {
   margin-top: 20px;
   height: 300px;
   font-size: 40px;
   border-radius: 15px;
- 
 }
-.banner3{
+.banner3 {
   margin-top: 10px;
   height: auto;
   font-size: 40px;
   border-radius: 15px;
   border: 2px solid rgb(187, 183, 183);
 }
-.cell{
+.cell {
   margin-right: 10px;
 }
-#commute1{
+#commute1 {
   height: 150px;
   border: 2px solid rgb(187, 183, 183);
   font-size: 20px;
   padding: 15px;
-  
 }
-#commute2{
+#commute2 {
   height: 75px;
   padding: 10px 20px 20px 20px;
   font-size: 24px;
   color: rgb(168, 158, 158);
-
 }
-#commute3{
+#commute3 {
   margin-top: 30px;
   height: 200px;
   padding: 10px 20px 20px 20px;
   font-size: 26px;
 }
 
-.classwork{
+.classwork {
   margin-top: 10px;
   height: 300px;
   font-size: 40px;
@@ -361,53 +356,51 @@ input[type="password"]:focus,
   border: 1px solid rgb(170, 167, 167);
   background-color: white;
 }
-#announce{
+#announce {
   padding-top: 9px;
   font-size: 22px;
 }
-#viewall{
+#viewall {
   padding-top: 20px;
   text-align: right;
   color: orange;
 }
-#cntt{
+#cntt {
   font-size: 20px;
-  padding:10px
+  padding: 10px;
 }
-.head{
-  color:white;
+.head {
+  color: white;
 }
-.assign{
+.assign {
   margin: auto;
- 
 }
-#assignment{
+#assignment {
   margin: auto;
-  padding:5px;
+  padding: 5px;
   font-size: 16px;
   text-align: left;
   font-style: italic;
-  
 }
 label {
   cursor: pointer;
 }
-#creatework{
+#creatework {
   margin-top: 30px;
-  height : 45px;
+  height: 45px;
   width: 125px;
   border-radius: 20px;
   font-size: 20px;
   text-align: center;
   background-color: #26e7bd;
-  color:white;
+  color: white;
   box-shadow: 2px 2px 2px 2px rgba(24, 226, 192, 0.2);
-  border:none;
+  border: none;
   outline: none;
 }
-#creatework:hover{
+#creatework:hover {
   margin-top: 30px;
-  height : 45px;
+  height: 45px;
   width: 125px;
   border-radius: 20px;
   font-size: 20px;
@@ -415,74 +408,71 @@ label {
   background-color: #74e9d0;
 }
 
-#assignworktoyourclass{
-  color:#26e7bd;
+#assignworktoyourclass {
+  color: #26e7bd;
 }
-.teacher{
+.teacher {
   margin-top: 50px;
   margin-left: 150px;
-  color:#0bbb95;
+  color: #0bbb95;
 }
-#teacheradd{
+#teacheradd {
   margin-left: 500px;
 }
-#student{
+#student {
   margin-top: 60px;
-  
 }
 
-.studentlist{
-  color:black;
+.studentlist {
+  color: black;
   margin-left: 10px;
 }
 
-#buttonteacher{
-  color:#0bbb95;
+#buttonteacher {
+  color: #0bbb95;
   font-size: 0.6em;
 }
 
-.formtext{
-  
+.formtext {
   margin-left: 20px;
   margin-top: 20px;
 }
-.input{
+.input {
   border: none;
 }
-#inputannounce{
+#inputannounce {
   width: 40%;
   height: 80px;
   border: 1px solid black;
-  
 }
-#announce-select{
+#announce-select {
   border: 2px solid black;
   border-radius: 5px;
 }
-.input:focus{
+.input:focus {
   border-color: white;
 }
-.btnform{
-  color:black;
+.btnform {
+  color: black;
   margin-right: 20px;
   background-color: white;
-  border:none;
-  border-radius: 5px ;
+  border: none;
+  border-radius: 5px;
   padding-bottom: 10px;
   font-weight: 500;
 }
-.btnsform{
+.btnsform {
   text-align: left;
   margin-left: 25px;
 }
-.btnform:hover{
-  color:black;
+.btnform:hover {
+  color: black;
   margin-right: 20px;
   background-color: rgb(238, 231, 231);
-  border:none;
-  border-radius: 5px ;
+  border: none;
+  border-radius: 5px;
 }
-.teacherform{
+.teacherform {
   display: none;
   margin: auto;
   margin-top: 100px;
@@ -492,36 +482,35 @@ label {
   border-radius: 10px;
   top: -20%;
   left: 10%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background-color: white;
-  
 }
 
-#showinvite{
+#showinvite {
   display: none;
 }
-#buttonteacher:hover{
-  color:#0b8b70;
+#buttonteacher:hover {
+  color: #0b8b70;
   cursor: pointer;
 }
 
-.assignment:hover{
+.assignment:hover {
   cursor: pointer;
 }
 
-#showinvite:checked ~ .teacherform{
+#showinvite:checked ~ .teacherform {
   display: block;
   align-items: center;
 }
-#showinvite:checked ~ .container-sm{
+#showinvite:checked ~ .container-sm {
   filter: blur(10px);
 }
 
-#showassignment{
+#showassignment {
   display: none;
 }
 
-.createassign{
+.createassign {
   display: none;
   margin: auto;
   margin-top: 100px;
@@ -535,55 +524,52 @@ label {
   font-size: x-large;
 }
 
-#title{
+#title {
   width: 70%;
   margin-left: 15px;
-  
 }
-#titleicon{
+#titleicon {
   font-size: 1.5em;
   color: #919999;
 }
-#instruction{
+#instruction {
   width: 70%;
   height: 70px;
   text-align: left;
   margin-left: 15px;
 }
-#instructionicon{
+#instructionicon {
   font-size: 1.5em;
   color: #919999;
 }
 
 /*table nho cho them assignment*/
-#showassignment:checked ~ .createassign{
+#showassignment:checked ~ .createassign {
   display: block;
 }
-#showassignment:checked ~ .tableassignment{
+#showassignment:checked ~ .tableassignment {
   display: none;
 }
-#showassignment:checked ~ .classworkindex{
-  display: none; 
+#showassignment:checked ~ .classworkindex {
+  display: none;
 }
 
-.tableassignment{
+.tableassignment {
   display: none;
   border: none;
   width: 250px;
   top: -17%;
   left: 31%;
-  transform: translate(-50%,-50%); 
-  
+  transform: translate(-50%, -50%);
 }
 
-#showcreate:checked ~ .tableassignment{
+#showcreate:checked ~ .tableassignment {
   display: block;
-  
+
   width: 150px;
-  
 }
-#search{
-  background-image: linear-gradient(315deg,  #7dee9a, #b4f0a8 74%);
+#search {
+  background-image: linear-gradient(315deg, #7dee9a, #b4f0a8 74%);
   width: 70%;
   border-color: #0fecbc;
   outline: none;
@@ -592,235 +578,227 @@ label {
 
 /*table nho cho them assignment*/
 
-
-#classcode{
+#classcode {
   width: 20%;
   margin-left: 0%;
   border: 1px solid rgb(185, 184, 184);
   border-radius: 2px;
 }
 
-.addclass:hover{
+.addclass:hover {
   background-color: rgb(7, 106, 119);
 }
-.formcode{
+.formcode {
   margin-left: 12%;
   margin-top: 3%;
   padding-left: 15%;
 }
-#announceinf{
+#announceinf {
   width: 80%;
   border: none;
 }
-.formcreate{
+.formcreate {
   margin-left: 12%;
   margin-top: -3%;
 }
-.cell:hover{
-  box-shadow: 4px 8px 15px 2px rgba(136, 134, 134, 0.8); 
+.cell:hover {
+  box-shadow: 4px 8px 15px 2px rgba(136, 134, 134, 0.8);
   cursor: pointer;
 }
 
-
 /*table nho cho them assignment*/
-.tableassignment tr{
+.tableassignment tr {
   border: none;
   background-color: white;
   border-radius: 10px;
 }
 
-
 /* Them chuc nang add anouncement*/
 
-#showaddannouncement{
-  display: block ;
+#showaddannouncement {
+  display: block;
 }
 
-#datestream{
+#datestream {
   font-size: 18px;
-  margin-left:4%;
+  margin-left: 4%;
 }
 
-#showaddannouncement:checked ~ .content{
+#showaddannouncement:checked ~ .content {
   filter: blur(30px);
 }
-#showaddannouncement:checked ~ .tableshowannouncement{
-  display: block; 
+#showaddannouncement:checked ~ .tableshowannouncement {
+  display: block;
 }
 
 /*----------------------------------*/
-.assignment:hover{
+.assignment:hover {
   background-color: rgb(216, 210, 210);
 }
-#showcreate{
+#showcreate {
   display: none;
 }
-#showcreate:hover{
+#showcreate:hover {
   cursor: pointer;
 }
 .table1 td {
-  padding:5px;
+  padding: 5px;
 }
 
-
-.addclass:hover{
+.addclass:hover {
   background-color: rgb(7, 106, 119);
 }
-#assignmenclasswork{
+#assignmenclasswork {
   font-weight: 700;
   font-size: 55px;
   color: #5fcccc;
 }
-.btnsform-assign{
+.btnsform-assign {
   margin-left: 75px;
   padding-bottom: 20px;
 }
 
-#buttonstudent{
+#buttonstudent {
   font-size: 20px;
   color: #2ce6bd;
 }
-#buttonstudent:hover{
+#buttonstudent:hover {
   color: #27a88c;
 }
 
-.navbar{
+.navbar {
   background-image: linear-gradient(315deg, #69d68a 0%, #70e4e4 90%);
 }
-.addnew{
+.addnew {
   width: 100%;
 }
 
 /*sua index giao vien*/
-#showeditclassroom{
+#showeditclassroom {
   display: none;
 }
 
-.tableeditclassroom{
+.tableeditclassroom {
   display: none;
   border: none;
   width: 80%;
   height: 80%;
   top: -20%;
   left: 50%;
-  transform: translate(-50%,-50%); 
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
-  border-bottom-left-radius: 15px ;
- 
+  border-bottom-left-radius: 15px;
 }
 
-#showeditclassroom:checked ~ .index{
+#showeditclassroom:checked ~ .index {
   filter: blur(50px);
 }
-#showeditclassroom:checked ~ .tableeditclassroom{
+#showeditclassroom:checked ~ .tableeditclassroom {
   display: block;
 }
 /*-------------------------------*/
 /*table nho chon them lop hoc hoac vao lop hoc*/
 
-#showaddjoinclassroom{
+#showaddjoinclassroom {
   display: none;
 }
 
-.table-add-join-class{
+.table-add-join-class {
   display: none;
   border: none;
   width: 80%;
   height: 80%;
   top: 0%;
   left: 50%;
-  transform: translate(-50%,-50%); 
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
-  border-bottom-left-radius: 15px ;
- 
+  border-bottom-left-radius: 15px;
 }
 
-.table-add-join-class-sinhvien{
+.table-add-join-class-sinhvien {
   display: none;
   border: none;
   width: 80%;
   height: 80%;
   top: -8%;
   left: 50%;
-  transform: translate(-50%,-50%); 
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
-  border-bottom-left-radius: 15px ;
- 
+  border-bottom-left-radius: 15px;
 }
 
-.editclassroom{
+.editclassroom {
   margin-bottom: 13px;
   margin-top: 8px;
 }
 
-.avatar{
+.avatar {
   margin-right: 8px;
 }
-.space{
+.space {
   padding-bottom: 10px;
 }
-.class-title{
+.class-title {
   margin-bottom: 20px;
 }
 
-#showaddjoinclassroom:checked ~ .table-add-join-class{
+#showaddjoinclassroom:checked ~ .table-add-join-class {
   display: block;
 }
-#showaddjoinclassroomsinhvien{
+#showaddjoinclassroomsinhvien {
   display: none;
 }
 
-#showaddjoinclassroomsinhvien:checked ~ .table-add-join-class-sinhvien{
+#showaddjoinclassroomsinhvien:checked ~ .table-add-join-class-sinhvien {
   display: block;
 }
 
-#showaddjoinclassroom:checked ~ .index{
+#showaddjoinclassroom:checked ~ .index {
   filter: blur(30px);
 }
-#showaddjoinclassroomsinhvien:checked ~ .index{
+#showaddjoinclassroomsinhvien:checked ~ .index {
   filter: blur(30px);
 }
 /*----------------------------------------------*/
 /*table nho chon them lop hoc hoac vao lop hoc*/
 
-#showhiddenstreamcontent{
+#showhiddenstreamcontent {
   display: block;
 }
 
-.hiddenstreamcontent{
+.hiddenstreamcontent {
   display: none;
 }
 
-.tableshowannouncement{
+.tableshowannouncement {
   display: none;
   border: none;
   width: 80;
   height: 80%;
   top: -10%;
   left: 50%;
-  transform: translate(-50%,-50%); 
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
-  border-bottom-left-radius: 15px ;
-
+  border-bottom-left-radius: 15px;
 }
-#showhiddenstreamcontent:checked ~ .tableshowannouncement{
+#showhiddenstreamcontent:checked ~ .tableshowannouncement {
   display: block;
 }
-#showhiddenstreamcontent:checked ~ .commute{
+#showhiddenstreamcontent:checked ~ .commute {
   display: none;
 }
-#showhiddenstreamcontent:checked ~ .content{
+#showhiddenstreamcontent:checked ~ .content {
   filter: blur(30px);
 }
 
 /*----------------------------------------------*/
 /*table phan quyen*/
 
-#showphanquyen{
+#showphanquyen {
   display: none;
 }
 
-.tablephanquyen{
+.tablephanquyen {
   display: none;
   display: none;
   border: none;
@@ -828,39 +806,38 @@ label {
   height: 80%;
   top: 0%;
   left: 50%;
-  transform: translate(-50%,-50%); 
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
-  border-bottom-left-radius: 15px ;
+  border-bottom-left-radius: 15px;
 }
 
-
-#showphanquyen:checked ~ .tablephanquyen{
+#showphanquyen:checked ~ .tablephanquyen {
   display: block;
 }
-#showphanquyen:checked ~ .commute{
+#showphanquyen:checked ~ .commute {
   display: none;
 }
-#showphanquyen:checked ~ .index{
+#showphanquyen:checked ~ .index {
   filter: blur(30px);
 }
-.btn{
+.btn {
   margin-right: 12px;
 }
-.create-form{
+.create-form {
   top: 10%;
 }
 /*----------------------------------------------*/
-.class-inform-textarea{
+.class-inform-textarea {
   border-radius: 5px;
   border: 2px solid black;
   height: 80px;
-  width:300px;
+  width: 300px;
 }
-.hiddenstreamcontent{
+.hiddenstreamcontent {
   height: auto;
   width: auto;
 }
-#classcomment{
+#classcomment {
   border-radius: 10px;
   width: 80%;
   margin-bottom: 30px;

@@ -1,8 +1,11 @@
 
 <?php 
 
-    require_once __DIR__. "/../autoload/autoload.php";
+    require_once __DIR__. "/../autoload/autoload.php";//admin@gmail.com
+    //"SELECT * FROM {$table} WHERE email = '". ."'";
     $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
+    
+    
     //load class with specific role
     if(check_role($_SESSION['email'])==2){
         $class = $db ->fetchAll('class');
@@ -205,7 +208,7 @@
             <div class="row class-container">
                 <?php foreach ($class as $item):?>
                 <!-- each class -->
-                <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
+                <a href="stream.php?id=<?php echo $item['id']?>">
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
                     <div class="cell">
 
@@ -215,7 +218,7 @@
                         </div>
                             <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
                             <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen text-dark"></i></a>
-                            <a href="delete-class.php?id=<?php echo $item['id']?>"><i class="editclassroom far fa-trash-alt text-dark"></i></a>
+                            <a href="delete-class.php?id=<?php echo $item['id']?>" onclick="confirmDelete()"><i class="editclassroom far fa-trash-alt text-dark"></i></a>
                         </div>
 
                         <div class="class-main p-2">
