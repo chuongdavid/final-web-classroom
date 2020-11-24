@@ -29,7 +29,7 @@
             }
         }
         $id_insert = $db -> update("class",$data_class,array('id' => $id));
-        if($id_insert>0){
+        if(count($id_insert)>0){
             $_SESSION['success'] = 'Update successfully';
             header('Location:index-giaovien.php');
         }
@@ -66,7 +66,7 @@
     </head>
 <body>
     <!-- form edit lớp -->
-    <div class="col-12 m-2">  
+    <div class="create-form col-12 m-2">  
                 <form method="post" action="#" onsubmit= "return validateInputEditClass()" enctype="multipart/form-data">
                     <div class="formcreate">
                         <label> <p id="assignmenclasswork"><b>Edit Classroom</b> </p></label>

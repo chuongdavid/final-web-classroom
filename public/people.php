@@ -104,7 +104,7 @@
                                         <td class="text-center"><?= $student['id_student'] ?></td>
                                         <td class="text-center"><?= $student['fullname']?></td>
                                         <td class="text-center"><?= ""?></td>  
-                                        <td class="text-center"><a href="./delete_user.php?id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus"></i></a></td>
+                                        <td class="text-center"><a href="./delete_user.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
                                     </tr>
                                 <?php } ?>
                             </table>
