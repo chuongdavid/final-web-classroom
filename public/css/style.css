@@ -16,7 +16,7 @@
 }
 /* The side navigation menu */
 .sidenav {
-  height: 50%; /* 100% Full-height */
+  height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
@@ -28,9 +28,11 @@
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   font-weight: 700;
-  
+  padding-bottom: 20px;
 }
-
+#mySidenav{
+  height: 100%;
+}
 .editclassroom{
   text-align: center;
   margin-right: 13px;
@@ -79,9 +81,6 @@ a:link:hover{
   background-color:none;
   border-radius: 0px 20px 20px 0;
   transform: scale(1.15);
-}
-.nav-item{
-  
 }
 
 /* Position and style the close button (top right corner) */
@@ -636,7 +635,7 @@ label {
 /* Them chuc nang add anouncement*/
 
 #showaddannouncement{
-  display: none;
+  display: block ;
 }
 #datestream{
   font-size: 18px;
@@ -769,7 +768,7 @@ label {
   display: block;
 }
 #showaddjoinclassroomsinhvien{
-  display: block;
+  display: none;
 }
 
 #showaddjoinclassroomsinhvien:checked ~ .table-add-join-class-sinhvien{

@@ -117,6 +117,7 @@
                     <a href="#" class="sidenav-item">Services</a>
                     <a href="#" class="sidenav-item">Clients</a>
                     <a href="#" class="sidenav-item">Contact</a>
+                    <a href="#" class="sidenav-item">Log out</a>
                 </div>
 
                 <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
