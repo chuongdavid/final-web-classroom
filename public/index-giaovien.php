@@ -93,6 +93,23 @@
         <!--font-awnsome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script>
+            function search(text){
+                
+            $(document).ready(function(){
+                
+                if(text.length!=0){
+                    $.post("ajax.php", { data: text }, function (data) {
+                    $(".class-place").html(data);
+                  });
+                }
+                else{
+                    $(".class-place").html("");
+                }
+            });
+            }
+            
+        </script>
     </head>
     <input type ="checkbox" id="showeditclassroom">
     <input type ="checkbox" id="showaddjoinclassroom">
@@ -137,7 +154,7 @@
                 <li class="nav-item ml-auto mr-0"> 
                     <a class="nav-link" href="#">
                         <label for="search"><i class="fa fa-search fa-2x"></i> </label> 
-                        <input type="text" id="search">
+                        <input onkeyup="search(this.value)" type="text" id="search" class="search">
                     </a>
                 </li>
                 <!--only available for admin-->
@@ -183,8 +200,9 @@
                         <?php endif ?>
                     </div>
         <!--classes-->
-        <div class=" index container">
-            <div class="row">
+        <div class=" index container"> 
+        <div class="class-place">
+            <div class="row class-container">
                 <?php foreach ($class as $item):?>
                 <!-- each class -->
                 <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
@@ -196,8 +214,8 @@
                             <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
                         </div>
                             <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
-                            <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen"></i></a>
-                            <a href="delete-class.php?id=<?php echo $item['id']?>"><i class="editclassroom far fa-trash-alt"></i></a>
+                            <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen text-dark"></i></a>
+                            <a href="delete-class.php?id=<?php echo $item['id']?>"><i class="editclassroom far fa-trash-alt text-dark"></i></a>
                         </div>
 
                         <div class="class-main p-2">
@@ -223,8 +241,10 @@
                 <?php endforeach ?>
 
                 <!-- end each class -->
-            
+                
             </div>
+            </div> 
+                <!-- div class class-place -->
         </div>
 
 
@@ -279,7 +299,7 @@
                         <i class="fa fa-times-circle"></i> 
                     </p>
                     <button class="btn btn-success">Update</button>
-                    <button class="btn btn-warning" type="reset">Reset</button>
+                    <a class="btn btn-warning" href="index-giaovien.php">Cancel</a>
                 </div> 
             </form>
         </div>

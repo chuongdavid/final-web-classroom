@@ -7,7 +7,11 @@
         "password" => postInput('psw')
       ];
       $data_user = $db -> fetchOne('user',"email = '".$data['email']."'");  
-      if (password_verify($data['password'],$data_user['password'])) {
+      if($data_user['verified']==0){
+        $_SESSION['error'] = "Your account hasn't verified yet. Please check your email to verified your account";
+      }
+      else{
+        if (password_verify($data['password'],$data_user['password'])) {
           if(check_role($data['email'])==0){
             $_SESSION['email'] = $data_user['email'];
             header('Location:index-sinhvien.php');
@@ -22,6 +26,8 @@
       } else {
         $error = "Email or password is incorrect. Please enter again";
       }
+      }
+      
     }
     
     
@@ -69,6 +75,20 @@
         <div class="form-login-container">
           <h1>Sign In</h1>
           <br/>
+          <div class="clearfix" >
+                        <?php if(isset($_SESSION['success'])): ?>
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['success']; unset($_SESSION['success']) ?>
+                            </div>
+                        <?php endif ?>
+                        <?php if(isset($_SESSION['error'])): ?>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['error']; unset($_SESSION['error']) ?>
+                            </div>
+                        <?php endif ?>
+          </div>
 
           <label for="email"><i class="fa fa-envelope"></i>Email address</label>
           <input
@@ -100,8 +120,9 @@
             Remember me </label
           ><br />
           <button class="btn-login">Sign in</button><br />
-          <button class="btn-login">Create an account</button><br />
-          <a href="forget_password.php" dodgerblue>Forgot your password?</a>
+          <a class="btn-login text-light" href="signUp.php">Create account</a>
+          <br>
+          <a href="forget_password.php">Forgot your password?</a>
         </div>
       </form>
     </div>

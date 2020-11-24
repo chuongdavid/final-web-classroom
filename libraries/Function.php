@@ -22,7 +22,7 @@ function getInput($string)
 function is_email_exists($email){
     $db = new Database;
     $check_email = $db -> fetchOne('user',"email = '".$email."'");  
-      if($check_email>0){
+      if(count($check_email)>0){
         return true;
       }
       else{
@@ -99,6 +99,44 @@ function verify_email($email,$vkey){
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Verify your account for classroom';
         $mail->Body    = "<p><a href='http://localhost/Code/final-web-classroom/public/verify.php?email=$email&vkey=$vkey'>Click here</a> to verify your classroom account.</p>";
+        // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        $mail->send();
+        return true;
+    }
+    catch (Exception $e) {
+        return false;
+    }
+}
+function send_join_request($id_student,$student_name,$id_class,$email){
+    $mail = new PHPMailer(true);
+    try{
+        //Server settings
+        $mail->CharSet = 'utf-8';                      // Enable verbose debug output
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+        $mail->Username   = 'chuongddavid@gmail.com';                     // SMTP username
+        $mail->Password   = 'ieibumydddhemnei';                               // SMTP password
+        $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+        //Recipients
+        $mail->setFrom('chuongddavid@gmail.com', 'Classroom');
+        $mail->addAddress($email, 'Receiver');     // Add a recipient
+        // $mail->addAddress('ellen@example.com');               // Name is optional
+        // $mail->addReplyTo('info@example.com', 'Information');
+        // $mail->addCC('cc@example.com');
+        // $mail->addBCC('bcc@example.com');
+
+        // // Attachments
+        // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+        // Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = 'Accept to join in your';
+        $mail->Body    = "<p><a href='".base_url()."http://localhost/Code/final-web-classroom/public/verify.php'>Click here</a> to verify your classroom account.</p>";
         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
