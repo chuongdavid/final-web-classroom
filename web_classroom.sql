@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2020 lúc 10:13 AM
+-- Thời gian đã tạo: Th10 24, 2020 lúc 04:20 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -44,8 +44,7 @@ CREATE TABLE `class` (
 --
 
 INSERT INTO `class` (`id`, `name`, `subject`, `teacher`, `room`, `image`, `created_by_who`, `created_by_id`, `updated_at`) VALUES
-('5fba94e3abc', 'tên lớp 4', 'Công nghệ thông tin 2', 'Cẩm Quang Phạm', 'B-0506', 'DSC_1172.JPEG', 'admin', 21, NULL),
-('5fbb598e214', 'Giải thuật 2', 'Công nghệ thông tin', 'Cẩm Quang', 'phòng', 'DSC_0916.jpg', 'admin', 21, NULL);
+('5fbc751d64f', 'Công nghệ phần mềm 2', 'Công nghệ thông tin', 'Trung Tín', 'B-05010', 'avatar.jpg', 'admin', 21, NULL);
 
 -- --------------------------------------------------------
 
@@ -82,7 +81,9 @@ CREATE TABLE `student_class` (
 --
 
 INSERT INTO `student_class` (`id_student`, `id_class`) VALUES
-(23, '5fbb598e214');
+(21, '5fbba72f297'),
+(23, '5fba94e3abc'),
+(23, '5fbb81872b5');
 
 -- --------------------------------------------------------
 

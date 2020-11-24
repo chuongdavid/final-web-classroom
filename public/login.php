@@ -10,7 +10,7 @@
       if (password_verify($data['password'],$data_user['password'])) {
           if(check_role($data['email'])==0){
             $_SESSION['email'] = $data_user['email'];
-            header('Location:index.php');
+            header('Location:index-sinhvien.php');
               
           }
           else{
