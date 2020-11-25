@@ -196,7 +196,7 @@
                                 <i class="far fa-window-maximize"></i> 
                                 
                                 <?php echo $item['title'] ?> 
-                                <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
+                                <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
                                 <p id="datestream"> <?php echo $item['created_at'] ?> </p>
                             
                             </div>      

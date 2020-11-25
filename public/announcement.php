@@ -106,7 +106,7 @@
                     <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label> </td> 
                 </tr>
                 <tr class="assignment-stream">
-                    <td> <i class="fas fa-laptop-code"></i><label> Delete </label> </td>
+                    <td> <i class="fas fa-laptop-code"></i> <label> Delete </label> </td>
                 </tr>
             </table>
         </div>

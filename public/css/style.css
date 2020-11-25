@@ -668,6 +668,9 @@ label {
 .table1 .assignment-stream {
   border-radius: 5px;
 }
+.table-stream .assignment-stream:hover{
+  background-color: #2b2828;
+}
 
 
 .addclass:hover {
@@ -820,7 +823,7 @@ label {
 }
 #more {
   margin-left: 670px;
-  
+  color:white;
 }
 
 /*---------Stream edit delete-------------*/
@@ -944,7 +947,6 @@ td {
   display: inline-table;
 }
 
-
 #hiddenstreamcontent-content {
   margin-top: 8px;
   margin-left: 25px;
@@ -1003,8 +1005,8 @@ td {
 .table-announce-edit-delete {
   display: none;
   width: 100px;
-  margin-top: -250px;
-  margin-left: 920px;
+  margin-top: -390px;
+  margin-left: 910px;
 }
 
 #show-announce-edit-delete:checked ~ .table-announce-edit-delete {
