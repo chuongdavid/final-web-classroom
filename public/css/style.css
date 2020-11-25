@@ -155,7 +155,6 @@ ul {
   background-color: #76e4cc;
   background-image: linear-gradient(315deg, #7ce6d4, #3dced8 74%);
   color: black;
-  
 }
 .sinhvien-title {
   padding-top: 5px;
@@ -660,7 +659,6 @@ label {
   border-radius: 5px;
 }
 
-
 .addclass:hover {
   background-color: rgb(7, 106, 119);
 }
@@ -842,7 +840,7 @@ label {
 #showphanquyen {
   display: none;
 }
-#stream-title{
+#stream-title {
   border-radius: 3px;
   border: 2px solid black;
 }
@@ -876,12 +874,8 @@ label {
 }
 /*----------------------------------------------*/
 /*table view sinh vien*/
-table,
-th,
-td {
+table {
   width: 100%;
-  border: 1px solid black;
-  table-layout: fixed;
 }
 /*----------------------------------------------*/
 /*delete-user css*/
@@ -967,10 +961,9 @@ td {
   margin-left: 40px;
   max-width: 650px;
   word-wrap: break-word;
-   
 }
 /*----------------Show announce edit delete------------------*/
-#show-announce-edit-delete{
+#show-announce-edit-delete {
   display: none;
 }
 
@@ -984,7 +977,6 @@ td {
 #show-announce-edit-delete:checked ~ .table-announce-edit-delete {
   display: block;
 }
-
 
 body,
 html {

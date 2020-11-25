@@ -92,18 +92,14 @@
                         <div id="user-info">
                             <table id = "user-listing">
                                 <tr>
-                                    <td class="text-center">MSSV</td>
                                     <td class="text-center">Họ Tên</td>
-                                    <td class="text-center">Nhóm</td>
-                                    <td class="text-center">Xóa</td>
+                                    <td class="text-right">Xóa</td>
                                 </tr>
                                 <?php
                                     foreach($student_arr as $student){
                                     ?>
                                     <tr>
-                                        <td class="text-center"><?= $student['id_student'] ?></td>
                                         <td class="text-center"><?= $student['fullname']?></td>
-                                        <td class="text-center"><?= ""?></td>  
                                         <td class="text-center"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
                                     </tr>
                                 <?php } ?>
