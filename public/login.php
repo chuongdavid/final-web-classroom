@@ -1,4 +1,4 @@
-<?php 
+<?php
     require_once __DIR__. "/../autoload/autoload.php";
     $error = "";
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -15,7 +15,6 @@
           if(check_role($data['email'])==0){
             $_SESSION['email'] = $data_user['email'];
             header('Location:index-sinhvien.php');
-              
           }
           else{
             $_SESSION['email'] = $data_user['email'];
@@ -30,7 +29,7 @@
       
     }
     
-    
+    var_dump($_SESSION);
     
 ?>
 <!DOCTYPE html>

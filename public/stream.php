@@ -1,6 +1,12 @@
 <?php 
-
     require_once __DIR__. "/../autoload/autoload.php";
+
+    //check login
+    if(!isset($_SESSION['email'])){
+        header("Location: login.php");
+    }
+    //---------------------------//
+    
     $id = $_GET['id'];
     $EditClass = $db -> fetchOne('class',"id = '".$id."'");
     if(empty($EditClass)){
@@ -57,9 +63,20 @@
                 <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
+                <!--Home sinh vien-->
+                <?php if(check_role($_SESSION['email'])==0){
+                    ?>
                 <li class="nav-item active">
+                    <a class="nav-link" href="index-hocsinh.php">Home</a>
+                </li>
+                <?php }
+                #--Home giao vien-->
+                    else {
+                ?>
+                        <li class="nav-item active">
                     <a class="nav-link" href="index-giaovien.php">Home</a>
                 </li>
+                <?php }?>
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Stream</a>
                 </li>

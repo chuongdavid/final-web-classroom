@@ -2,6 +2,11 @@
 <?php 
 
 require_once __DIR__. "/../autoload/autoload.php";//admin@gmail.com
+//check login
+if(!isset($_SESSION['email'])){
+    header("Location: login.php");
+}
+
 //"SELECT * FROM {$table} WHERE email = '". ."'";
 $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
 
@@ -68,7 +73,6 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
     }
     
 }
-
 ?>
 
 
@@ -141,9 +145,21 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
             <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
             <!--left nav-->
+            <!--Home sinh vien-->
+            <?php if(check_role($data_user['email'])==0){
+                ?>
             <li class="nav-item active">
+                <a class="nav-link" href="index-hocsinh.php">Home</a>
+            </li>
+            <?php }
+            #--Home giao vien-->
+                else {
+            ?>
+                    <li class="nav-item active">
                 <a class="nav-link" href="index-giaovien.php">Home</a>
             </li>
+            <?php }?>
+
             <li class="nav-item">
                 <a class="nav-link" href="#">To-do</a>
             </li>
@@ -175,6 +191,13 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
                 <a class="nav-link" href="#">
                     <label for="showaddjoinclassroom"><i class="fa fa-plus fa-2x"></i> </label>
                 </a>
+            </li>
+
+            <li class="nav-item ml-2 mr-2">
+                <a class="nav-link" href="logout.php">
+                    <label for="logoutbutton"><i class="fas fa-sign-out-alt fa-2x"></i></label>
+                </a>
+
             </li>
         </ul>
     </nav>
