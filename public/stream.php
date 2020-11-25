@@ -169,14 +169,6 @@
                             <label for ="showaddannouncement"><i class=" fas fa-user-graduate"></i> Share something with your class </label>
                         </div>
                         
-                        <div class="banner3 commute" id="commute3">
-                            <b>Communicate with your class here</b></br>
-                            <div id="announce">
-                                <i class="far fa-comment-alt"> </i>  Create and schedule annnouncements </br>
-                                <i class="far fa-comment"> </i> Respond to student posts
-                            </div>
-                        </div>
-                        
                         <div class="hiddenstreamcontent" >
                         
                             <div id="hiddenstreamcontent-content">
@@ -185,19 +177,18 @@
                                 Dang Trung Tin <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
                                 <p id="datestream"> Nov 24</p>
                             
-                            </div> 
+                            </div>      
+                        </div> 
 
-                            <!--  <div id="teachercontent">
-                                fdsfhklsdflksjfl;sdjl;fsk
-                                
-                            </div>
-                            
+                        <div class="banner3 commute" id="commute3">
+                            <b>Communicate with your class here</b></br>
                             <div id="announce">
-                                <input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
-                            </div>  -->
-
+                                <i class="far fa-comment-alt"> </i>  Create and schedule annnouncements </br>
+                                <i class="far fa-comment"> </i> Respond to student posts
+                            </div>
+                        </div>
+                        
                             
-                        </div>     
                     </div>
                 </div>
             </div>
@@ -227,7 +218,7 @@
         <div class="stream-edit-delete ">  
             <table class="table1 table-stream" >
                 <tr class="assignment-stream">
-                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label> </td> 
+                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label></td> 
                 </tr>
                 <tr class="assignment-stream">
                     <td> <i class="fas fa-laptop-code"></i><label> Delete </label> </td>
