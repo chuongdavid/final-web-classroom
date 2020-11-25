@@ -1,16 +1,10 @@
 <?php 
     require_once __DIR__. "/../autoload/autoload.php";
-<<<<<<< HEAD
 
-    //check login
     if(!isset($_SESSION['email'])){
         header("Location: login.php");
     }
-    //---------------------------//
     
-=======
-    $error =[];
->>>>>>> 3236cee7cd50cda7065a2f87723065aec8d8b61e
     $id = $_GET['id'];
     $EditClass = $db -> fetchOne('class',"id = '".$id."'");
     if(empty($EditClass)){
