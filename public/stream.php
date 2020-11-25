@@ -8,13 +8,18 @@
         $_SESSION['error'] = "Class does not exist";
         header('Location:index-giaovien.php');
     }
-    //exist class
-        if(isset($_POST['news'])){
+    //if exist class do below
+        //load announcement
+        $load_announcement = $db -> fetchAllCondition('announcement',"id_class = '".$id."'");
+
+        //create announcement
+        if(isset($_POST['news']) && isset($_POST['title'])){
             $id_announcement = uniqid(); 
             $data_announcement = ['id' => $id_announcement,
                     'news'=>$_POST['news'],
                     'id_class'=>$EditClass['id'],
-                    'created_by_id'=> $_SESSION['id_user']
+                    'created_by_id'=> $_SESSION['id_user'],
+                    'title' => $_POST['title']
             ];
             if(isset($_FILES['file'])){
                 $fileCount = count($_FILES['file']['name']);
@@ -37,7 +42,7 @@
                     }
                 }
                 if((!empty($error))){
-                    $_SESSION['error'] = "Error occured when uploading files";
+                    $_SESSION['error'] = "Error occured when uploading files or you didn't choose any file";
                 }
                 else{
                     $_SESSION['success']="Upload announcement successfully";
@@ -168,7 +173,7 @@
                         <div class="banner3 classanounce" id="commute2">
                             <label for ="showaddannouncement"><i class=" fas fa-user-graduate"></i> Share something with your class </label>
                         </div>
-                        
+                        <?php if(count($load_announcement)==0):?>
                         <div class="banner3 commute" id="commute3">
                             <b>Communicate with your class here</b></br>
                             <div id="announce">
@@ -176,28 +181,19 @@
                                 <i class="far fa-comment"> </i> Respond to student posts
                             </div>
                         </div>
-                        
+                        <?php endif ?>
+                        <?php foreach ($load_announcement as $item):?>
                         <div class="hiddenstreamcontent" >
                         
                             <div id="hiddenstreamcontent-content">
                                 <i class="far fa-window-maximize"></i> 
                                 
-                                Dang Trung Tin <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
-                                <p id="datestream"> Nov 24</p>
+                                echo <?php $item['title'] ?> <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
+                                <p id="datestream"> </p>
                             
                             </div> 
-
-                            <!--  <div id="teachercontent">
-                                fdsfhklsdflksjfl;sdjl;fsk
-                                
-                            </div>
-                            
-                            <div id="announce">
-                                <input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
-                            </div>  -->
-
-                            
-                        </div>     
+                        </div> 
+                        <?php endforeach ?>    
                     </div>
                 </div>
             </div>
@@ -210,10 +206,10 @@
                         <hr style="width:60%; text-align:center; margin-left:0">
                         
                         <h4>Title</h4>
-                        <input id="stream-title" type="text" placeholder="Title"> </br></br>
-                        <h6>Nội dung</h6>
+                        <input id="stream-title" type="text" placeholder="Title" name="title"> </br></br>
+                        <h6>Content</h6>
                         <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"></textarea></br></br>
-                        <b> Chọn ảnh</b></br>
+                        <b> Choose files</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         
                         </br></br>
