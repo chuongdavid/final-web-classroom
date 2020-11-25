@@ -74,34 +74,45 @@
         <input type ="checkbox" id="show-announce-edit-delete">
        
         
-        <div class=" anouncement container-sm col-lg-8">
-            </br>
-            <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  <label for="show-announce-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label></p>
-            <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
-            <hr style="width:80%; text-align:center; margin-left:0"> 
-            <p id="teachercontent">
-            <?php echo $detail_announcement['news'] ?>
-            <p>Uploaded files</p>
-            <?php foreach ($uploaded_files as $item):?>
-                <a href="#"><?php echo $item['name'] ?></p>
-            <?php endforeach ?>
-
-            
-                
-            
-            <div id="announce">
-                <div class=" commentcontent">
-                    <div id="hiddenstreamcontent-content">
-                        <i class="far fa-window-maximize"></i> 
-                        
-                        Ten sv
-                        <label for="show-stream-edit-delete"><i class="fa fa-ellipsis-v" id="more-comment"></i></label>
-                        <p id="datecomment"> Nov 25</p>
+        <div class="container-sm ">
+            <div class="row">
+                <div class="col-lg-9"> 
+                    </br>
+                    <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  <label for="show-announce-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label>  </p>
+                    <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
                     
-                    </div>      
-                </div></br></br>
-        
-                <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
+                    <p id="teachercontent"> 
+                    <?php echo $detail_announcement['news'] ?>
+                    <hr style="width:80%; text-align:center; margin-left:0"> 
+                    <p>class comment</p>
+                    <div id="announce">
+                        <div class=" commentcontent">
+                            
+                            <div id="hiddenstreamcontent-content">
+                                <i class="far fa-window-maximize"></i> 
+                                
+                                Ten sv<p id="datecomment"> Nov 25</p>
+                                <label for="show-stream-edit-delete"><i class="fa fa-ellipsis-v" id="more-comment"></i></label>
+                                
+                            </div>      
+                            
+                            
+                        </div>
+                    </div></br></br>
+                    <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
+                    
+                    
+                </div>
+                <div class="col-lg-3 "> 
+                    <div class="upload-announce">
+                        </br>
+                        <p><b>Uploaded files</b></p>
+                        <hr style="width:100%; text-align:center; margin-left:0">
+                        <?php foreach ($uploaded_files as $item):?>
+                            <p> <a href="#"><?php echo $item['name'] ?></a> </p>
+                        <?php endforeach ?>
+                    </div>
+                </div>
             </div>
 
         </div>

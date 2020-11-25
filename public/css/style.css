@@ -73,9 +73,10 @@ a:link:hover {
   text-decoration: none;
 }
 #datecomment{
-  margin-top: -10px;
-  margin-left: 45px;
-  font-size: 14px;
+  margin-top: 0px;
+  margin-left: 10px;
+  font-size: 12px;
+  display: inline;
 }
 #more-comment{
   margin-left: 600px;
@@ -952,6 +953,7 @@ td {
   margin-left: 25px;
   vertical-align: middle;
   color: rgb(93, 94, 93);
+  font-size: 18px;
 }
 #classcomment {
   border-radius: 10px;
@@ -983,7 +985,8 @@ td {
 }
 #more-announce {
   font-size: 24px;
-  margin-left: 400px;
+  display: inline;
+  margin-left: 34px;
 }
 #dateannounce {
   margin-top: -20px;
@@ -1015,7 +1018,17 @@ td {
 #noti-stream{
   width: 300px;
 }
-
+.upload-announce{
+  margin-top: 30px;
+  margin-left: 0px;
+  border: 3px solid rgb(182, 177, 177);
+  text-align: center;
+  display: inline-table;
+  padding-right: 50px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
 body,
 html {
   height: 100%;
