@@ -154,6 +154,7 @@ ul {
   border-top-right-radius: 5px;
   background-color: #76e4cc;
   background-image: linear-gradient(315deg, #7ce6d4, #3dced8 74%);
+  color: black;
 }
 .sinhvien-title {
   padding-bottom: 10px;
@@ -948,6 +949,11 @@ td {
 #teachercontent {
   padding: 30px;
   margin-left: 40px;
+  max-width: 200px;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 body,
 html {
