@@ -155,8 +155,10 @@ ul {
   background-color: #76e4cc;
   background-image: linear-gradient(315deg, #7ce6d4, #3dced8 74%);
   color: black;
+  
 }
 .sinhvien-title {
+  padding-top: 5px;
   padding-bottom: 10px;
 }
 .class-title {
@@ -360,6 +362,10 @@ input[type="password"]:focus,
 #announce {
   padding-top: 9px;
   font-size: 22px;
+  outline: none;
+}
+#announce:focus {
+  outline: none;
 }
 #viewall {
   padding-top: 20px;
@@ -386,6 +392,7 @@ input[type="password"]:focus,
 label {
   cursor: pointer;
 }
+
 #creatework {
   margin-top: 30px;
   height: 45px;
@@ -808,6 +815,7 @@ label {
 .assignment-stream {
   border: 1px solid rgb(187, 186, 186);
   border-radius: 15px;
+  width: auto;
 }
 .assignment-stream:hover {
   background-color: rgb(180, 177, 177);
@@ -816,7 +824,7 @@ label {
   display: none;
   top: -20%;
   left: 71.5%;
-  width: 0px;
+  width: 100px;
 }
 #show-stream-edit-delete:checked ~ .stream-edit-delete {
   display: block;
@@ -915,6 +923,7 @@ td {
   width: 65%;
   margin-bottom: 30px;
   margin-left: 20px;
+  outline: none;
 }
 #tengiaovien {
   font-size: 28px;
@@ -949,12 +958,27 @@ td {
 #teachercontent {
   padding: 30px;
   margin-left: 40px;
-  max-width: 200px;
-  width: 250px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 650px;
+  word-wrap: break-word;
+   
 }
+/*----------------Show announce edit delete------------------*/
+#show-announce-edit-delete{
+  display: block;
+}
+
+.table-announce-edit-delete {
+  display: none;
+  width: 100px;
+  top: -10%;
+  left: 71.5%;
+}
+
+#show-announce-edit-delete:checked ~ .table-announce-edit-delete {
+  display: block;
+}
+
+
 body,
 html {
   height: 100%;
