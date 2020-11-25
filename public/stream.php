@@ -173,7 +173,21 @@
                         <div class="banner3 classanounce" id="commute2">
                             <label for ="showaddannouncement"><i class=" fas fa-user-graduate"></i> Share something with your class </label>
                         </div>
-                        <?php if(count($load_announcement)==0):?>
+                        <?php foreach ($load_announcement as $item):?>
+                        <a href="announcement.php?id=<?php echo $item['id']?>">
+                        <div class="hiddenstreamcontent" >
+                        
+                            <div id="hiddenstreamcontent-content">
+                                <i class="far fa-window-maximize"></i> 
+                                
+                                <?php echo $item['title'] ?> <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
+                                <p id="datestream"> <?php echo $item['created_at'] ?> </p>
+                            
+                            </div>      
+                        </div> 
+                        </a>
+                        <?php endforeach?>
+                        <?php if(count($load_announcement)==0) :?>
                         <div class="banner3 commute" id="commute3">
                             <b>Communicate with your class here</b></br>
                             <div id="announce">
@@ -182,18 +196,8 @@
                             </div>
                         </div>
                         <?php endif ?>
-                        <?php foreach ($load_announcement as $item):?>
-                        <div class="hiddenstreamcontent" >
                         
-                            <div id="hiddenstreamcontent-content">
-                                <i class="far fa-window-maximize"></i> 
-                                
-                                echo <?php $item['title'] ?> <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
-                                <p id="datestream"> </p>
                             
-                            </div> 
-                        </div> 
-                        <?php endforeach ?>    
                     </div>
                 </div>
             </div>
@@ -206,10 +210,10 @@
                         <hr style="width:60%; text-align:center; margin-left:0">
                         
                         <h4>Title</h4>
-                        <input id="stream-title" type="text" placeholder="Title" name="title"> </br></br>
-                        <h6>Content</h6>
+                        <input id="stream-title" type="text" placeholder="Title"> </br></br>
+                        <h6>Nội dung</h6>
                         <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"></textarea></br></br>
-                        <b> Choose files</b></br>
+                        <b> Chọn ảnh</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         
                         </br></br>
@@ -223,7 +227,7 @@
         <div class="stream-edit-delete ">  
             <table class="table1 table-stream" >
                 <tr class="assignment-stream">
-                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label> </td> 
+                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label></td> 
                 </tr>
                 <tr class="assignment-stream">
                     <td> <i class="fas fa-laptop-code"></i><label> Delete </label> </td>

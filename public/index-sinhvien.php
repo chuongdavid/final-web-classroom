@@ -35,17 +35,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             }      
             else{
                 //get information who created this class
-                // var_dump($code);
-                // $create_class_by = $db -> fetchOne('user',"id = '".$code['created_by_id']."'");
-                // send_join_request($id_student,$data_user['name'],$class_code,$create_class_by['email']);
-                // $insert_class = $db -> insert('student_class',$data);
-                // if(count($insert_class)>0){
-                //     $_SESSION['success']='Join class successfully!';
-                //     header("refresh: 0.5"); 
-                // }
-                // else{
-                //     $_SESSION['error'] ='Join class fail!';
-                // }
+                $create_class_by = $db -> fetchOne('user',"id = '".$code['created_by_id']."'");
+                if(send_join_request($id_student,$class_code,$create_class_by['email'])){
+                    $_SESSION['success'] ='Your request has been sent. Please wait for your teacher to accept your request';
+                }
+                else{
+                    $_SESSION['error'] ='Something wrong';
+                }
+                
             }
         }
         else{
@@ -54,7 +51,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>

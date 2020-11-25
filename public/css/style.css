@@ -660,6 +660,7 @@ label {
   border-radius: 5px;
 }
 
+
 .addclass:hover {
   background-color: rgb(7, 106, 119);
 }
@@ -778,7 +779,7 @@ label {
 /*table nho chon them lop hoc hoac vao lop hoc*/
 
 #showhiddenstreamcontent {
-  display: block;
+  display: none;
 }
 
 .classanounce {
@@ -800,7 +801,7 @@ label {
   display: block;
 }
 #showhiddenstreamcontent:checked ~ .commute {
-  display: none;
+  display: block;
 }
 #showhiddenstreamcontent:checked ~ .hiddenstreamcontent {
   display: block;
@@ -815,11 +816,11 @@ label {
 #show-stream-edit-delete {
   display: none;
 }
-tr .assignment-stream {
+.assignment-stream {
   border: 1px solid rgb(187, 186, 186);
   border-radius: 5px;
 }
-tr .assignment-stream:hover {
+.assignment-stream:hover {
   background-color: rgb(180, 177, 177);
 }
 .stream-edit-delete {
@@ -907,7 +908,7 @@ td {
   width: 300px;
 }
 .hiddenstreamcontent {
-  display: none;
+  display: block;
   margin-top: 20px;
   height: 74px;
   width: auto;
