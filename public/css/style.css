@@ -72,7 +72,15 @@ a:link:hover {
 .sidenav a:hover {
   text-decoration: none;
 }
-
+#datecomment{
+  margin-top: -10px;
+  margin-left: 45px;
+  font-size: 14px;
+}
+#more-comment{
+  margin-left: 600px;
+  padding-right: 20px;
+}
 .sidenav-item:hover {
   background-color: none;
   border-radius: 0px 20px 20px 0;
@@ -253,6 +261,7 @@ input[type="password"]:focus,
   border-radius: 5px;
   padding: 10px;
 }
+
 .form-change-pass-container i {
   margin-right: 4px;
 }
@@ -361,7 +370,7 @@ input[type="password"]:focus,
 }
 #announce {
   padding-top: 9px;
-  font-size: 22px;
+  font-size: 18px;
   outline: none;
 }
 #announce:focus {
@@ -630,7 +639,7 @@ label {
 #datestream {
   font-size: 14px;
   margin-left: 42px;
-  margin-top: -10px;
+  margin-top: -40px;
 }
 .fa-window-maximize {
   margin-right: 10px;
@@ -810,8 +819,10 @@ label {
   filter: blur(30px);
 }
 #more {
-  margin-left: 450px;
+  margin-left: 670px;
+  
 }
+
 /*---------Stream edit delete-------------*/
 #show-stream-edit-delete {
   display: none;
@@ -915,9 +926,24 @@ td {
   box-sizing: auto;
   border: 1px solid rgb(177, 174, 174);
   border-radius: 15px;
-  vertical-align: middle;
   font-size: 24px;
+  overflow: auto;
+  display: inline-table;
+  
 }
+.commentcontent{
+  display: block;
+  margin-top: 20px;
+  height: 74px;
+  width: auto;
+  box-sizing: auto;
+  border: none;
+  border-radius: 15px;
+  font-size: 22px;
+  overflow: auto;
+  display: inline-table;
+}
+
 
 #hiddenstreamcontent-content {
   margin-top: 8px;
@@ -984,7 +1010,9 @@ td {
 #show-announce-edit-delete:checked ~ .table-announce-edit-delete {
   display: block;
 }
-
+#noti-stream{
+  width: 300px;
+}
 
 body,
 html {

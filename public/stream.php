@@ -1,10 +1,8 @@
 <?php 
     require_once __DIR__. "/../autoload/autoload.php";
-
     if(!isset($_SESSION['email'])){
         header("Location: login.php");
-    }
-    
+    } 
     $id = $_GET['id'];
     $EditClass = $db -> fetchOne('class',"id = '".$id."'");
     if(empty($EditClass)){
@@ -197,7 +195,8 @@
                             <div id="hiddenstreamcontent-content">
                                 <i class="far fa-window-maximize"></i> 
                                 
-                                <?php echo $item['title'] ?> <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
+                                <?php echo $item['title'] ?> 
+                                <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
                                 <p id="datestream"> <?php echo $item['created_at'] ?> </p>
                             
                             </div>      
@@ -233,7 +232,9 @@
                         <b> Chọn ảnh</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         
-                        </br></br>
+                        </br> </br>
+                        <p class="error-notification noti-stream" style="width:300px" id = "error-message-stream" ></p>
+                        
                         <label for="showhiddenstreamcontent"> <button class="btn btn-primary">Post</button></label>
                         <a href="stream.php?id=<?php echo $EditClass['id']?>" class="btn btn-warning">Cancel</a>
                         <hr style="width:60%; text-align:center; margin-left:0"></br>

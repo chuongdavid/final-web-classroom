@@ -473,54 +473,41 @@ function validateInputchangePass2() {
 
 //validate input của stream
 
-function hideErrorchangePass2() {
-  let errorField = document.getElementById("error-message-changepass2");
+function hideErrorStream() {
+  let errorField = document.getElementById("error-message-stream");
   errorField.style.display = "none";
-  console.log("Hide error changepass 2");
 }
 
-function displayErrorchangePass2(message) {
-  let errorField = document.getElementById("error-message-changepass2");
+function displayErrorStream(message) {
+  let errorField = document.getElementById("error-message-stream");
   errorField.style.display = "";
   errorField.innerHTML = message;
 }
 window.addEventListener("load", () => {
-  hideErrorchangePass2();
+  hideErrorStream();
 });
 
 
-function validateInputchangePass2() {
+function validateInputannouncement() {
   try {
     let titleField = document.getElementById("stream-title");
-    let textField = document.getElementById("stream-announce");
-    let errorField = document.getElementById("error-message-changepass2");
+    let announceField = document.getElementById("stream-announce");
+    let errorField = document.getElementById("error-message-stream");
 
-    let newpass = newpassField.value;
-    let repass = repassField.value;
+    let title = titleField.value;
+    let announce = announceField.value;
 
-    if (newpass.length === 0) {
-      displayErrorchangePass2(
-        ' <i class="fa fa-times-circle"></i> Please enter your new password'
+    if (title.length === 0) {
+      displayErrorStream(
+        ' <i class="fa fa-times-circle"></i> Please enter your title'
       );
-      newpassField.focus();
+      titleField.focus();
       return false;
-    } else if (newpass.length < 6) {
-      displayErrorchangePass2(
-        ' <i class="fa fa-times-circle"></i> Your new password must be 6 letters '
+    } else if (announce === "") {
+      displayErrorStream(
+        ' <i class="fa fa-times-circle"></i> Please enter your announcement '
       );
-      newpassField.focus();
-      return false;
-    } else if (repass === "") {
-      displayErrorchangePass2(
-        ' <i class="fa fa-times-circle"></i> Please verify your new password '
-      );
-      repassField.focus();
-      return false;
-    } else if (repass !== newpass) {
-      displayErrorchangePass2(
-        '<i class="fa fa-times-circle"></i> Please enter the exact new password'
-      );
-      codeField.focus();
+      announceField.focus();
       return false;
     }
     return true;
