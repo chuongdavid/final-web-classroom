@@ -475,17 +475,4 @@ function delete_class(id) {
   }
 }
 
-function search(text){
-            
-  $(document).ready(function(){
-      
-      if(text.length!=0){
-          $.post("ajax.php", { data: text }, function (data) {
-          $(".class-place").html(data);
-        });
-      }
-      else{
-          $(".class-place").html("");
-      }
-  });
-  }
+
