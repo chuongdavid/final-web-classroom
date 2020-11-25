@@ -81,7 +81,20 @@
                 Content
             </p>
             
+                
+            
             <div id="announce">
+                <div class=" commentcontent">
+                    <div id="hiddenstreamcontent-content">
+                        <i class="far fa-window-maximize"></i> 
+                        
+                        Ten sv
+                        <label for="show-stream-edit-delete"><i class="fa fa-ellipsis-v" id="more-comment"></i></label>
+                        <p id="datecomment"> Nov 25</p>
+                    
+                    </div>      
+                </div></br></br>
+        
                 <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
             </div>
 

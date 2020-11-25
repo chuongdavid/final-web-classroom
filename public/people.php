@@ -1,3 +1,8 @@
+<?php
+    include './connect_db.php';
+    require_once __DIR__. "/../autoload/autoload.php";
+    $student_arr = $db -> fetchAllCondition('student_class, user', "user.id = student_class.id_student AND student_class.id_class ='".$_GET['id']."'");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +12,7 @@
         <title>Classroom</title>
         
         <!--css file-->
-        <link href="css/style.css?v=<?= time();?>" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
 
         <!--js file-->
         <script src="main.js"></script>
@@ -48,13 +53,13 @@
 
                 <!--left nav-->
                 <li class="nav-item ">
-                    <a class="nav-link" href="stream.php?id=<?=$_GET['id']?>">Stream</a>
+                    <a class="nav-link" href="#">Stream</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="classwork.html">Classwork</a>
+                    <a class="nav-link" href="#">Classwork</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="people.php?id=<?=$_GET['id']?>">People</a>
+                    <a class="nav-link" href="#">People</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Grades</a>
@@ -81,26 +86,18 @@
                         <hr style="width:100%; text-align:left; margin-left:0">
                     </tr>
                     <tr>
-                       <i class=" studentlist fas fa-graduation-cap"></i>
+                        <!---->
                     <!--xem danh sach sinh vien-->
-                       <?php
-                            include './connect_db.php';
-                            require_once __DIR__. "/../autoload/autoload.php";
-                            $student_arr = $db -> fetchAllCondition('student_class, user', "user.id = student_class.id_student AND student_class.id_class ='".$_GET['id']."'");
-                        ?>
+                       
 
                         <div id="user-info">
                             <table id = "user-listing">
-                                <tr>
-                                    <td class="text-center">Họ Tên</td>
-                                    <td class="text-right">Xóa</td>
-                                </tr>
                                 <?php
                                     foreach($student_arr as $student){
                                     ?>
-                                    <tr>
-                                        <td class="text-center"><?= $student['fullname']?></td>
-                                        <td class="text-center"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
+                                    <tr class=" border-bottom">
+                                        <td class="text-left"><i class="fas fa-user"></i>   <?= $student['fullname']?></td>
+                                        <td class="text-right pr-2"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
                                     </tr>
                                 <?php } ?>
                             </table>
@@ -123,9 +120,9 @@
                     </br>
                     <div class="btnsform">
                         
-                        <a class="btnform button text-decoration-none" href="./people.php?id=<?=$_GET['id']?>">Invite</a>
+                        <button class="btnform">Invite</button>
                         
-                        <a class="btnform button text-decoration-none" href="./people.php?id=<?=$_GET['id']?>">Cancel</a>
+                        <button class="btnform">Cancel</button>
                     
                     </div>    
                 </form>
