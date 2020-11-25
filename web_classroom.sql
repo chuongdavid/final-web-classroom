@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2020 lúc 06:54 AM
+-- Thời gian đã tạo: Th10 25, 2020 lúc 10:53 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `announcement` (
   `id` varchar(11) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
   `news` varchar(200) DEFAULT NULL,
   `id_class` varchar(11) DEFAULT NULL,
   `created_by_id` int(11) DEFAULT NULL,
@@ -40,27 +41,9 @@ CREATE TABLE `announcement` (
 -- Đang đổ dữ liệu cho bảng `announcement`
 --
 
-INSERT INTO `announcement` (`id`, `news`, `id_class`, `created_by_id`, `created_at`, `updated_at`) VALUES
-('5fbde4218c7', 'something', '5fbdb0b668d', 19, '2020-11-25 04:57:05', NULL),
-('5fbde49b82f', 'adasdas', '5fbdb0b668d', 19, '2020-11-25 04:59:07', NULL),
-('5fbde507835', 'vui vui', '5fbdb0b668d', 19, '2020-11-25 05:00:55', NULL),
-('5fbde544412', 'sadsa', '5fbdb0b668d', 19, '2020-11-25 05:01:56', NULL),
-('5fbde5843fc', 'adasd', '5fbdb0b668d', 19, '2020-11-25 05:03:00', NULL),
-('5fbde5f2941', 'asdasd', '5fbdb0b668d', 19, '2020-11-25 05:04:50', NULL),
-('5fbde6987a5', 'something', '5fbdb0b668d', 19, '2020-11-25 05:07:36', NULL),
-('5fbde9fbe4f', '', '5fbdb0b668d', 19, '2020-11-25 05:22:03', NULL),
-('5fbdeaf057b', '', '5fbdb0b668d', 19, '2020-11-25 05:26:08', NULL),
-('5fbdeb3f8cf', '', '5fbdb0b668d', 19, '2020-11-25 05:27:27', NULL),
-('5fbdeb4aec8', '', '5fbdb0b668d', 19, '2020-11-25 05:27:38', NULL),
-('5fbdeb9c78b', 'Vui vẻ thôi', '5fbdb0b668d', 19, '2020-11-25 05:29:00', NULL),
-('5fbdebf9e34', 'Bài tập lớn 10 %', '5fbdb0b668d', 19, '2020-11-25 05:30:33', NULL),
-('5fbdecbde53', 'Bài tập 1', '5fbdb0b668d', 19, '2020-11-25 05:33:49', NULL),
-('5fbded072f1', 'asdasdasd', '5fbdb0b668d', 19, '2020-11-25 05:35:03', NULL),
-('5fbded545f9', '', '5fbdb0b668d', 19, '2020-11-25 05:36:20', NULL),
-('5fbdee66b03', 'vui ve', '5fbdb0b668d', 19, '2020-11-25 05:40:54', NULL),
-('5fbdeebe8d6', 'vui ve', '5fbdb0b668d', 19, '2020-11-25 05:42:22', NULL),
-('5fbdeec6e7c', 'asdasd', '5fbdb0b668d', 19, '2020-11-25 05:42:30', NULL),
-('5fbdeff941f', 'asdasdasd', '5fbdb0b668d', 19, '2020-11-25 05:47:37', NULL);
+INSERT INTO `announcement` (`id`, `title`, `news`, `id_class`, `created_by_id`, `created_at`, `updated_at`) VALUES
+('5fbe142c5db', 'Few days in Phu Quoc 2019 - Tú Võ', 'Bài tập lớn kì này gồm có :', '5fbdb0c3cab', 19, '2020-11-25 08:22:04', NULL),
+('5fbe16100ee', 'Something with title', 'Học bài nha', '5fbdb0c3cab', 19, '2020-11-25 08:30:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -107,16 +90,9 @@ CREATE TABLE `file_upload_announce` (
 --
 
 INSERT INTO `file_upload_announce` (`id_file`, `id_announce`, `name`) VALUES
-(1, '5fbde5f2941', '5'),
-(2, '5fbde6987a5', 'A'),
-(3, '5fbdeb3f8cf', 'DSC_0007.JPG'),
-(4, '5fbdeb3f8cf', 'DSC_0009.JPG'),
-(5, '5fbdeb4aec8', 'DSC_0007.JPG'),
-(6, '5fbdeb4aec8', 'DSC_0009.JPG'),
-(7, '5fbdeb4aec8', 'DSC_0012.JPG'),
-(8, '5fbdeb9c78b', 'DSC_0239.JPG'),
-(9, '5fbdeb9c78b', 'DSC_0240.JPG'),
-(10, '5fbdeb9c78b', 'DSC_0242.JPG');
+(11, '5fbe142c5db', 'DSC_0005.JPG'),
+(12, '5fbe142c5db', 'DSC_0007.JPG'),
+(13, '5fbe142c5db', 'DSC_0009.JPG');
 
 -- --------------------------------------------------------
 
@@ -147,6 +123,13 @@ CREATE TABLE `student_class` (
   `id_student` int(11) NOT NULL,
   `id_class` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `student_class`
+--
+
+INSERT INTO `student_class` (`id_student`, `id_class`) VALUES
+(23, '5fbdb0c3cab');
 
 -- --------------------------------------------------------
 
@@ -222,7 +205,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `file_upload_announce`
 --
 ALTER TABLE `file_upload_announce`
-  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
