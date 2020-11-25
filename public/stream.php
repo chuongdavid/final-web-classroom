@@ -58,6 +58,9 @@
 
                 <!--left nav-->
                 <li class="nav-item active">
+                    <a class="nav-link" href="index-giaovien.php">Home</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="#">Stream</a>
                 </li>
                 <li class="nav-item">

@@ -8,7 +8,7 @@
       ];
       $data_user = $db -> fetchOne('user',"email = '".$data['email']."'");  
       if($data_user['verified']==0){
-        $_SESSION['error'] = "Your account hasn't verified yet. Please check your email to verified your account";
+        $_SESSION['error'] = "Your account hgit asn't verified yet. Please check your email to verified your account";
       }
       else{
         if (password_verify($data['password'],$data_user['password'])) {
@@ -29,7 +29,6 @@
       }
       
     }
-    
     
     
     
