@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 24, 2020 lúc 04:20 AM
+-- Thời gian đã tạo: Th10 24, 2020 lúc 02:37 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -44,7 +44,11 @@ CREATE TABLE `class` (
 --
 
 INSERT INTO `class` (`id`, `name`, `subject`, `teacher`, `room`, `image`, `created_by_who`, `created_by_id`, `updated_at`) VALUES
-('5fbc751d64f', 'Công nghệ phần mềm 2', 'Công nghệ thông tin', 'Trung Tín', 'B-05010', 'avatar.jpg', 'admin', 21, NULL);
+('5fbc751d64f', 'Công nghệ phần mềm 2', 'Công nghệ thông tin', 'Trung Tín', 'B-05010', 'avatar.jpg', 'admin', 21, NULL),
+('5fbcb1ed9a5', 'Hóa 3', 'Hóa', 'Trung Tín', 'B-0807', 'avatar4.png', 'admin', 21, NULL),
+('5fbcb213d3e', 'Kỹ thuật ô tô', 'Kỹ thuật', 'Mai Văn Mạnh', 'A-0807', 'avatar3.png', 'admin', 21, NULL),
+('5fbcb2efe10', 'Cấu trúc rời rạc', 'Công nghệ thông tin', 'Tấn Tài Lộc', 'A-0506', 'avatar.png', 'admin', 21, NULL),
+('5fbcb32bcbf', 'Toán cao cấp', 'Toán học', 'Phương Đan', 'C-0708', 'avatar.jpg', 'admin', 21, NULL);
 
 -- --------------------------------------------------------
 
@@ -81,9 +85,10 @@ CREATE TABLE `student_class` (
 --
 
 INSERT INTO `student_class` (`id_student`, `id_class`) VALUES
-(21, '5fbba72f297'),
-(23, '5fba94e3abc'),
-(23, '5fbb81872b5');
+(23, '5fbc751d64f'),
+(23, '5fbcb1ed9a5'),
+(24, '5fbcb2efe10'),
+(24, '5fbcb32bcbf');
 
 -- --------------------------------------------------------
 
@@ -113,9 +118,11 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `user_name`, `fullname`, `password`, `date`, `email`, `phone`, `vkey`, `verified`, `role`, `created_at`, `updated_at`) VALUES
 (19, 'chuongdavid', 'Dương Thụy Chương', '$2y$10$ZhOBGrXRMJ9tKCZ233.0/etuDij5WREEFdJ20oSmmwyaCqPOhgjsi', '2020-11-25', 'cameraquangthuy@gmail.com', '0387845823', '', 1, 1, NULL, '2020-11-22 13:32:47'),
 (20, 'Tín Cao', 'Trung Tín', '$2y$10$M.lK9/36B9liPi0CMjrVZe7EIa/iMtU2bZPealv5Ew7ID1I.oRe3m', '2020-11-26', 'chuong@gmail.com', '0387845823', NULL, 1, 1, NULL, '2020-11-21 12:27:59'),
-(21, 'admin', 'admin', '$2y$10$g4scKl0..ydwHnjgroLDTuV2r2Z8DwTQZ6X3jPUAzdbj5tnDXTHE6', '2020-11-17', 'admin@gmail.com', '0387845823', NULL, 1, 2, NULL, '2020-11-21 12:28:01'),
+(21, 'admin', 'admin', '$2y$10$g4scKl0..ydwHnjgroLDTuV2r2Z8DwTQZ6X3jPUAzdbj5tnDXTHE6', '2020-11-17', 'admin@gmail.com', '0387845823', NULL, 1, 2, NULL, '2020-11-24 04:23:06'),
 (22, 'Vi', 'Khang Vĩ', '$2y$10$pzG8jBjfItUKFaal/eyFMOKGPs0vLB9pjVDUSlV/grT7jYwSQq/lu', '2020-11-11', 'khangvi1412@gmail.com', '0387845823', '', 0, 0, NULL, '2020-11-22 03:07:23'),
-(23, 'chuongdavid', 'Dương Thụy Bảo', '$2y$10$vKLitrmehmlwltfhOHk3A.qGMfI24d/n5nL/6WhPehRWT3fVs.btW', '2020-11-10', 'student@gmail.com', '0387845823', '', 1, 0, NULL, '2020-11-23 07:01:27');
+(23, 'chuongdavid', 'Dương Thụy Bảo', '$2y$10$vKLitrmehmlwltfhOHk3A.qGMfI24d/n5nL/6WhPehRWT3fVs.btW', '2020-11-10', 'student@gmail.com', '0387845823', '', 1, 0, NULL, '2020-11-23 07:01:27'),
+(24, 'xuancute', 'Huỳnh Thị Đan Xuân', '$2y$10$eKkTAMVeacRiK.SDLx.FjOTDGqEfQUXVFNpiQp3kL/8rDTltzakLe', '2020-11-09', 'danxuanhuynhthi2202@gmail.com', '0387845823', '', 1, 0, NULL, '2020-11-24 10:59:00'),
+(25, 'teacher', 'Giáo Viên', '$2y$10$LXit4U7soqF2OPJbqgOhOeFi3a8adzClGEteWq4PwQ31BFpwtiK2m', '2020-11-05', 'teacher@gmail.com', '0387845823', NULL, 1, 1, NULL, '2020-11-24 13:37:45');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -147,7 +154,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

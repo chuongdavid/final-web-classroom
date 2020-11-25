@@ -16,7 +16,7 @@
 }
 /* The side navigation menu */
 .sidenav {
-  height: 50%; /* 100% Full-height */
+  height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
@@ -28,8 +28,11 @@
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   font-weight: 700;
+  padding-bottom: 20px;
 }
-
+#mySidenav {
+  height: 100%;
+}
 .editclassroom {
   text-align: center;
   margin-right: 13px;
@@ -462,7 +465,6 @@ label {
   text-align: left;
   margin-left: 25px;
 }
-
 .btnform:hover {
   color: black;
   margin-right: 20px;
@@ -555,7 +557,7 @@ label {
 .tableassignment {
   display: none;
   border: none;
-  width: 250px;
+  width: 300px;
   top: -17%;
   left: 31%;
   transform: translate(-50%, -50%);
@@ -616,9 +618,14 @@ label {
 #showaddannouncement {
   display: none;
 }
+
 #datestream {
-  font-size: 18px;
-  margin-left: 4%;
+  font-size: 14px;
+  margin-left: 42px;
+  margin-top: -10px;
+}
+.fa-window-maximize {
+  margin-right: 10px;
 }
 
 #showaddannouncement:checked ~ .content {
@@ -760,11 +767,11 @@ label {
 /*table nho chon them lop hoc hoac vao lop hoc*/
 
 #showhiddenstreamcontent {
-  display: none;
+  display: block;
 }
 
-.hiddenstreamcontent {
-  display: none;
+.classanounce {
+  box-shadow: 4px 4px 15px 2px rgba(0, 0, 0, 0.2);
 }
 
 .tableshowannouncement {
@@ -784,10 +791,38 @@ label {
 #showhiddenstreamcontent:checked ~ .commute {
   display: none;
 }
+#showhiddenstreamcontent:checked ~ .hiddenstreamcontent {
+  display: block;
+}
 #showhiddenstreamcontent:checked ~ .content {
   filter: blur(30px);
 }
-
+#more {
+  margin-left: 450px;
+}
+/*---------Stream edit delete-------------*/
+#show-stream-edit-delete {
+  display: none;
+}
+.assignment-stream {
+  border: 1px solid rgb(187, 186, 186);
+  border-radius: 15px;
+}
+.assignment-stream:hover {
+  background-color: rgb(180, 177, 177);
+}
+.stream-edit-delete {
+  display: none;
+  top: -20%;
+  left: 71.5%;
+  width: 0px;
+}
+#show-stream-edit-delete:checked ~ .stream-edit-delete {
+  display: block;
+}
+.table-stream {
+  border-radius: 20px;
+}
 /*----------------------------------------------*/
 /*table phan quyen*/
 
@@ -857,13 +892,62 @@ td {
   width: 300px;
 }
 .hiddenstreamcontent {
-  height: auto;
+  display: none;
+  margin-top: 20px;
+  height: 74px;
   width: auto;
+  box-sizing: auto;
+  border: 1px solid rgb(177, 174, 174);
+  border-radius: 15px;
+  vertical-align: middle;
+  font-size: 24px;
+}
+
+#hiddenstreamcontent-content {
+  margin-top: 8px;
+  margin-left: 25px;
+  vertical-align: middle;
+  color: rgb(93, 94, 93);
 }
 #classcomment {
   border-radius: 10px;
-  width: 80%;
+  width: 65%;
   margin-bottom: 30px;
+  margin-left: 20px;
+}
+#tengiaovien {
+  font-size: 28px;
+  margin-left: 8px;
+}
+#tenlophoc {
+  margin-left: 8px;
+  display: inline;
+}
+.anouncementnav {
+  margin-left: 15px;
+}
+.tenlopannounce:hover {
+  text-decoration: underline;
+}
+#tenlopannounce {
+  font-size: larger;
+}
+#tenannounce {
+  font-size: 40px;
+  color: #515252;
+}
+#more-announce {
+  font-size: 24px;
+  margin-left: 400px;
+}
+#dateannounce {
+  margin-top: -20px;
+  margin-left: 66px;
+  color: rgb(153, 152, 152);
+}
+#teachercontent {
+  padding: 30px;
+  margin-left: 40px;
 }
 body,
 html {

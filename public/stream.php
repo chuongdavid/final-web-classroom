@@ -75,11 +75,16 @@
             </ul>
         </nav>
         <input type ="checkbox" id="showaddannouncement">
-        
+        <input type ="checkbox" id="show-stream-edit-delete">
         <div class=" stream container-sm">
             <div class="row head">
                 <div class="banner col-12"> 
-                <b><?php echo $EditClass['teacher'] ?></b></br>
+                <p id="tenlophoc">
+                    <b><?php echo $EditClass['name'] ?></b></br>
+                </p>
+                <p id="tengiaovien">
+                    <?php echo $EditClass['teacher'] ?>
+                </p>
                 <p id="cntt">
                 <?php echo $EditClass['subject'] ?></br>
                     <b>Class code: </b> <?php echo $EditClass['id'] ?>  <i class="far fa-paper-plane"></i>
@@ -100,7 +105,7 @@
                     
                     <div class="banner2 class-anounce col-lg-8">
                         <input type ="checkbox" id="showhiddenstreamcontent">
-                        <div class="banner3" id="commute2">
+                        <div class="banner3 classanounce" id="commute2">
                             <label for ="showaddannouncement"><i class=" fas fa-user-graduate"></i> Share something with your class </label>
                         </div>
                         
@@ -112,16 +117,25 @@
                             </div>
                         </div>
                         
-                        <div class="banner3 hiddenstreamcontent c" id="commute3">
-                            <i class="fa fa-user "></i> <b>Dang Trung Tin</b>
-                            <p id="datestream"> Nov 21</p>
+                        <div class="hiddenstreamcontent" >
+                        
+                            <div id="hiddenstreamcontent-content">
+                                <i class="far fa-window-maximize"></i> 
+                                
+                                Dang Trung Tin <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
+                                <p id="datestream"> Nov 24</p>
+                            
+                            </div> 
 
-                            <div id="teachercontent">
+                            <!--  <div id="teachercontent">
                                 fdsfhklsdflksjfl;sdjl;fsk
+                                
                             </div>
+                            
                             <div id="announce">
-                                <input id="classcomment" type="text" placeholder="Add class comment"> </input> <label for="classcomment" ><i class="far fa-paper-plane"></i></label></br> 
-                            </div>
+                                <input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
+                            </div>  -->
+
                             
                         </div>     
                     </div>
@@ -151,10 +165,15 @@
                 </div> 
             </form>
         </div>
-        
-        
-        
-
-
+        <div class="stream-edit-delete col-lg-4">  
+            <table class="table1 table-stream" >
+                <tr class="assignment-stream">
+                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label> </td> 
+                </tr>
+                <tr class="assignment-stream">
+                    <td> <i class="fas fa-laptop-code"></i><label> Delete </label> </td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>

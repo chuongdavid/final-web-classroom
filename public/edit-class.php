@@ -85,7 +85,7 @@
                             <i class="fa fa-times-circle"></i> 
                         </p>
                         <button class="btn btn-primary">Update</button>
-                        <button class="btn btn-warning">Cancel</button>
+                        <a class="btn btn-warning" href="index-giaovien.php">Cancel</a>
                     </div> 
                 </form>
     </div>  
