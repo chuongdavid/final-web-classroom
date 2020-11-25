@@ -1,3 +1,42 @@
+<?php
+    include './connect_db.php';
+    require_once __DIR__. "/../autoload/autoload.php";
+    $student_arr = $db -> fetchAllCondition('student_class, user', "user.id = student_class.id_student AND student_class.id_class ='".$_GET['id']."'");
+    $class_code = $_GET['id'];
+    $create_class_by = $db -> fetchOne('user',"id = '".$_SESSION['id_user']."'");
+    //invite student
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        if(isset($_POST['email_student'])){
+            $email_student = $_POST['email_student'];
+            $isset_user = $db -> fetchOne('user',"email = '".$email_student."'");
+            if($isset_user > 0){
+                $data = [
+                'id_student'=>$isset_user['id'],
+                'id_class' => $class_code];
+                
+                $check_duplicate = $db -> fetchAllCondition('student_class',"id_student = ".$isset_user['id']." AND id_class = '".$class_code."'"); 
+                if(count($check_duplicate)>0){
+                    $_SESSION['error'] ='This student have already joined this class';
+                }      
+                else{
+                    //get information who created this class
+                    
+                    $checkSent = send_invitation_class($create_class_by['id'],$class_code,$isset_user['id'],$email_student);
+                    if($checkSent){
+                        $_SESSION['success'] ='Your invitation has been sent.';
+                    }
+                    else{
+                        $_SESSION['error'] ='Send invitation fail';
+                    }
+                    
+                }
+            }
+            else{
+                $_SESSION['error'] ='This student does not exist';
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -64,6 +103,20 @@
                 
             </ul>
         </nav>
+        <div class="clearfix" >
+                        <?php if(isset($_SESSION['success'])): ?>
+                            <div class="alert alert-success alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['success']; unset($_SESSION['success']) ?>
+                            </div>
+                        <?php endif ?>
+                        <?php if(isset($_SESSION['error'])): ?>
+                            <div class="alert alert-danger alert-dismissible" role="alert">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <?php echo $_SESSION['error']; unset($_SESSION['error']) ?>
+                            </div>
+                        <?php endif ?>
+        </div>
         <input type ="checkbox" id="showinvite">
         <div class="container-sm">
             <div class=" teacher col-lg-8">
@@ -73,7 +126,7 @@
                         <hr style="width:100%; text-align:left; margin-left:0">
                     </tr>
                     <tr>
-                       <i class="studentlist fas fa-user-graduate"></i> Dang Trung Tin
+                       <i class="studentlist fas fa-user-graduate"></i> <?php echo $create_class_by['fullname'] ?>
                        
                     </tr>   
                     <tr>
@@ -81,17 +134,33 @@
                         <hr style="width:100%; text-align:left; margin-left:0">
                     </tr>
                     <tr>
-                       <i class=" studentlist fas fa-graduation-cap"></i> Dang Trung Tin  <a href="#" id="teacheradd"><i id="buttonstudent" class="fas fa-minus"></i> </a>
+                        <!---->
+                    <!--xem danh sach sinh vien-->
+                       
+
+                        <div id="user-info">
+                            <table id = "user-listing">
+                                <?php
+                                    foreach($student_arr as $student){
+                                    ?>
+                                    <tr class=" border-bottom">
+                                        <td class="text-left"><i class="fas fa-user"></i>   <?= $student['fullname']?></td>
+                                        <td class="text-right pr-2"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                        </div>
+                    <!---->
                     </tr> 
                 </table>   
             </div>
 
             </div> 
             <div class="teacherform col-lg-3">  
-                <form >
+                <form method="POST" >
                     <div class="formtext">
                         <label> <b>Invite</b> </label></br>
-                        <input class="input" type = "text" placeholder="Type a name or email">
+                        <input class="input" name="email_student" type = "text" placeholder="Type a name or email">
                     </div>
                     <hr style="width:60%; text-align:center; margin-left:0">
                     </br>

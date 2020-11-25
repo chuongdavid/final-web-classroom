@@ -174,8 +174,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
             </li>
             <!--only available for admin-->
             <?php if(check_role($data_user['email'])==2){
-                ?> 
-                
+                ?>               
                 <li class="nav-item  ml-2 mr-2">
                 <a class="nav-link" href="#">
                     <label for="showphanquyen"><i class="fa fa-user fa-2x"></i> </label>

@@ -113,7 +113,7 @@
                 <?php if(check_role($_SESSION['email'])==0){
                     ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index-hocsinh.php">Home</a>
+                    <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
                 <?php }
                 #--Home giao vien-->

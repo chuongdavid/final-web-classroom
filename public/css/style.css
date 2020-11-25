@@ -72,13 +72,14 @@ a:link:hover {
 .sidenav a:hover {
   text-decoration: none;
 }
+
 #datecomment{
   margin-top: 0px;
   margin-left: 10px;
   font-size: 12px;
   display: inline;
 }
-#more-comment{
+#more-comment {
   margin-left: 600px;
   padding-right: 20px;
 }
@@ -164,7 +165,6 @@ ul {
   background-color: #76e4cc;
   background-image: linear-gradient(315deg, #7ce6d4, #3dced8 74%);
   color: black;
-  
 }
 .sinhvien-title {
   padding-top: 5px;
@@ -673,7 +673,6 @@ label {
   background-color: #2b2828;
 }
 
-
 .addclass:hover {
   background-color: rgb(7, 106, 119);
 }
@@ -857,7 +856,7 @@ label {
 #showphanquyen {
   display: none;
 }
-#stream-title{
+#stream-title {
   border-radius: 3px;
   border: 2px solid black;
 }
@@ -891,12 +890,8 @@ label {
 }
 /*----------------------------------------------*/
 /*table view sinh vien*/
-table,
-th,
-td {
+table {
   width: 100%;
-  border: 1px solid black;
-  table-layout: fixed;
 }
 /*----------------------------------------------*/
 /*delete-user css*/
@@ -933,9 +928,8 @@ td {
   font-size: 24px;
   overflow: auto;
   display: inline-table;
-  
 }
-.commentcontent{
+.commentcontent {
   display: block;
   margin-top: 20px;
   height: 74px;
@@ -998,24 +992,23 @@ td {
   margin-left: 40px;
   max-width: 650px;
   word-wrap: break-word;
-   
 }
 /*----------------Show announce edit delete------------------*/
-#show-announce-edit-delete{
+#show-announce-edit-delete {
   display: none;
 }
 
 .table-announce-edit-delete {
   display: none;
   width: 100px;
-  margin-top: -390px;
-  margin-left: 910px;
+  margin-top: -420px;
+  margin-left: 940px;
 }
 
 #show-announce-edit-delete:checked ~ .table-announce-edit-delete {
   display: block;
 }
-#noti-stream{
+#noti-stream {
   width: 300px;
 }
 .upload-announce{

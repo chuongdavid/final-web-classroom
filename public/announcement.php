@@ -95,8 +95,6 @@
                                 <label for="show-stream-edit-delete"><i class="fa fa-ellipsis-v" id="more-comment"></i></label>
                                 
                             </div>      
-                            
-                            
                         </div>
                     </div></br></br>
                     <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
@@ -127,10 +125,7 @@
                 </tr>
             </table>
         </div>
-        
-        
-      
-        
+
         
     </body>
 </html>

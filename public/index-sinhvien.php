@@ -1,6 +1,13 @@
 <?php 
 
 require_once __DIR__. "/../autoload/autoload.php";
+
+//check login
+if(!isset($_SESSION['email'])){
+    header("Location: login.php");
+}
+//---------------------------//
+
 $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
 $id_student = $data_user['id'];
 //get information class student did join
@@ -36,11 +43,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             else{
                 //get information who created this class
                 $create_class_by = $db -> fetchOne('user',"id = '".$code['created_by_id']."'");
-                if(send_join_request($id_student,$class_code,$create_class_by['email'])){
+                $checkSent = send_join_request($id_student,$class_code,$create_class_by['email']);
+                if($checkSent){
                     $_SESSION['success'] ='Your request has been sent. Please wait for your teacher to accept your request';
                 }
                 else{
-                    $_SESSION['error'] ='Something wrong';
+                    $_SESSION['error'] ='Send invitation fail';
                 }
                 
             }
@@ -51,6 +59,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -104,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
                 <!--left nav-->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">To-do</a>
@@ -114,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 </li>
 
                 <!--right nav-->
-                <li class="nav-item col-md-4 ml-auto mr-0"> 
+                <li class="nav-item col-md-2 ml-auto mr-0"> 
                     <a class="nav-link" href="#">
                         <label for="search"><i class="fa fa-search fa-2x"></i> </label> 
                         <input type="text" id="search" class="search">
@@ -159,45 +168,45 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <input type ="checkbox" id="showaddjoinclassroomsinhvien">
         <!--classes-->
         <div class=" index container">
-            <div class="class-place">
-                <div class="row">
-                    <?php foreach ($class as $item):?>
-                        <!-- each class -->
-                        <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
-                            <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="cell">
+        <div class="class-place">
+            <div class="row">
+                <?php foreach ($class as $item):?>
+                    <!-- each class -->
+                    <a href="stream.php?id=<?php echo $item['id']?>">
+                        <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="cell">
 
-                                    <div class="class-inf">
-                                        <div>
-                                            <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
+                                <div class="class-inf">
+                                    <div>
+                                        <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
+                                    </div>
+                                    <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
+                                    <a></a>
+                                </div>
+
+                                <div class="class-main p-2">
+                                    <p class="title"> <?php echo $item['subject'] ?></p>
+                                </div>
+
+                                <div class="class-footer ">
+                                    <span class="circle">
+                                        <div class="work-icon">
+                                            <i class="fa fa-user-o " aria-hidden="true"></i>
                                         </div>
-                                        <div class="sinhvien-title text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
-                                        <a></a>
-                                    </div>
+                                    </span>
 
-                                    <div class="class-main p-2">
-                                        <p class="title"> <?php echo $item['subject'] ?></p>
-                                    </div>
-
-                                    <div class="class-footer ">
-                                        <span class="circle">
-                                            <div class="work-icon">
-                                                <i class="fa fa-user-o " aria-hidden="true"></i>
-                                            </div>
-                                        </span>
-
-                                        <span class="circle">
-                                            <div class="folder-icon">
-                                                <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                            </div>
-                                        </span>
-                                    </div>
+                                    <span class="circle">
+                                        <div class="folder-icon">
+                                            <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                        </div>
+                                    </span>
                                 </div>
                             </div>
-                        </a>
-                    <?php endforeach ?>
-                    <!-- end each class -->
-                </div>
+                        </div>
+                    </a>
+                <?php endforeach ?>
+                <!-- end each class -->
+            </div>
             </div> 
                 <!-- div class class-place -->
         </div>
