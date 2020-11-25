@@ -154,6 +154,7 @@ ul {
   border-top-right-radius: 5px;
   background-color: #76e4cc;
   background-image: linear-gradient(315deg, #7ce6d4, #3dced8 74%);
+  color: black;
 }
 .sinhvien-title {
   padding-bottom: 10px;
@@ -859,6 +860,32 @@ label {
   top: 10%;
 }
 /*----------------------------------------------*/
+/*table view sinh vien*/
+table,
+th,
+td {
+  width: 100%;
+  border: 1px solid black;
+  table-layout: fixed;
+}
+/*----------------------------------------------*/
+/*delete-user css*/
+.box-content {
+  margin: 0 auto;
+  width: 800px;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 20px;
+}
+#create_user form {
+  width: 200px;
+  margin: 40px auto;
+}
+#create_user form input {
+  margin: 5px 0;
+}
+/*----------------------------------------------*/
+
 .class-inform-textarea {
   border-radius: 5px;
   border: 2px solid black;
@@ -922,6 +949,11 @@ label {
 #teachercontent {
   padding: 30px;
   margin-left: 40px;
+  max-width: 200px;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 body,
 html {

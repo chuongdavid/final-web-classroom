@@ -110,7 +110,7 @@
                     <a class="nav-link" href="#">Classwork</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">People</a>
+                    <a class="nav-link" href="people.php?id=<?php echo $EditClass['id'] ?>">People</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Grades</a>
