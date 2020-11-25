@@ -2,10 +2,6 @@
 <?php 
 
 require_once __DIR__. "/../autoload/autoload.php";
-<<<<<<< HEAD
-=======
-//check login
->>>>>>> cb121c7efe2d416eca17c9cdd7f0e0a61156ce8b
 if(!isset($_SESSION['email'])){
     header("Location: login.php");
 }
@@ -73,7 +69,6 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
     }
     
 }
-var_dump($_SESSION);
 ?>
 
 

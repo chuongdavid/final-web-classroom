@@ -6,6 +6,8 @@
         $_SESSION['error'] = "Url does not exist";
         header('Location:index-giaovien.php');
     }
+    $data_user_created = $db -> fetchOne('user',"id = '".$detail_announcement['created_by_id']."'");
+    $uploaded_files =$db -> fetchAllCondition('file_upload_announce',"id_announce = '".$detail_announcement['id']."'");
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,12 +76,16 @@
         
         <div class=" anouncement container-sm col-lg-8">
             </br>
-            <p id="tenannounce"> <i class="far fa-window-maximize"></i> Dang Trung Tin  <label for="show-announce-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label></p>
-            <p id="dateannounce"> Mai Văn Mạnh . Nov 24</p>
+            <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  <label for="show-announce-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label></p>
+            <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
             <hr style="width:80%; text-align:center; margin-left:0"> 
             <p id="teachercontent">
-                Content
-            </p>
+            <?php echo $detail_announcement['news'] ?>
+            <p>Uploaded files</p>
+            <?php foreach ($uploaded_files as $item):?>
+                <a href="#"><?php echo $item['name'] ?></p>
+            <?php endforeach ?>
+
             
                 
             
