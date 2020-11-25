@@ -1,17 +1,12 @@
 
 <?php 
 
-<<<<<<< HEAD
-require_once __DIR__. "/../autoload/autoload.php";//admin@gmail.com
+require_once __DIR__. "/../autoload/autoload.php";
 //check login
 if(!isset($_SESSION['email'])){
     header("Location: login.php");
 }
 
-//"SELECT * FROM {$table} WHERE email = '". ."'";
-=======
-require_once __DIR__. "/../autoload/autoload.php";
->>>>>>> 3236cee7cd50cda7065a2f87723065aec8d8b61e
 $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
 //load class with specific role
 if(check_role($_SESSION['email'])==2){
@@ -75,6 +70,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
     }
     
 }
+var_dump($_SESSION);
 ?>
 
 
