@@ -82,10 +82,8 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
     
     <!--css file-->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-
     <!--js file-->
-    <script src="main.js"></script>
-
+<script src="main.js"></script>
     <!--Bootstrap 4-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -218,7 +216,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
                     </div>
                         <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
                         <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen text-dark"></i></a>
-                        <a href="delete-class.php?id=<?php echo $item['id']?>" onclick="confirmDelete()"><i class="editclassroom far fa-trash-alt text-dark"></i></a>
+                        <a href="delete-class.php?id=<?php echo $item['id']?>" onclick="return confirm('Are you sure to delete this class !'); "><i class="editclassroom far fa-trash-alt text-dark"></i></a>
                     </div>
 
                     <div class="class-main p-2">

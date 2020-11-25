@@ -469,6 +469,8 @@ function validateInputchangePass2() {
     return false;
   }
 }
-function confirmDelete() {
-  var r = confirm("Are you sure to delete this class?");
+function delete_class(id) {
+  if (confirm("Sure To Remove This Class ?")) {
+    window.location.href = "delete-class.php?id=" + id;
+  }
 }
