@@ -10,7 +10,7 @@
       if (password_verify($data['password'],$data_user['password'])) {
           if(check_role($data['email'])==0){
             $_SESSION['email'] = $data_user['email'];
-            header('Location:index.php');
+            header('Location:index-sinhvien.php');
               
           }
           else{
@@ -100,7 +100,7 @@
             Remember me </label
           ><br />
           <button class="btn-login">Sign in</button><br />
-          <button class="btn-login">Create an account</button><br />
+          <button href="signUp.php" class="btn-login">Create an account</button><br />
           <a href="forget_password.php" dodgerblue>Forgot your password?</a>
         </div>
       </form>

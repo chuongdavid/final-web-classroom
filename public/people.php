@@ -7,7 +7,7 @@
         <title>Classroom</title>
         
         <!--css file-->
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css?v=<?= time();?>" rel="stylesheet" type="text/css" />
 
         <!--js file-->
         <script src="main.js"></script>
@@ -48,13 +48,13 @@
 
                 <!--left nav-->
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Stream</a>
+                    <a class="nav-link" href="stream.php?id=<?=$_GET['id']?>">Stream</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Classwork</a>
+                    <a class="nav-link" href="classwork.html">Classwork</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">People</a>
+                    <a class="nav-link" href="people.php?id=<?=$_GET['id']?>">People</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Grades</a>
@@ -104,7 +104,7 @@
                                         <td class="text-center"><?= $student['id_student'] ?></td>
                                         <td class="text-center"><?= $student['fullname']?></td>
                                         <td class="text-center"><?= ""?></td>  
-                                        <td class="text-center"><a href="./delete_user.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
+                                        <td class="text-center"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
                                     </tr>
                                 <?php } ?>
                             </table>
@@ -121,15 +121,15 @@
                         <label> <b>Invite</b> </label></br>
                         <input class="input" type = "text" placeholder="Type a name or email">
                     </div>
-                    <hr style="width:90%; text-align:left; margin-left:10">
+                    <hr style="width:60%; text-align:center; margin-left:0">
                     </br>
                     </br>
                     </br>
                     <div class="btnsform">
                         
-                        <button class="btnform">Invite</button>
+                        <a class="btnform button text-decoration-none" href="./people.php?id=<?=$_GET['id']?>">Invite</a>
                         
-                        <button class="btnform">Cancel</button>
+                        <a class="btnform button text-decoration-none" href="./people.php?id=<?=$_GET['id']?>">Cancel</a>
                     
                     </div>    
                 </form>

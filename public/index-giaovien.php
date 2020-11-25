@@ -232,7 +232,7 @@
             <form method="post" action="#" onsubmit= "return validateInputaddClass()" enctype="multipart/form-data" >
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
-                    <hr style="width:90%; text-align:left; margin-left:10"></br>
+                    <hr style="width:60%; text-align:center; margin-left:0"></br>
                     <div class="class-info">
                         <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)" name="class_name"></br>
                         <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject" name="class_subject"></br>
@@ -248,7 +248,7 @@
                     </br>
                     
                     <button class="btn btn-primary">Create</button>
-                    <button class="btn btn-warning">Cancel</button>
+                    <button class="btn btn-warning" type="reset">Reset</button>
                     
                 
                 </div> 
@@ -259,7 +259,7 @@
             <form method="post" action="#" onsubmit= "return validateInputphanquyen()">
                 <div class="formcreate">
                     <label> <p id="assignmenclasswork"><b>Decentralization</b> </p></label>
-                    <hr style="width:90%; text-align:left; margin-left:10"></br>
+                    <hr style="width:60%; text-align:center; margin-left:0"></br>
                     <input type="text" class="form-control col-md-4 mb-2" 
                     placeholder="Enter email to give permission" id="email-phanquyen" name="email_permission">
                     <div class="form-group row">
@@ -278,12 +278,12 @@
                         <i class="fa fa-times-circle"></i> 
                     </p>
                     <button class="btn btn-success">Update</button>
-                    <button class="btn btn-warning">Cancel</button>
+                    <button class="btn btn-warning" type="reset">Reset</button>
                 </div> 
             </form>
         </div>
 
-                <hr style="width:90%; text-align:left; margin-left:10">
+                <hr style="width:60%; text-align:center; margin-left:0">
         </div>
     </body>
 </html>

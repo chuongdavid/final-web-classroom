@@ -152,7 +152,9 @@ ul {
   background-color: #76e4cc;
   background-image: linear-gradient(315deg, #7ce6d4, #3dced8 74%);
 }
-
+.sinhvien-title {
+  padding-bottom: 10px;
+}
 .class-title {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -460,6 +462,7 @@ label {
   text-align: left;
   margin-left: 25px;
 }
+
 .btnform:hover {
   color: black;
   margin-right: 20px;
@@ -513,7 +516,7 @@ label {
   height: auto;
   width: auto;
   border-radius: 10px;
-  top: -20%;
+  top: -37%;
   left: 0%;
   background-color: white;
   font-size: x-large;
@@ -553,8 +556,8 @@ label {
   display: none;
   border: none;
   width: 250px;
-  top: -13%;
-  left: 35%;
+  top: -17%;
+  left: 31%;
   transform: translate(-50%, -50%);
 }
 
@@ -564,7 +567,7 @@ label {
   width: 150px;
 }
 #search {
-  background-image: linear-gradient(315deg, #75f395, #9aec8a 74%);
+  background-image: linear-gradient(315deg, #7dee9a, #b4f0a8 74%);
   width: 70%;
   border-color: #0fecbc;
   outline: none;
@@ -709,6 +712,18 @@ label {
   border-bottom-left-radius: 15px;
 }
 
+.table-add-join-class-sinhvien {
+  display: none;
+  border: none;
+  width: 80%;
+  height: 80%;
+  top: -8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-bottom-left-radius: 15px;
+}
+
 .editclassroom {
   margin-bottom: 13px;
   margin-top: 8px;
@@ -717,6 +732,9 @@ label {
 .avatar {
   margin-right: 8px;
 }
+.space {
+  padding-bottom: 10px;
+}
 .class-title {
   margin-bottom: 20px;
 }
@@ -724,7 +742,18 @@ label {
 #showaddjoinclassroom:checked ~ .table-add-join-class {
   display: block;
 }
+#showaddjoinclassroomsinhvien {
+  display: none;
+}
+
+#showaddjoinclassroomsinhvien:checked ~ .table-add-join-class-sinhvien {
+  display: block;
+}
+
 #showaddjoinclassroom:checked ~ .index {
+  filter: blur(30px);
+}
+#showaddjoinclassroomsinhvien:checked ~ .index {
   filter: blur(30px);
 }
 /*----------------------------------------------*/
@@ -795,29 +824,13 @@ label {
   top: 10%;
 }
 /*----------------------------------------------*/
-/*viewList*/
-/*table*/
+/*table view sinh vien*/
 table,
 th,
 td {
+  width: 100%;
   border: 1px solid black;
-}
-#user-info {
-  border: 1px solid #ccc;
-  width: 700px;
-  margin: 0 auto;
-}
-#user-info table {
-  margin: 10px auto 0 auto;
-  text-align: center;
-}
-#user-info h1 {
-  text-align: center;
-}
-
-/*user-listing*/
-#user-listing {
-  width: 700px;
+  table-layout: fixed;
 }
 /*----------------------------------------------*/
 /*delete-user css*/
@@ -828,7 +841,21 @@ td {
   text-align: center;
   padding: 20px;
 }
+#create_user form {
+  width: 200px;
+  margin: 40px auto;
+}
+#create_user form input {
+  margin: 5px 0;
+}
 /*----------------------------------------------*/
+
+.class-inform-textarea {
+  border-radius: 5px;
+  border: 2px solid black;
+  height: 80px;
+  width: 300px;
+}
 .hiddenstreamcontent {
   height: auto;
   width: auto;
