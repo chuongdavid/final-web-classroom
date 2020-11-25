@@ -14,11 +14,13 @@
         if (password_verify($data['password'],$data_user['password'])) {
           if(check_role($data['email'])==0){
             $_SESSION['email'] = $data_user['email'];
+            $_SESSION['id_user'] = $data_user['id'];
             header('Location:index-sinhvien.php');
               
           }
           else{
             $_SESSION['email'] = $data_user['email'];
+            $_SESSION['id_user'] = $data_user['id'];
             header('Location:index-giaovien.php');
           }
 

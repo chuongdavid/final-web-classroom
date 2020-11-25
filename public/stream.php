@@ -1,12 +1,58 @@
 <?php 
 
     require_once __DIR__. "/../autoload/autoload.php";
+    $error =[];
     $id = $_GET['id'];
     $EditClass = $db -> fetchOne('class',"id = '".$id."'");
     if(empty($EditClass)){
         $_SESSION['error'] = "Class does not exist";
         header('Location:index-giaovien.php');
     }
+    //exist class
+        if(isset($_POST['news'])){
+            $id_announcement = uniqid(); 
+            $data_announcement = ['id' => $id_announcement,
+                    'news'=>$_POST['news'],
+                    'id_class'=>$EditClass['id'],
+                    'created_by_id'=> $_SESSION['id_user']
+            ];
+            if(isset($_FILES['file'])){
+                $fileCount = count($_FILES['file']['name']);
+                for($i=0;$i<$fileCount;$i++){
+                    $file_name = $_FILES['file']['name'][$i];
+                    $file_tmp = $_FILES['file']['tmp_name'][$i];
+                    $file_type = $_FILES['file']['type'][$i];
+                    $file_error = $_FILES['file']['error'][$i];
+                    if($file_error == 0){
+                        $part = ROOT ."announcement/";
+                        $data_file_up =['id_announce' => $id_announcement,
+                                        'name' => $file_name
+                    ];
+                        move_uploaded_file($file_tmp,$part.$file_name);
+                        $id_insert = $db -> insert("file_upload_announce",$data_file_up);
+                    }
+                    else{
+                        $numberError = "error file number:".$i;
+                        $error = [ $numberError => $i ];
+                    }
+                }
+                if((!empty($error))){
+                    $_SESSION['error'] = "Error occured when uploading files";
+                }
+                else{
+                    $_SESSION['success']="Upload announcement successfully";
+                }
+            }
+            $insert_announce = $db -> insert("announcement",$data_announcement);
+            if(count($insert_announce>0)){
+                $_SESSION['success'] = "Upload announcemnet successfully";
+            }
+            else{
+                $_SESSION['error'] = "Upload annoucemnet fail";
+            }
+            
+        }
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -76,6 +122,20 @@
         </nav>
         <input type ="checkbox" id="showaddannouncement">
         <input type ="checkbox" id="show-stream-edit-delete">
+        <div class="clearfix" >
+                    <?php if(isset($_SESSION['success'])): ?>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $_SESSION['success']; unset($_SESSION['success']) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if(isset($_SESSION['error'])): ?>
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $_SESSION['error']; unset($_SESSION['error']) ?>
+                        </div>
+                    <?php endif ?>
+        </div>
         <div class=" stream container-sm">
             <div class="row head">
                 <div class="banner col-12"> 
@@ -143,23 +203,18 @@
             </div>
         </div>
         <div class="tableshowannouncement col-12">  
-            <form enctype="multipart/form-data" >
+            <form method="POST" enctype="multipart/form-data" >
                 <div class="formcode">
                     <div class="form-inf">
                         <label> <p id="assignmenclasswork"><b>Share with your class</b> </p></label>
                         <hr style="width:60%; text-align:center; margin-left:0">
-                        <h4> For</h4>
-                        <select id="announce-select" name="carlist" form="carform">
-                            <option value="volvo">All student</option>
-                            <option value="saab">Trung Tin</option>
-                        </select></br></br>
-                        <textarea class="class-inform-textarea" placeholder="Type here"></textarea></br></br>
+                        <textarea name="news" class="class-inform-textarea" placeholder="Type here"></textarea></br></br>
                         <b> Chọn ảnh</b></br>
-                        <input type="file" id="fileanh" >
+                        <input type="file" id="fileanh" name="file[]" multiple  >
                         
                         </br></br>
-                        <label for="showhiddenstreamcontent">  <button class="btnform">Post</button></label>
-                        <button class="btnform" type="reset">Reset</button>
+                        <label for="showhiddenstreamcontent"> <button class="btn btn-primary">Post</button></label>
+                        <a href="stream.php?id=<?php echo $EditClass['id']?>" class="btn btn-warning">Cancel</a>
                         <hr style="width:60%; text-align:center; margin-left:0"></br>
                     </div>    
                 </div> 
