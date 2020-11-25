@@ -1,5 +1,6 @@
 <?php 
     require_once __DIR__. "/../autoload/autoload.php";
+<<<<<<< HEAD
 
     //check login
     if(!isset($_SESSION['email'])){
@@ -7,12 +8,65 @@
     }
     //---------------------------//
     
+=======
+    $error =[];
+>>>>>>> 3236cee7cd50cda7065a2f87723065aec8d8b61e
     $id = $_GET['id'];
     $EditClass = $db -> fetchOne('class',"id = '".$id."'");
     if(empty($EditClass)){
         $_SESSION['error'] = "Class does not exist";
         header('Location:index-giaovien.php');
     }
+    //if exist class do below
+        //load announcement
+        $load_announcement = $db -> fetchAllCondition('announcement',"id_class = '".$id."'");
+
+        //create announcement
+        if(isset($_POST['news']) && isset($_POST['title'])){
+            $id_announcement = uniqid(); 
+            $data_announcement = ['id' => $id_announcement,
+                    'news'=>$_POST['news'],
+                    'id_class'=>$EditClass['id'],
+                    'created_by_id'=> $_SESSION['id_user'],
+                    'title' => $_POST['title']
+            ];
+            if(isset($_FILES['file'])){
+                $fileCount = count($_FILES['file']['name']);
+                for($i=0;$i<$fileCount;$i++){
+                    $file_name = $_FILES['file']['name'][$i];
+                    $file_tmp = $_FILES['file']['tmp_name'][$i];
+                    $file_type = $_FILES['file']['type'][$i];
+                    $file_error = $_FILES['file']['error'][$i];
+                    if($file_error == 0){
+                        $part = ROOT ."announcement/";
+                        $data_file_up =['id_announce' => $id_announcement,
+                                        'name' => $file_name
+                    ];
+                        move_uploaded_file($file_tmp,$part.$file_name);
+                        $id_insert = $db -> insert("file_upload_announce",$data_file_up);
+                    }
+                    else{
+                        $numberError = "error file number:".$i;
+                        $error = [ $numberError => $i ];
+                    }
+                }
+                if((!empty($error))){
+                    $_SESSION['error'] = "Error occured when uploading files or you didn't choose any file";
+                }
+                else{
+                    $_SESSION['success']="Upload announcement successfully";
+                }
+            }
+            $insert_announce = $db -> insert("announcement",$data_announcement);
+            if(count($insert_announce>0)){
+                $_SESSION['success'] = "Upload announcemnet successfully";
+            }
+            else{
+                $_SESSION['error'] = "Upload annoucemnet fail";
+            }
+            
+        }
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -96,6 +150,20 @@
         </nav>
         <input type ="checkbox" id="showaddannouncement">
         <input type ="checkbox" id="show-stream-edit-delete">
+        <div class="clearfix" >
+                    <?php if(isset($_SESSION['success'])): ?>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $_SESSION['success']; unset($_SESSION['success']) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if(isset($_SESSION['error'])): ?>
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $_SESSION['error']; unset($_SESSION['error']) ?>
+                        </div>
+                    <?php endif ?>
+        </div>
         <div class=" stream container-sm">
             <div class="row head">
                 <div class="banner col-12"> 
@@ -124,11 +192,25 @@
                     </div>
                     
                     <div class="banner2 class-anounce col-lg-8">
-                        <input type ="checkbox" id="showhiddenstreamcontent">
+                        <input type ="checkbox" id="showhiddenstreamcontent"/>
                         <div class="banner3 classanounce" id="commute2">
                             <label for ="showaddannouncement"><i class=" fas fa-user-graduate"></i> Share something with your class </label>
                         </div>
+                        <?php foreach ($load_announcement as $item):?>
+                        <a href="announcement.php?id=<?php echo $item['id']?>">
+                        <div class="hiddenstreamcontent" >
                         
+                            <div id="hiddenstreamcontent-content">
+                                <i class="far fa-window-maximize"></i> 
+                                
+                                <?php echo $item['title'] ?> <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
+                                <p id="datestream"> <?php echo $item['created_at'] ?> </p>
+                            
+                            </div>      
+                        </div> 
+                        </a>
+                        <?php endforeach?>
+                        <?php if(count($load_announcement)==0) :?>
                         <div class="banner3 commute" id="commute3">
                             <b>Communicate with your class here</b></br>
                             <div id="announce">
@@ -136,59 +218,39 @@
                                 <i class="far fa-comment"> </i> Respond to student posts
                             </div>
                         </div>
+                        <?php endif ?>
                         
-                        <div class="hiddenstreamcontent" >
-                        
-                            <div id="hiddenstreamcontent-content">
-                                <i class="far fa-window-maximize"></i> 
-                                
-                                Dang Trung Tin <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
-                                <p id="datestream"> Nov 24</p>
                             
-                            </div> 
-
-                            <!--  <div id="teachercontent">
-                                fdsfhklsdflksjfl;sdjl;fsk
-                                
-                            </div>
-                            
-                            <div id="announce">
-                                <input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
-                            </div>  -->
-
-                            
-                        </div>     
                     </div>
                 </div>
             </div>
         </div>
         <div class="tableshowannouncement col-12">  
-            <form enctype="multipart/form-data" >
+            <form method="post" action="#" onsubmit= "return validateInputannouncement()" enctype="multipart/form-data" >
                 <div class="formcode">
                     <div class="form-inf">
                         <label> <p id="assignmenclasswork"><b>Share with your class</b> </p></label>
                         <hr style="width:60%; text-align:center; margin-left:0">
-                        <h4> For</h4>
-                        <select id="announce-select" name="carlist" form="carform">
-                            <option value="volvo">All student</option>
-                            <option value="saab">Trung Tin</option>
-                        </select></br></br>
-                        <textarea class="class-inform-textarea" placeholder="Type here"></textarea></br></br>
+                        
+                        <h4>Title</h4>
+                        <input id="stream-title" type="text" placeholder="Title"> </br></br>
+                        <h6>Nội dung</h6>
+                        <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"></textarea></br></br>
                         <b> Chọn ảnh</b></br>
-                        <input type="file" id="fileanh" >
+                        <input type="file" id="fileanh" name="file[]" multiple  >
                         
                         </br></br>
-                        <label for="showhiddenstreamcontent">  <button class="btnform">Post</button></label>
-                        <button class="btnform" type="reset">Reset</button>
+                        <label for="showhiddenstreamcontent"> <button class="btn btn-primary">Post</button></label>
+                        <a href="stream.php?id=<?php echo $EditClass['id']?>" class="btn btn-warning">Cancel</a>
                         <hr style="width:60%; text-align:center; margin-left:0"></br>
                     </div>    
                 </div> 
             </form>
         </div>
-        <div class="stream-edit-delete col-lg-4">  
+        <div class="stream-edit-delete ">  
             <table class="table1 table-stream" >
                 <tr class="assignment-stream">
-                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label> </td> 
+                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label></td> 
                 </tr>
                 <tr class="assignment-stream">
                     <td> <i class="fas fa-laptop-code"></i><label> Delete </label> </td>

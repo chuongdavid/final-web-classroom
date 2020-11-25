@@ -1,6 +1,7 @@
 
 <?php 
 
+<<<<<<< HEAD
 require_once __DIR__. "/../autoload/autoload.php";//admin@gmail.com
 //check login
 if(!isset($_SESSION['email'])){
@@ -8,9 +9,10 @@ if(!isset($_SESSION['email'])){
 }
 
 //"SELECT * FROM {$table} WHERE email = '". ."'";
+=======
+require_once __DIR__. "/../autoload/autoload.php";
+>>>>>>> 3236cee7cd50cda7065a2f87723065aec8d8b61e
 $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
-
-
 //load class with specific role
 if(check_role($_SESSION['email'])==2){
     $class = $db ->fetchAll('class');
@@ -86,8 +88,10 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
     
     <!--css file-->
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+
     <!--js file-->
-<script src="main.js"></script>
+    <script src="main.js"></script>
+
     <!--Bootstrap 4-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -229,45 +233,45 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
             <div class="row class-container">
                 <?php foreach ($class as $item):?>
                 <!-- each class -->
-                <a href="stream.php?id=<?php echo $item['id']?>">
-                    <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
-                        <div class="cell">
+                <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
+                <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                    <div class="cell">
 
-                            <div class="class-inf">
-                                <div>
-                                    <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
+                        <div class="class-inf">
+                        <div>
+                            <h1 class="class-title text-left ml-3 mb-1"> <?php echo $item['name'] ?> </h1>
+                        </div>
+                            <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
+                            <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen text-dark"></i></a>
+                            <a href="delete-class.php?id=<?php echo $item['id']?>" onclick="return confirm('Are you sure to delete this class!');"><i class="editclassroom far fa-trash-alt text-dark"></i></a>
+                        </div>
+
+                        <div class="class-main p-2">
+                            <p class="title"> <?php echo $item['subject'] ?></p>
+                        </div>
+
+                        <div class="class-footer ">
+                            <span class="circle">
+                                <div class="work-icon">
+                                    <i class="fa fa-user-o " aria-hidden="true"></i>
                                 </div>
-                                    <div class="text-left ml-3 mt-0"><img src="<?php echo base_url() ?>/public/uploads/class/<?php echo $item['image'] ?>" class="avatar" style="width:13%; border-radius: 50%"> <?php $item['teacher'] ?><?php echo $item['teacher'] ?></div>
-                                    <a href="edit-class.php?id=<?php echo $item['id']?>"><i class="editclassroom fas fa-pen text-dark"></i></a>
-                                    <a href="delete-class.php?id=<?php echo $item['id']?>" onclick="return confirm('Are you sure to delete this class !'); "><i class="editclassroom far fa-trash-alt text-dark"></i></a>
-                            </div>
+                            </span>
 
-                            <div class="class-main p-2">
-                                <p class="title"> <?php echo $item['subject'] ?></p>
-                            </div>
-
-                            <div class="class-footer ">
-                                <span class="circle">
-                                    <div class="work-icon">
-                                        <i class="fa fa-user-o " aria-hidden="true"></i>
-                                    </div>
-                                </span>
-
-                                <span class="circle">
-                                    <div class="folder-icon">
-                                        <i class="fa fa-folder-o" aria-hidden="true"></i>
-                                    </div>
-                                </span>
-                            </div>
+                            <span class="circle">
+                                <div class="folder-icon">
+                                    <i class="fa fa-folder-o" aria-hidden="true"></i>
+                                </div>
+                            </span>
                         </div>
                     </div>
+                </div>
                 </a>
                 <?php endforeach ?>
 
                 <!-- end each class -->
+                
             </div>
-        </div>
-        
+        </div> 
             <!-- div class class-place -->
     </div>
 
@@ -293,7 +297,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
                 </br>
                 
                 <button class="btn btn-primary">Create</button>
-                <button class="btn btn-warning" type="reset">Reset</button>
+                <a class="btn btn-warning" href="index-giaovien.php">Cancel</a>
                 
             
             </div> 

@@ -469,8 +469,64 @@ function validateInputchangePass2() {
     return false;
   }
 }
-function delete_class(id) {
-  if (confirm("Sure To Remove This Class ?")) {
-    window.location.href = "delete-class.php?id=" + id;
+
+
+//validate input của stream
+
+function hideErrorchangePass2() {
+  let errorField = document.getElementById("error-message-changepass2");
+  errorField.style.display = "none";
+  console.log("Hide error changepass 2");
+}
+
+function displayErrorchangePass2(message) {
+  let errorField = document.getElementById("error-message-changepass2");
+  errorField.style.display = "";
+  errorField.innerHTML = message;
+}
+window.addEventListener("load", () => {
+  hideErrorchangePass2();
+});
+
+
+function validateInputchangePass2() {
+  try {
+    let titleField = document.getElementById("stream-title");
+    let textField = document.getElementById("stream-announce");
+    let errorField = document.getElementById("error-message-changepass2");
+
+    let newpass = newpassField.value;
+    let repass = repassField.value;
+
+    if (newpass.length === 0) {
+      displayErrorchangePass2(
+        ' <i class="fa fa-times-circle"></i> Please enter your new password'
+      );
+      newpassField.focus();
+      return false;
+    } else if (newpass.length < 6) {
+      displayErrorchangePass2(
+        ' <i class="fa fa-times-circle"></i> Your new password must be 6 letters '
+      );
+      newpassField.focus();
+      return false;
+    } else if (repass === "") {
+      displayErrorchangePass2(
+        ' <i class="fa fa-times-circle"></i> Please verify your new password '
+      );
+      repassField.focus();
+      return false;
+    } else if (repass !== newpass) {
+      displayErrorchangePass2(
+        '<i class="fa fa-times-circle"></i> Please enter the exact new password'
+      );
+      codeField.focus();
+      return false;
+    }
+    return true;
+  } catch (e) {
+    return false;
   }
 }
+
+
