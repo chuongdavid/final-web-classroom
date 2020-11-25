@@ -656,6 +656,9 @@ label {
 .table1 td {
   padding: 5px;
 }
+.table1 .assignment-stream {
+  border-radius: 5px;
+}
 
 .addclass:hover {
   background-color: rgb(7, 106, 119);
@@ -812,19 +815,19 @@ label {
 #show-stream-edit-delete {
   display: none;
 }
-.assignment-stream {
+tr .assignment-stream {
   border: 1px solid rgb(187, 186, 186);
-  border-radius: 15px;
-  width: auto;
+  border-radius: 5px;
 }
-.assignment-stream:hover {
+tr .assignment-stream:hover {
   background-color: rgb(180, 177, 177);
 }
 .stream-edit-delete {
   display: none;
-  top: -20%;
-  left: 71.5%;
+  margin-top: -150px;
+  margin-left: 1100px;
   width: 100px;
+  background-color: white;
 }
 #show-stream-edit-delete:checked ~ .stream-edit-delete {
   display: block;
@@ -838,7 +841,10 @@ label {
 #showphanquyen {
   display: none;
 }
-
+#stream-title{
+  border-radius: 3px;
+  border: 2px solid black;
+}
 .tablephanquyen {
   display: none;
   display: none;
@@ -964,14 +970,14 @@ td {
 }
 /*----------------Show announce edit delete------------------*/
 #show-announce-edit-delete{
-  display: block;
+  display: none;
 }
 
 .table-announce-edit-delete {
   display: none;
   width: 100px;
-  top: -10%;
-  left: 71.5%;
+  margin-top: -250px;
+  margin-left: 920px;
 }
 
 #show-announce-edit-delete:checked ~ .table-announce-edit-delete {

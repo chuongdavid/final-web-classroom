@@ -164,7 +164,7 @@
                     </div>
                     
                     <div class="banner2 class-anounce col-lg-8">
-                        <input type ="checkbox" id="showhiddenstreamcontent">
+                        <input type ="checkbox" id="showhiddenstreamcontent"/>
                         <div class="banner3 classanounce" id="commute2">
                             <label for ="showaddannouncement"><i class=" fas fa-user-graduate"></i> Share something with your class </label>
                         </div>
@@ -203,12 +203,16 @@
             </div>
         </div>
         <div class="tableshowannouncement col-12">  
-            <form method="POST" enctype="multipart/form-data" >
+            <form method="post" action="#" onsubmit= "return validateInputannouncement()" enctype="multipart/form-data" >
                 <div class="formcode">
                     <div class="form-inf">
                         <label> <p id="assignmenclasswork"><b>Share with your class</b> </p></label>
                         <hr style="width:60%; text-align:center; margin-left:0">
-                        <textarea name="news" class="class-inform-textarea" placeholder="Type here"></textarea></br></br>
+                        
+                        <h4>Title</h4>
+                        <input id="stream-title" type="text" placeholder="Title"> </br></br>
+                        <h6>Nội dung</h6>
+                        <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"></textarea></br></br>
                         <b> Chọn ảnh</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         
@@ -220,7 +224,7 @@
                 </div> 
             </form>
         </div>
-        <div class="stream-edit-delete col-lg-4">  
+        <div class="stream-edit-delete ">  
             <table class="table1 table-stream" >
                 <tr class="assignment-stream">
                     <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label> </td> 
