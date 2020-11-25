@@ -1,3 +1,12 @@
+<?php
+    require_once __DIR__. "/../autoload/autoload.php";
+    $id = $_GET['id'];
+    $detail_announcement = $db -> fetchOne('announcement',"id = '".$id."'");
+    if(empty($detail_announcement)){
+        $_SESSION['error'] = "Url does not exist";
+        header('Location:index-giaovien.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>

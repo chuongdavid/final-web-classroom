@@ -269,7 +269,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
                 </br>
                 
                 <button class="btn btn-primary">Create</button>
-                <button class="btn btn-warning" type="reset">Reset</button>
+                <a class="btn btn-warning" href="index-giaovien.php">Cancel</a>
                 
             
             </div> 
