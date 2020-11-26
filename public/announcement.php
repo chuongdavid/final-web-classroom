@@ -78,7 +78,12 @@
             <div class="row">
                 <div class="col-lg-9"> 
                     </br>
-                    <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  <label for="show-announce-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label>  </p>
+                    <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  
+                    <!-- only person created this post can see this button -->
+                        <?php if($detail_announcement['created_by_id']===$_SESSION['id_user']): ?>
+                            <label for="show-announce-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label>
+                        <?php endif ?> 
+                    </p>
                     <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
                     
                     <p id="teachercontent"> 
@@ -114,7 +119,8 @@
             </div>
 
         </div>
-
+        <?php if($detail_announcement['created_by_id']===$_SESSION['id_user']): ?>
+        
         <div class="table-announce-edit-delete">  
             <table class="table1 table-stream" >
                 <tr class="assignment-stream">
@@ -125,6 +131,7 @@
                 </tr>
             </table>
         </div>
+        <?php endif ?>
 
         
     </body>

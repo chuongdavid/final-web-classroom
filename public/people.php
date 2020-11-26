@@ -168,9 +168,9 @@
                     </br>
                     <div class="btnsform">
                         
-                        <button class="btnform">Invite</button>
+                        <button class="btn btn-primary">Invite</button>
                         
-                        <button class="btnform">Cancel</button>
+                        <a href="people.php?id=<?php $_GET['id']?>" class="btn btn-warning">Cancel</a>
                     
                     </div>    
                 </form>
