@@ -101,7 +101,9 @@
                     </div>      
                 </div></br></br>
         
-                <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
+                <form> 
+                    <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input><i class="far fa-paper-plane"></i></label></br>
+                </form>
             </div>
 
         </div>
