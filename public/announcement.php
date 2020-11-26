@@ -80,19 +80,16 @@
                     </br>
 
                     <div class="announce"> 
-                        <p id="tenannounce" > <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  
-
-                        
-                        <div class="dropdown dropdownannounce" >
-                            <button class="btn btn-secondary dropdown-toggle" style="float: right ; display :inline; margin-top:-60px; margin-right:60px" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Edit</a>
-                                <a class="dropdown-item" href="#">Delete </a>
-                                
-                            </div>
-                        </div>      
+                        <p id="tenannounce" > <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?> 
+                            <div class="dropdown dropdownannounce" >
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Edit</a>
+                                    <a class="dropdown-item" href="#">Delete </a>  
+                                </div>
+                            </div>      
                         </p> 
                     </div>
                     <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
@@ -103,22 +100,23 @@
                     <p>class comment</p>
                     <div id="announce">
                         <div class=" commentcontent">
-                            
-                            <div id="hiddenstreamcontent-content">
-                                <i class="far fa-window-maximize"></i> 
-                                
-                                Ten sv<p id="datecomment"> Nov 25</p>
-                            <div class="dropdown dropdownannounce" style="float: right ; display: inline ; right: -230px "  >
-                                    <button class="btn btn-secondary dropdown"  type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Edit</a>
-                                        <a class="dropdown-item" href="#">Delete </a>
-                                        
+                            <p >
+                                <div id="hiddenstreamcontent-content">
+                                    <i class="far fa-window-maximize"></i> 
+                                    Ten svddddddddddddddddddddddd<p id="datecomment"> Nov 25</p>
+                                    <div class="dropdown dropdown-comment" >
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Edit</a>
+                                            <a class="dropdown-item" href="#">Delete </a>
+                                            
+                                        </div>
                                     </div>
-                                </div>
-                            </div>      
+                                </div>    
+                            </p>  
+                            
                         </div>
                     </div></br></br>
                     <i class="classcomment fas fa-graduation-cap"></i><input id="classcomment" type="text" placeholder="Add class comment"> </input> <label><i class="far fa-paper-plane"></i></label></br> 
