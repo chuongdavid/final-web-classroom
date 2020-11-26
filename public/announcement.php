@@ -107,7 +107,7 @@
                         <p><b>Uploaded files</b></p>
                         <hr style="width:100%; text-align:center; margin-left:0">
                         <?php foreach ($uploaded_files as $item):?>
-                            <p> <a href="#"><?php echo $item['name'] ?></a> </p>
+                            <p> <a href="<?php echo base_url() ?>/public/uploads/announcement/<?php echo $item['name'] ?>" download ><?php echo $item['name'] ?></a> </p>
                         <?php endforeach ?>
                     </div>
                 </div>
