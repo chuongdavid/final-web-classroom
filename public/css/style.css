@@ -532,7 +532,7 @@ label {
   display: none;
   margin: auto;
   margin-top: 100px;
-  border: 1px solid black;
+  border: 1px solid rgb(165, 162, 162);
   height: auto;
   width: auto;
   border-radius: 10px;
@@ -540,6 +540,8 @@ label {
   left: 0%;
   background-color: white;
   font-size: x-large;
+  padding-left: 50px;
+  
 }
 
 #title {
@@ -638,9 +640,9 @@ label {
 }
 
 #datestream {
-  font-size: 14px;
-  margin-left: 42px;
-  margin-top: -40px;
+  font-size: 13px;
+  margin-left: 33px;
+  margin-top: -35px;
 }
 .fa-window-maximize {
   margin-right: 10px;
@@ -1025,9 +1027,27 @@ table {
 
 /* Cac nut dropdown button */
 
-#dropdownMenuButton-announcement{ 
-  display: inline;
-  float: right;
+.dropdownannounce{ 
+  font-size : 10px ; 
+  float: right ;
+  display :inline; 
+  margin-top:-60px; 
+  margin-right:60px;
+
+}
+#dropdownMenuButton-announcement{
+  background-color : white;
+  color : rgb(82, 80, 80); 
+  border: none; 
+  outline: none;
+  
+}
+
+.dropdown-comment{
+  float: right ; 
+  display: inline ; 
+  margin-top: 0px;
+  margin-right: -30px
 }
 
 
