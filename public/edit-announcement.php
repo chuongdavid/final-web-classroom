@@ -86,14 +86,14 @@
                         
                         <h4>Title</h4>
                         <input name ="title" id="stream-title" type="text" placeholder="Title" value="<?php echo $EditAnnouncement['title'] ?>"> </br></br>
-                        <h6>Nội dung</h6>
+                        <h6>What's on your mind</h6>
                         <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"><?php echo $EditAnnouncement['news'] ?></textarea></br></br>
-                        <b> Chọn ảnh</b></br>
+                        <b> Choose picture</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         </br> </br>
                         <p class="error-notification noti-stream" style="width:300px" id = "error-message-stream" ></p>
                         
-                        <label for="showhiddenstreamcontent"> <button class="btn btn-primary">Post</button></label>
+                        <label for="showhiddenstreamcontent"> <button class="btn btn-primary">Update</button></label>
                         <a href="stream.php?id=<?php echo $EditClass['id']?>" class="btn btn-warning">Cancel</a>
                         <hr style="width:60%; text-align:center; margin-left:0"></br>
                     </div>    
