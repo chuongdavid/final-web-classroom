@@ -8,8 +8,7 @@
             header('Location:index-giaovien.php');
         }
         $num = $db ->deleteQuery("class","id = '".$id."'");
-        var_dump($num);
-        if($num >0){
+        if(count($num) >0){
             $_SESSION['success'] = ' Delete successfully ';
             header('Location:index-giaovien.php');
         }

@@ -47,11 +47,13 @@
                 }
                 else{
                     $_SESSION['success']="Upload announcement successfully";
+                    header("refresh: 0.5"); 
                 }
             }
             $insert_announce = $db -> insert("announcement",$data_announcement);
             if(count($insert_announce>0)){
                 $_SESSION['success'] = "Upload announcemnet successfully";
+                header("refresh: 0.5"); 
             }
             else{
                 $_SESSION['error'] = "Upload annoucemnet fail";
@@ -226,7 +228,7 @@
                         <hr style="width:60%; text-align:center; margin-left:0">
                         
                         <h4>Title</h4>
-                        <input id="stream-title" type="text" placeholder="Title"> </br></br>
+                        <input name ="title" id="stream-title" type="text" placeholder="Title"> </br></br>
                         <h6>Nội dung</h6>
                         <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"></textarea></br></br>
                         <b> Chọn ảnh</b></br>

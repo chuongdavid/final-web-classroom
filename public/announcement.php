@@ -78,19 +78,23 @@
             <div class="row">
                 <div class="col-lg-9"> 
                     </br>
-                    <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>
-                        <div class="dropdown">
-                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                dropdown
+
+                    <div class="announce"> 
+                        <p id="tenannounce" > <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  
+
+                        
+                        <div class="dropdown dropdownannounce" >
+                            <button class="btn btn-secondary dropdown-toggle" style="float: right ; display :inline; margin-top:-60px; margin-right:60px" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another </a>
-                                <a class="dropdown-item" href="#">Something </a>
+                                <a class="dropdown-item" href="#">Edit</a>
+                                <a class="dropdown-item" href="#">Delete </a>
+                                
                             </div>
-                        </div> 
-                    </p>
-                   
+                        </div>      
+                        </p> 
+                    </div>
                     <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
                     
                     <p id="teachercontent"> 
@@ -104,8 +108,16 @@
                                 <i class="far fa-window-maximize"></i> 
                                 
                                 Ten sv<p id="datecomment"> Nov 25</p>
-                                <label for="show-stream-edit-delete"><i class="fa fa-ellipsis-v" id="more-comment"></i></label>
-                                
+                            <div class="dropdown dropdownannounce" style="float: right ; display: inline ; right: -230px "  >
+                                    <button class="btn btn-secondary dropdown"  type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Edit</a>
+                                        <a class="dropdown-item" href="#">Delete </a>
+                                        
+                                    </div>
+                                </div>
                             </div>      
                         </div>
                     </div></br></br>
@@ -119,14 +131,15 @@
                         <p><b>Uploaded files</b></p>
                         <hr style="width:100%; text-align:center; margin-left:0">
                         <?php foreach ($uploaded_files as $item):?>
-                            <p> <a href="#"><?php echo $item['name'] ?></a> </p>
+                            <p> <a href="<?php echo base_url() ?>/public/uploads/announcement/<?php echo $item['name'] ?>" download ><?php echo $item['name'] ?></a> </p>
                         <?php endforeach ?>
                     </div>
                 </div>
             </div>
 
         </div>
-
+        <?php if($detail_announcement['created_by_id']===$_SESSION['id_user']): ?>
+        
         <div class="table-announce-edit-delete">  
             <table class="table1 table-stream" >
                 <tr class="assignment-stream">
@@ -137,6 +150,7 @@
                 </tr>
             </table>
         </div>
+        <?php endif ?>
 
         
     </body>

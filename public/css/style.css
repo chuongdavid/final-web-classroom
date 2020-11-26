@@ -1025,11 +1025,11 @@ table {
 
 /* Cac nut dropdown button */
 
-#dropdownMenuButton-announcement{
+#dropdownMenuButton-announcement{ 
   display: inline;
-  top: 50%;
-  left: 0%;
+  float: right;
 }
+
 
 /* -----------------------------------------------------------*/
 
