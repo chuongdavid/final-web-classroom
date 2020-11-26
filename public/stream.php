@@ -229,9 +229,9 @@
                         
                         <h4>Title</h4>
                         <input name ="title" id="stream-title" type="text" placeholder="Title"> </br></br>
-                        <h6>Nội dung</h6>
+                        <h6>What's on your mind</h6>
                         <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"></textarea></br></br>
-                        <b> Chọn ảnh</b></br>
+                        <b> Choose picture</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         
                         </br> </br>

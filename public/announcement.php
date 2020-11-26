@@ -103,7 +103,7 @@
                             <p >
                                 <div id="hiddenstreamcontent-content">
                                     <i class="far fa-window-maximize"></i> 
-                                    Ten svddddddddddddddddddddddd<p id="datecomment"> Nov 25</p>
+                                    Ten sv<p id="datecomment"> Nov 25</p>
                                     <div class="dropdown dropdown-comment" >
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             
