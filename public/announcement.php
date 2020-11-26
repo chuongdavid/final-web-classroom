@@ -78,7 +78,19 @@
             <div class="row">
                 <div class="col-lg-9"> 
                     </br>
-                    <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  <label for="show-announce-edit-delete"> <i class="fa fa-ellipsis-v" id="more-announce"></i></label>  </p>
+                    <p id="tenannounce"> <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>
+                        <div class="dropdown">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                dropdown
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another </a>
+                                <a class="dropdown-item" href="#">Something </a>
+                            </div>
+                        </div> 
+                    </p>
+                   
                     <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
                     
                     <p id="teachercontent"> 

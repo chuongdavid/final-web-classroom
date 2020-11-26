@@ -1022,6 +1022,17 @@ table {
   padding-bottom: 30px;
   border-radius: 10px;
 }
+
+/* Cac nut dropdown button */
+
+#dropdownMenuButton-announcement{
+  display: inline;
+  top: 50%;
+  left: 0%;
+}
+
+/* -----------------------------------------------------------*/
+
 body,
 html {
   height: 100%;
