@@ -82,17 +82,18 @@
                     <div class="announce"> 
                         <p id="tenannounce" > <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?>  
 
-                        
+                        <?php if($detail_announcement['created_by_id']===$_SESSION['id_user']): ?>
                         <div class="dropdown dropdownannounce" >
-                            <button class="btn btn-secondary dropdown-toggle" style="float: right ; display :inline; margin-top:-60px; margin-right:60px" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary dropdown-toggle btn-sm" style="float: right ; display :inline; margin-top:-60px; margin-right:60px" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Edit</a>
-                                <a class="dropdown-item" href="#">Delete </a>
+                                <a class="dropdown-item" href="edit-announcement.php?id=<?php echo $detail_announcement['id'] ?>">Edit</a>
+                                <a class="dropdown-item" href="delete-announcement.php?id=<?php echo $detail_announcement['id'] ?>&id_class=<?php echo $detail_announcement['id_class'] ?>" onclick="return confirm('Are you sure you want to delete this announcement?');">Delete </a>
                                 
                             </div>
-                        </div>      
+                        </div>     
+                        <?php endif ?> 
                         </p> 
                     </div>
                     <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
@@ -138,20 +139,5 @@
             </div>
 
         </div>
-        <?php if($detail_announcement['created_by_id']===$_SESSION['id_user']): ?>
-        
-        <div class="table-announce-edit-delete">  
-            <table class="table1 table-stream" >
-                <tr class="assignment-stream">
-                    <td> <i class="fas fa-chalkboard-teacher"></i> <label> Edit</label> </td> 
-                </tr>
-                <tr class="assignment-stream">
-                    <td> <i class="fas fa-laptop-code"></i> <label> Delete </label> </td>
-                </tr>
-            </table>
-        </div>
-        <?php endif ?>
-
-        
     </body>
 </html>

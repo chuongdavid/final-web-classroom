@@ -145,7 +145,7 @@
                                     ?>
                                     <tr class=" border-bottom">
                                         <td class="text-left"><i class="fas fa-user"></i>   <?= $student['fullname']?></td>
-                                        <td class="text-right pr-2"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are u sure u want to delete this student?');"></i></a></td>
+                                        <td class="text-right pr-2"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are you sure you want to delete this student?');"></i></a></td>
                                     </tr>
                                 <?php } ?>
                             </table>
