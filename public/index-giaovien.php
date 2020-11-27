@@ -107,7 +107,9 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
               });
             }
             else{
-                $(".class-place").html("");
+                $.post("ajax-search-empty.php", { data: text }, function (data) {
+                $(".class-place").html(data);
+              });
             }
         });
         }

@@ -104,7 +104,7 @@
                     
                     
                   <form action="" method="POST">
-                    <p>Teacher's name: <?php echo $data_teacher['fullname'] ?> </p>
+                    <p>Teacher's name: <?php echo $data_class['teacher'] ?> </p>
                     <p>Teacher's email: <?php echo $data_teacher['email'] ?> </p>
                     <p>Class name: <?php echo $data_class['name'] ?> </p>
                     <p>Class code: <?php echo $data_class['id'] ?> </p>

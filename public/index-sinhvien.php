@@ -79,6 +79,25 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <!--font-awnsome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script>
+        function search(text){
+            
+        $(document).ready(function(){
+            
+            if(text.length!=0){
+                $.post("ajax.php", { data: text }, function (data) {
+                $(".class-place").html(data);
+              });
+            }
+            else{
+                $.post("ajax-search-empty.php", { data: text }, function (data) {
+                $(".class-place").html(data);
+              });
+            }
+        });
+        }
+        
+    </script>
     </head>
 
     <body>
@@ -121,7 +140,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 <li class="nav-item col-md-2 ml-auto mr-0"> 
                     <a class="nav-link" href="#">
                         <label for="search"><i class="fa fa-search fa-2x"></i> </label> 
-                        <input type="text" id="search" class="search">
+                        <input onkeyup="search(this.value)" type="text" id="search" class="search">
                     </a>
                 </li>
                 <li class="nav-item ml-2 mr-2">
