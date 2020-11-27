@@ -1058,12 +1058,10 @@ table {
   display: inline;
   margin-top: 0px;
   margin-right: -30px;
-<<<<<<< HEAD
-=======
-  
->>>>>>> b613dec8255425bf5b888e513ff406b35d34cd3c
 }
-
+#commentbuttonsend{
+  border: none;
+}
 /* -----------------------------------------------------------*/
 
 body,
