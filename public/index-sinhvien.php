@@ -79,25 +79,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <!--font-awnsome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script>
-        function search(text){
-            
-        $(document).ready(function(){
-            
-            if(text.length!=0){
-                $.post("ajax.php", { data: text }, function (data) {
-                $(".class-place").html(data);
-              });
-            }
-            else{
-                $.post("ajax-search-empty.php", { data: text }, function (data) {
-                $(".class-place").html(data);
-              });
-            }
-        });
-        }
-        
-    </script>
     </head>
 
     <body>
