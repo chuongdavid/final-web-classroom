@@ -517,4 +517,6 @@ function validateInputannouncement() {
 }
 
 //add comment
-
+function setComment(){
+  
+}

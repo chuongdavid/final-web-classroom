@@ -72,10 +72,12 @@ a:link:hover {
 .sidenav a:hover {
   text-decoration: none;
 }
+
 #datecomment {
-  margin-top: -10px;
-  margin-left: 45px;
-  font-size: 14px;
+  margin-top: 0px;
+  margin-left: 10px;
+  font-size: 12px;
+  display: inline;
 }
 #more-comment {
   margin-left: 600px;
@@ -530,7 +532,7 @@ label {
   display: none;
   margin: auto;
   margin-top: 100px;
-  border: 1px solid black;
+  border: 1px solid rgb(165, 162, 162);
   height: auto;
   width: auto;
   border-radius: 10px;
@@ -538,6 +540,7 @@ label {
   left: 0%;
   background-color: white;
   font-size: x-large;
+  padding-left: 50px;
 }
 
 #title {
@@ -636,9 +639,9 @@ label {
 }
 
 #datestream {
-  font-size: 14px;
-  margin-left: 42px;
-  margin-top: -40px;
+  font-size: 13px;
+  margin-left: 33px;
+  margin-top: -35px;
 }
 .fa-window-maximize {
   margin-right: 10px;
@@ -666,6 +669,9 @@ label {
 }
 .table1 .assignment-stream {
   border-radius: 5px;
+}
+.table-stream .assignment-stream:hover {
+  background-color: #2b2828;
 }
 
 .addclass:hover {
@@ -818,6 +824,7 @@ label {
 }
 #more {
   margin-left: 670px;
+  color: white;
 }
 
 /*---------Stream edit delete-------------*/
@@ -941,6 +948,7 @@ table {
   margin-left: 25px;
   vertical-align: middle;
   color: rgb(93, 94, 93);
+  font-size: 18px;
 }
 #classcomment {
   border-radius: 10px;
@@ -972,7 +980,8 @@ table {
 }
 #more-announce {
   font-size: 24px;
-  margin-left: 400px;
+  display: inline;
+  margin-left: 34px;
 }
 #dateannounce {
   margin-top: -20px;
@@ -993,8 +1002,8 @@ table {
 .table-announce-edit-delete {
   display: none;
   width: 100px;
-  margin-top: -250px;
-  margin-left: 920px;
+  margin-top: -420px;
+  margin-left: 940px;
 }
 
 #show-announce-edit-delete:checked ~ .table-announce-edit-delete {
@@ -1003,6 +1012,42 @@ table {
 #noti-stream {
   width: 300px;
 }
+.upload-announce {
+  margin-top: 30px;
+  margin-left: 0px;
+  border: 3px solid rgb(182, 177, 177);
+  text-align: center;
+  display: inline-table;
+  padding-right: 50px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+}
+
+/* Cac nut dropdown button */
+
+.dropdownannounce {
+  font-size: 10px;
+  float: right;
+  display: inline;
+  margin-top: -60px;
+  margin-right: 60px;
+}
+#dropdownMenuButton-announcement {
+  background-color: white;
+  color: rgb(82, 80, 80);
+  border: none;
+  outline: none;
+}
+
+.dropdown-comment {
+  float: right;
+  display: inline;
+  margin-top: 0px;
+  margin-right: -30px;
+}
+
+/* -----------------------------------------------------------*/
 
 body,
 html {

@@ -47,11 +47,13 @@
                 }
                 else{
                     $_SESSION['success']="Upload announcement successfully";
+                    header("refresh: 0.5"); 
                 }
             }
             $insert_announce = $db -> insert("announcement",$data_announcement);
             if(count($insert_announce>0)){
                 $_SESSION['success'] = "Upload announcemnet successfully";
+                header("refresh: 0.5"); 
             }
             else{
                 $_SESSION['error'] = "Upload annoucemnet fail";
@@ -113,7 +115,7 @@
                 <?php if(check_role($_SESSION['email'])==0){
                     ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index-hocsinh.php">Home</a>
+                    <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
                 <?php }
                 #--Home giao vien-->
@@ -196,7 +198,7 @@
                                 <i class="far fa-window-maximize"></i> 
                                 
                                 <?php echo $item['title'] ?> 
-                                <label for="show-stream-edit-delete"> <i class="fa fa-ellipsis-v" id="more"></i></label>
+                                <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
                                 <p id="datestream"> <?php echo $item['created_at'] ?> </p>
                             
                             </div>      
@@ -226,10 +228,10 @@
                         <hr style="width:60%; text-align:center; margin-left:0">
                         
                         <h4>Title</h4>
-                        <input id="stream-title" type="text" placeholder="Title"> </br></br>
-                        <h6>Nội dung</h6>
+                        <input name ="title" id="stream-title" type="text" placeholder="Title"> </br></br>
+                        <h6>What's on your mind</h6>
                         <textarea name="news" class="class-inform-textarea" id="stream-announce" placeholder="Type here"></textarea></br></br>
-                        <b> Chọn ảnh</b></br>
+                        <b> Choose picture</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         
                         </br> </br>

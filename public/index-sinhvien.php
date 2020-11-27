@@ -43,8 +43,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             else{
                 //get information who created this class
                 $create_class_by = $db -> fetchOne('user',"id = '".$code['created_by_id']."'");
-                send_join_request($id_student,$class_code,$create_class_by['email']);
-                $_SESSION['success'] ='Your request has been sent. Please wait for your teacher to accept your request';
+                $checkSent = send_join_request($id_student,$class_code,$create_class_by['email']);
+                if($checkSent){
+                    $_SESSION['success'] ='Your request has been sent. Please wait for your teacher to accept your request';
+                }
+                else{
+                    $_SESSION['error'] ='Send invitation fail';
+                }
+                
             }
         }
         else{
@@ -107,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
                 <!--left nav-->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">To-do</a>
@@ -117,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 </li>
 
                 <!--right nav-->
-                <li class="nav-item col-md-4 ml-auto mr-0"> 
+                <li class="nav-item col-md-2 ml-auto mr-0"> 
                     <a class="nav-link" href="#">
                         <label for="search"><i class="fa fa-search fa-2x"></i> </label> 
                         <input type="text" id="search" class="search">

@@ -1,18 +1,17 @@
 <?php
-    include 'connect_db.php';
-    var_dump($_POST);
-
-    $name = $_POST['name'];
-    $comment = $_POST['comment'];
-
-    $comment_length =  str_len($comment);
-
-    if($comment_length > 100){
-        header("Location: announcement.php?error=1");
+require_once __DIR__. "/../autoload/autoload.php";
+#var_dump($_SESSION)
+    if (isset($_POST['commentSubmit'])){
+        $id = uniqid();
+    
+        $data = [
+            "id" => $id,
+            "id_announce" => $_POST['id_announce'],
+            "id_class" => $_POST['id_class'],
+            "created_by_who" => $_POST['created_by_who'],
+            "content" => $_POST['content'],
+          ];
+        $db -> insert('comment', $data);
+        header("Location: announcement.php?id=$_POST[id_announce]");
     }
-    else{
-        mysql_query("INSERT INTO  comments VALUES ('','$name','$comment')");
-        header("Location: announcement.php");
-    }
-
 ?>
