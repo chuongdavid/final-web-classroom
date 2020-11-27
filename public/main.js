@@ -513,12 +513,6 @@ function validateInputannouncement() {
     return false;
   }
 }
-<<<<<<< HEAD
-
-//add comment
-function setComment(){
-  
-=======
 function search(text) {
   $(document).ready(function () {
     if (text.length != 0) {
@@ -531,5 +525,4 @@ function search(text) {
       });
     }
   });
->>>>>>> b613dec8255425bf5b888e513ff406b35d34cd3c
 }
