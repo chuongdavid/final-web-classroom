@@ -6,7 +6,7 @@
     if(isset($class_name)){
         //this case happen when user type something
         if(check_role($_SESSION['email'])==2){
-            $class = $db ->fetchAllCondition('class',"created_by_id = '".$data_user['id']."' AND  name like '$class_name%' ");
+            $class = $db ->fetchAllCondition('class',  "name like '$class_name%' ");
         }
         if(check_role($_SESSION['email'])==1){
             $class = $db -> fetchAllCondition('class',"created_by_id = '".$data_user['id']."' AND  name like '$class_name%' "); 
@@ -31,7 +31,8 @@
         
         if(count($class)>0){
 ?>
-            
+            <div class="class-place">
+            <div class="row">
             <?php foreach ($class as $item):?>
                 <!-- each class -->
                 <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
@@ -73,7 +74,8 @@
                 </div>
                 </a>
                 <?php endforeach ?>
-            
+            </div>
+            </div>
             <?php
         }
         else{

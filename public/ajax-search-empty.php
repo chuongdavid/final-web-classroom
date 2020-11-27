@@ -26,8 +26,9 @@
         $class = $data;
     }
     if(count($class)>0){
-?>
-    <?php foreach ($class as $item):?>
+?>              <div class="class-place">
+                <div class="row">
+                <?php foreach ($class as $item):?>
                 <!-- each class -->
                 <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
@@ -68,6 +69,8 @@
                 </div>
                 </a>
                 <?php endforeach ?>
+                </div>
+                </div>
 <?php
     }
 ?>
