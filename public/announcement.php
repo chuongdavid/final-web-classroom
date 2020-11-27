@@ -62,8 +62,7 @@
                 
                 <li class="nav-item active">
                     <a class="nav-link anouncementnav" href="#">
-                       <b id="tenlopannounce">Lập trình web và ứng dụng</b> </br>
-                       Mai Văn Mạnh 
+                       <b id="tenlopannounce">Classroom</b> </br>
                     </a>
                 </li>
                
