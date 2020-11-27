@@ -114,22 +114,22 @@
                 <!--Home sinh vien-->
                 <?php if(check_role($_SESSION['email'])==0){
                     ?>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
                 <?php }
                 #--Home giao vien-->
                     else {
                 ?>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                     <a class="nav-link" href="index-giaovien.php">Home</a>
                 </li>
                 <?php }?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Stream</a>
+                    <a class="nav-link" href="stream.php?id=<?=$EditClass['id']?>">Stream</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Classwork</a>
+                    <a class="nav-link" href="classwork.php?id=<?=$EditClass['id']?>">Classwork</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="people.php?id=<?php echo $EditClass['id'] ?>">People</a>
