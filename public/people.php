@@ -4,6 +4,7 @@
     $student_arr = $db -> fetchAllCondition('student_class, user', "user.id = student_class.id_student AND student_class.id_class ='".$_GET['id']."'");
     $class_code = $_GET['id'];
     $create_class_by = $db -> fetchOne('user',"id = '".$_SESSION['id_user']."'");
+    $data_class = $db -> fetchOne('class',"id = '".$class_code."'");
     //invite student
     if($_SERVER["REQUEST_METHOD"]=="POST"){
         if(isset($_POST['email_student'])){
@@ -126,7 +127,7 @@
                         <hr style="width:100%; text-align:left; margin-left:0">
                     </tr>
                     <tr>
-                       <i class="studentlist fas fa-user-graduate"></i> <?php echo $create_class_by['fullname'] ?>
+                       <i class="studentlist fas fa-user-graduate"></i> <?php echo $data_class['teacher'] ?>
                        
                     </tr>   
                     <tr>

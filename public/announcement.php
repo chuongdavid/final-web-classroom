@@ -7,6 +7,7 @@
         $_SESSION['error'] = "Url does not exist";
         header('Location:index-giaovien.php');
     }
+    $data_class = $db -> fetchOne('class',"id = '".$detail_announcement['id_class']."'");
     $data_user_created = $db -> fetchOne('user',"id = '".$detail_announcement['created_by_id']."'");
     $uploaded_files =$db -> fetchAllCondition('file_upload_announce',"id_announce = '".$detail_announcement['id']."'");
     $comment = $db -> fetchAll('comment');
@@ -81,19 +82,22 @@
             <div class="row">
                 <div class="col-lg-9"> 
                     </br>
-
+                    
                     <div class="announce"> 
                         <p id="tenannounce" > <i class="far fa-window-maximize"></i> <?php echo $detail_announcement['title'] ?> 
+                        <?php if(($_SESSION['id_user']==$data_user_created['id']) || ($_SESSION['id_user']==$data_class['created_by_id'])): ?>
                             <div class="dropdown dropdownannounce" >
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     
                                 </button>
+                                
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="edit-announcement.php?id=<?php echo $detail_announcement['id'] ?>">Edit</a>
                                     <a class="dropdown-item" href="delete-announcement.php?id=<?php echo $detail_announcement['id'] ?>&id_class=<?php echo $detail_announcement['id_class'] ?>" onclick="return confirm('Are you sure you want to delete this announcement?');">Delete </a>
-                                    
                                 </div>
-                            </div>      
+                                
+                            </div>     
+                            <?php endif ?> 
                         </p> 
                     </div>
                     <p id="dateannounce"> <?php echo $data_user_created['fullname'] ?> posted at <?php echo $detail_announcement['created_at'] ?></p>
@@ -129,8 +133,6 @@
                         </div>
                     </div></br></br>
                     
-                    <?php
-                    var_dump($item['id_announce']);?>
                     <?php endforeach ?>
                     
                     <form action='add_comment.php' method='POST'>

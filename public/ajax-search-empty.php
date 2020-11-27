@@ -2,38 +2,33 @@
     require_once __DIR__. "/../autoload/autoload.php";
     $class_name = $_POST['data'];
     $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
-    //load class with specific role
-    if(isset($class_name)){
-        //this case happen when user type something
-        if(check_role($_SESSION['email'])==2){
-            $class = $db ->fetchAllCondition('class',  "name like '$class_name%' ");
-        }
-        if(check_role($_SESSION['email'])==1){
-            $class = $db -> fetchAllCondition('class',"created_by_id = '".$data_user['id']."' AND  name like '$class_name%' "); 
-        }
-        if(check_role($_SESSION['email'])==0){
-            $sql = "SELECT class.*
-            FROM student_class 
-            INNER JOIN class 
-            ON class.id = student_class.id_class 
-            WHERE student_class.id_student = ".$data_user['id']." AND  class.name like '$class_name%'";
-            $data = [];
-            $result = mysqli_query($db->link,$sql) or die("Lỗi Truy Vấn fetchAll " .mysqli_error($db->link));
-            if( $result)
+    if(check_role($_SESSION['email'])==2){
+        $class = $db ->fetchAll('class');
+    }
+    if(check_role($_SESSION['email'])==1){
+        $class = $db -> fetchAllCondition('class',"created_by_id = '".$data_user['id']."'"); 
+    }
+    if(check_role($_SESSION['email'])==0){
+        $sql = "SELECT class.*
+        FROM student_class 
+        INNER JOIN class 
+        ON class.id = student_class.id_class 
+        WHERE student_class.id_student = ".$data_user['id']."";
+        $data = [];
+        $result = mysqli_query($db->link,$sql) or die("Lỗi Truy Vấn fetchAll " .mysqli_error($db->link));
+        if( $result)
+        {
+            while ($num = mysqli_fetch_assoc($result))
             {
-                while ($num = mysqli_fetch_assoc($result))
-                {
-                    $data[] = $num;
-                }
+                $data[] = $num;
             }
-            $class = $data;
         }
-        
-        if(count($class)>0){
-?>
-            <div class="class-place">
-            <div class="row">
-            <?php foreach ($class as $item):?>
+        $class = $data;
+    }
+    if(count($class)>0){
+?>              <div class="class-place">
+                <div class="row">
+                <?php foreach ($class as $item):?>
                 <!-- each class -->
                 <a href="stream.php?id=<?php echo $item['id']?>" style="text-decoration: none; color:black">
                 <div class="classcard col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
@@ -74,12 +69,8 @@
                 </div>
                 </a>
                 <?php endforeach ?>
-            </div>
-            </div>
-            <?php
-        }
-        else{
-            echo "<p class = ".'text-danger'."><strong>Opps key word does not match any class name!</strong></p>";
-        }
+                </div>
+                </div>
+<?php
     }
 ?>
