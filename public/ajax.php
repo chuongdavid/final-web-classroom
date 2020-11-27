@@ -6,17 +6,17 @@
     if(isset($class_name)){
         //this case happen when user type something
         if(check_role($_SESSION['email'])==2){
-            $class = $db ->fetchAllCondition('class',  "name like '$class_name%' ");
+            $class = $db ->fetchAllCondition('class',  "(name like '$class_name%') OR (subject like '$class_name%') OR (room like '$class_name%') ");
         }
         if(check_role($_SESSION['email'])==1){
-            $class = $db -> fetchAllCondition('class',"created_by_id = '".$data_user['id']."' AND  name like '$class_name%' "); 
+            $class = $db -> fetchAllCondition('class',"created_by_id = '".$data_user['id']."' AND  ((name like '$class_name%') OR (subject like '$class_name%') OR (room like '$class_name%')) "); 
         }
         if(check_role($_SESSION['email'])==0){
             $sql = "SELECT class.*
             FROM student_class 
             INNER JOIN class 
             ON class.id = student_class.id_class 
-            WHERE student_class.id_student = ".$data_user['id']." AND  class.name like '$class_name%'";
+            WHERE student_class.id_student = ".$data_user['id']." AND  ((name like '$class_name%') OR (subject like '$class_name%') OR (room like '$class_name%'))";
             $data = [];
             $result = mysqli_query($db->link,$sql) or die("Lỗi Truy Vấn fetchAll " .mysqli_error($db->link));
             if( $result)
@@ -79,7 +79,7 @@
             <?php
         }
         else{
-            echo "<p class = ".'text-danger'."><strong>Opps key word does not match any class name!</strong></p>";
+            echo "<p class = ".'text-danger'."><strong>Opps data not found!</strong></p>";
         }
     }
 ?>

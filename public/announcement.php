@@ -65,8 +65,8 @@
                 
                 <li class="nav-item active">
                     <a class="nav-link anouncementnav" href="#">
-                       <b id="tenlopannounce">Lập trình web và ứng dụng</b> </br>
-                       Mai Văn Mạnh 
+                       <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
+                       <?= $data_class['teacher'] ?>
                     </a>
                 </li>
                
