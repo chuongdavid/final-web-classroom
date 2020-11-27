@@ -10,8 +10,7 @@
     $data_class = $db -> fetchOne('class',"id = '".$detail_announcement['id_class']."'");
     $data_user_created = $db -> fetchOne('user',"id = '".$detail_announcement['created_by_id']."'");
     $uploaded_files =$db -> fetchAllCondition('file_upload_announce',"id_announce = '".$detail_announcement['id']."'");
-    $comment = $db -> fetchAll('comment');
-    $user = $db -> fetchAllCondition('user,comment', "user.email = comment.created_by_who");
+    $comment = $db -> fetchAllCondition('comment', "id_announce = '".$detail_announcement['id']."'");
 ?>
 <!DOCTYPE html>
 <html>
@@ -66,22 +65,10 @@
                 <?php if(check_role($data_user['email'])==0){
                     ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="index-hocsinh.php">Home</a>
-                </li>
-                <?php }
-                #--Home giao vien-->
-                    else {
-                ?>
-                        <li class="nav-item active">
-                    <a class="nav-link" href="index-giaovien.php">Home</a>
-                </li>
-                <?php }?>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">To-do</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Calendar</a>
+                    <a class="nav-link anouncementnav" href="#">
+                       <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
+                       <?= $data_class['teacher'] ?>
+                    </a>
                 </li>
                
                 <!--right nav-->
@@ -126,13 +113,16 @@
                                 <div id="hiddenstreamcontent-content">
                                     <i class="far fa-window-maximize"></i> 
                                     <?= $item['created_by_who']?><p id="datecomment"> <?php echo $item['created_at'] ?></p>
+                                    
                                     <div class="dropdown dropdown-comment" >
                                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-announcement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             
                                         </button>
+                                        <?php if(($_SESSION['email']==$item['created_by_who']) || ($_SESSION['id_user']==$data_class['created_by_id'])): ?>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="./delete_comment.php?id=<?=$item['id']?>&id_announce=<?=$item['id_announce']?>" onclick="return confirm('Are you sure you want to delete this comment?');">Delete </a>
                                         </div>
+                                        <?php endif ?>
                                     </div>
                                 </div>    
                             </p>  
@@ -160,6 +150,7 @@
                             </button></br>
                     </form>
                 </div>
+                <?php if(!empty($uploaded_files)): ?>
                 <div class="col-lg-3 "> 
                     <div class="upload-announce">
                         </br>
@@ -170,6 +161,7 @@
                         <?php endforeach ?>
                     </div>
                 </div>
+                <?php endif ?>
             </div>
 
         </div>

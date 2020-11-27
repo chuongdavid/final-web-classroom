@@ -84,19 +84,6 @@
 
             return mysqli_affected_rows($this->link);
         }
-        public function updateview($sql)
-        {
-            $result = mysqli_query($this->link,$sql)  or die ("Lỗi update view " .mysqli_error($this->link));
-            return mysqli_affected_rows($this->link);
-
-        }
-        public function countTable($table)
-        {
-            $sql = "SELECT id FROM  {$table}";
-            $result = mysqli_query($this->link, $sql) or die("Lỗi Truy Vấn countTable----" .mysqli_error($this->link));
-            $num = mysqli_num_rows($result);
-            return $num;
-        }
 
 
         /**
@@ -134,20 +121,6 @@
             return true;
         }
 
-        public function fetchsql( $sql )
-        {
-            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn sql " .mysqli_error($this->link));
-            $data = [];
-            if( $result)
-            {
-                while ($num = mysqli_fetch_assoc($result))
-                {
-                    $data[] = $num;
-                }
-            }
-            return $data;
-        } 
-
         public function fetchID($table , $id )
         {
             $sql = "SELECT * FROM {$table} WHERE id = $id ";
@@ -178,16 +151,6 @@
             return $data;
         }
 
-        public function deletesql ($table ,  $sql )
-        {
-            $sql = "DELETE FROM {$table} WHERE " .$sql;
-            // _debug($sql);die;
-            mysqli_query($this->link,$sql) or die (" Lỗi Truy Vấn delete   --- " .mysqli_error($this->link));
-            return mysqli_affected_rows($this->link);
-        }
-
-        
-
          public function fetchAll($table)
         {
             $sql = "SELECT * FROM {$table} WHERE 1" ;
@@ -201,12 +164,6 @@
                 }
             }
             return $data;
-        }
-        public function total($sql)
-        {
-            $result = mysqli_query($this->link  , $sql);
-            $tien = mysqli_fetch_assoc($result);
-            return $tien;
         }
     }
    
