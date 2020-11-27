@@ -79,7 +79,7 @@
             <?php
         }
         else{
-            echo "data not found";
+            echo "<p class = ".'text-danger'."><strong>Opps key word does not match any class name!</strong></p>";
         }
     }
 ?>
