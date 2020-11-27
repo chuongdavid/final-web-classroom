@@ -22,7 +22,7 @@
         
 
         /**
-         * [insert description] hàm insert 
+         * [     description] hàm insert 
          * @param  $table
          * @param  array  $data  
          * @return integer

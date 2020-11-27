@@ -73,7 +73,7 @@ a:link:hover {
   text-decoration: none;
 }
 
-#datecomment{
+#datecomment {
   margin-top: 0px;
   margin-left: 10px;
   font-size: 12px;
@@ -551,7 +551,6 @@ label {
   background-color: white;
   font-size: x-large;
   padding-left: 50px;
-  
 }
 
 #title {
@@ -681,7 +680,7 @@ label {
 .table1 .assignment-stream {
   border-radius: 5px;
 }
-.table-stream .assignment-stream:hover{
+.table-stream .assignment-stream:hover {
   background-color: #2b2828;
 }
 
@@ -838,7 +837,7 @@ label {
 }
 #more {
   margin-left: 670px;
-  color:white;
+  color: white;
 }
 
 /*---------Stream edit delete-------------*/
@@ -1026,7 +1025,7 @@ table {
 #noti-stream {
   width: 300px;
 }
-.upload-announce{
+.upload-announce {
   margin-top: 30px;
   margin-left: 0px;
   border: 3px solid rgb(182, 177, 177);
@@ -1040,30 +1039,30 @@ table {
 
 /* Cac nut dropdown button */
 
-.dropdownannounce{ 
-  font-size : 10px ; 
-  float: right ;
-  display :inline; 
-  margin-top:-60px; 
-  margin-right:60px;
-
+.dropdownannounce {
+  font-size: 10px;
+  float: right;
+  display: inline;
+  margin-top: -60px;
+  margin-right: 60px;
 }
-#dropdownMenuButton-announcement{
-  background-color : white;
-  color : rgb(82, 80, 80); 
-  border: none; 
+#dropdownMenuButton-announcement {
+  background-color: white;
+  color: rgb(82, 80, 80);
+  border: none;
   outline: none;
-  
 }
 
-.dropdown-comment{
-  float: right ; 
-  display: inline ; 
+.dropdown-comment {
+  float: right;
+  display: inline;
   margin-top: 0px;
   margin-right: -30px;
+<<<<<<< HEAD
+=======
   
+>>>>>>> b613dec8255425bf5b888e513ff406b35d34cd3c
 }
-
 
 /* -----------------------------------------------------------*/
 
