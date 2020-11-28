@@ -137,7 +137,7 @@
             <div class=" teacher col-lg-8">
                 <table >
                     <tr>
-                        <h2 >Teachers <a href="#" id="teacheradd"> <label for="showinvite"><i id="buttonteacher" class="fa fa-user-plus"></i> </label> </a> </h2>
+                        <h2 >Teachers <a id="teacheradd"> <label for="showinvite"> </label> </a> </h2>
                         <hr style="width:100%; text-align:left; margin-left:0">
                     </tr>
                     <tr>
