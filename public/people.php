@@ -102,13 +102,13 @@
                 </li>
                 <?php }?>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Stream</a>
+                    <a class="nav-link" href="stream.php?id=<?=$_GET['id']?>">Stream</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Classwork</a>
+                    <a class="nav-link" href="classwork.php?id=<?=$_GET['id']?>">Classwork</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">People</a>
+                    <a class="nav-link" href="people.php?id=<?=$_GET['id']?>">People</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Grades</a>
