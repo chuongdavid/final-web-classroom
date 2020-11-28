@@ -64,7 +64,7 @@
                 
                 
                 <li class="nav-item active">
-                    <a class="nav-link anouncementnav" href="#">
+                    <a class="nav-link anouncementnav" href="stream.php?id=<?=$data_class['id']?>">
                        <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
                        <?= $data_class['teacher'] ?>
                     </a>

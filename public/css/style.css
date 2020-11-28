@@ -167,7 +167,7 @@ ul {
   padding-bottom: 15px;
 }
 
-.class-inf:hover{
+.class-inf:hover {
   text-decoration: none;
 }
 .sinhvien-title {
@@ -180,10 +180,10 @@ ul {
   white-space: nowrap;
   max-height: 100px;
 }
-.class-teacher{
-  color:black;
+.class-teacher {
+  color: black;
 }
-.class-teacher:hover{
+.class-teacher:hover {
   text-decoration: white;
 }
 
@@ -778,7 +778,6 @@ label {
   padding-bottom: 10px;
 }
 .class-title {
-  
   color: black;
 }
 .class-title :hover {
@@ -1058,10 +1057,6 @@ table {
   display: inline;
   margin-top: 0px;
   margin-right: -30px;
-<<<<<<< HEAD
-=======
-  
->>>>>>> b613dec8255425bf5b888e513ff406b35d34cd3c
 }
 
 /* -----------------------------------------------------------*/
