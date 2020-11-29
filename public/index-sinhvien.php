@@ -216,7 +216,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <form method="POST">
                 <div class="formcode">
                     <label> <p id="assignmenclasswork"><b>Join Class</b> </p></label>
-                    <hr style="width:90%; text-align:left; margin-left:10"></br>
+                    <hr class="line"></br>
                     <div class="titleintruction">
                     <h4> Class code</h4>
                     <p> Ask your teacher for the class code </p>
@@ -231,7 +231,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 </div> 
             </form>
         </div>
-                <hr style="width:90%; text-align:left; margin-left:10">   
+                <hr class="line">   
     
     </body>
 </html>

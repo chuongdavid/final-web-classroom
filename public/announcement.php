@@ -116,7 +116,7 @@
                     
                     <p id="teachercontent"> 
                     <?php echo $detail_announcement['news'] ?>
-                    <hr style="width:80%; text-align:center; margin-left:0"> 
+                    <hr class="line"> 
                     <p>class comment</p>
                     <?php foreach($comment as $item): ?>
                     <div id="announce">
@@ -167,7 +167,8 @@
                     <div class="upload-announce">
                         </br>
                         <p><b>Uploaded files</b></p>
-                        <hr style="width:100%; text-align:center; margin-left:0">
+                        <hr class ="line">
+                        
                         <?php foreach ($uploaded_files as $item):?>
                             <p> <a href="<?php echo base_url() ?>/public/uploads/announcement/<?php echo $item['name'] ?>" download ><?php echo $item['name'] ?></a> </p>
                         <?php endforeach ?>

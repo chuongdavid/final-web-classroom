@@ -82,7 +82,7 @@
                 <div class="formcode">
                     <div class="form-inf">
                         <label> <p id="assignmenclasswork"><b>Edit your announcement</b> </p></label>
-                        <hr style="width:60%; text-align:center; margin-left:0">
+                        <hr class="line">
                         
                         <h4>Title</h4>
                         <input name ="title" id="stream-title" type="text" placeholder="Title" value="<?php echo $EditAnnouncement['title'] ?>"> </br></br>
@@ -91,11 +91,11 @@
                         <b> Choose picture</b></br>
                         <input type="file" id="fileanh" name="file[]" multiple  >
                         </br> </br>
-                        <p class="error-notification noti-stream" style="width:300px" id = "error-message-stream" ></p>
+                        <p class="error-notification noti-stream" id = "error-message-stream" ></p>
                         
                         <label for="showhiddenstreamcontent"> <button class="btn btn-primary">Update</button></label>
                         <a href="stream.php?id=<?php echo $EditClass['id']?>" class="btn btn-warning">Cancel</a>
-                        <hr style="width:60%; text-align:center; margin-left:0"></br>
+                        <hr class="line"></br>
                     </div>    
                 </div> 
             </form>

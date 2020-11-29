@@ -139,14 +139,14 @@ require_once __DIR__. "/../autoload/autoload.php";
             <form class="formtext">
                 <div>
                     <label> <p id="assignmenclasswork"><b>Assignment</b> </p></label>
-                    <hr style="width:60%; text-align:center; margin-left:0"></br>
+                    <hr class="line"></br>
                     <div class="titleintruction">
                         <i id="titleicon" class="fas fa-mug-hot"></i> <input id="title" type = "text" placeholder="Title" ></br></br>
                         <i id="instructionicon" class="fas fa-align-left"></i> <input id="instruction" type = "text" placeholder="Intructions"></br></br>
                         <i id="instructionicon" class="far fa-calendar-alt" style="margin-right: 14px"></i> <input type="date" id="deadline"> 
                     </div>
                 </div>
-                <hr style="width:60%; text-align:center; margin-left:0">
+                <hr classs="line">
                 </br>
                 
                 <div class="btnsform-assign">

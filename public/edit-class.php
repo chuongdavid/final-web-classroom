@@ -70,7 +70,7 @@
                 <form method="post" action="#" onsubmit= "return validateInputEditClass()" enctype="multipart/form-data">
                     <div class="formcreate">
                         <label> <p id="assignmenclasswork"><b>Edit Classroom</b> </p></label>
-                        <hr style="width:90%; text-align:left; margin-left:10"></br>
+                        <hr class="line"></br>
                         <div class="class-info">
                             <input class="class-info-box" value="<?php echo $EditClass['name']  ?>" id="class-name-edit" type = "text" placeholder="Class name (required)" name="class_name"></br>
                             <input class="class-info-box" value="<?php echo $EditClass['subject']  ?>" id="class-subject-edit" type = "text" placeholder="Subject" name="class_subject"></br>

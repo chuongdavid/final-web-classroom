@@ -649,7 +649,11 @@ label {
 #showaddannouncement {
   display: none;
 }
-
+.line{
+  width:80%; 
+  text-align:center; 
+  margin-left:0
+}
 #datestream {
   font-size: 13px;
   margin-left: 33px;
@@ -658,7 +662,9 @@ label {
 .fa-window-maximize {
   margin-right: 10px;
 }
-
+#error-message-stream{
+  width: 300px;
+}
 #showaddannouncement:checked ~ .content {
   filter: blur(30px);
 }
