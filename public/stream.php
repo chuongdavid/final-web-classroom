@@ -108,38 +108,38 @@
                     <a href="#" class="sidenav-item">Contact</a>
                 </div>
 
-                <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
+                <span class="align-self-center" onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
                 <!--Home sinh vien-->
                 <?php if(check_role($_SESSION['email'])==0){
                     ?>
-                <li class="nav-item">
+                <li class="nav-item align-self-center">
                     <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
                 <?php }
                 #--Home giao vien-->
                     else {
                 ?>
-                        <li class="nav-item">
+                        <li class="nav-item align-self-center">
                     <a class="nav-link" href="index-giaovien.php">Home</a>
                 </li>
                 <?php }?>
-                <li class="nav-item active">
+                <li class="nav-item active align-self-center">
                     <a class="nav-link" href="stream.php?id=<?=$EditClass['id']?>">Stream</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item align-self-center">
                     <a class="nav-link" href="classwork.php?id=<?=$EditClass['id']?>">Classwork</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item align-self-center">
                     <a class="nav-link" href="people.php?id=<?php echo $EditClass['id'] ?>">People</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Grades</a>
                 </li>
 
                 <!--right nav-->
-                
+                <li class="nav-item ml-auto mr-2 align-self-center">
+                <a class="nav-link" href="logout.php">
+                    <label for="logoutbutton"><i class="fas fa-sign-out-alt fa-2x"></i></label>
+                </a>
             </ul>
         </nav>
         <input type ="checkbox" id="showaddannouncement">
@@ -195,12 +195,10 @@
                         <div class="hiddenstreamcontent" >
                         
                             <div id="hiddenstreamcontent-content">
-                                <i class="far fa-window-maximize"></i> 
-                                
+                                <i class="far fa-window-maximize"></i>       
                                 <?php echo $item['title'] ?> 
                                 <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
                                 <p id="datestream"> <?php echo $item['created_at'] ?> </p>
-                            
                             </div>      
                         </div> 
                         </a>

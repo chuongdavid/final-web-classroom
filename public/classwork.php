@@ -125,9 +125,9 @@ require_once __DIR__. "/../autoload/autoload.php";
                 <div id="assignment-classwork-content">
                     <i class="far fa-window-maximize"></i> 
                     
-                    fdsfsdf</br>
+                    Thông báo assignment</br>
                     <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
-                    <p id="datestream">fdsfsdf fsdfds </p>
+                    <p id="datestream">ngày assignment </p>
                 
                 </div>      
             </div> 

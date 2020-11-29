@@ -75,14 +75,12 @@
                 </li>
                 <?php }?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="stream.php?id=<?=$EditClass['id']?>">Stream</a>
+                    <a class="nav-link anouncementnav" href="stream.php?id=<?=$data_class['id']?>">
+                       <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
+                       <?= $data_class['teacher'] ?>
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="classwork.php?id=<?=$EditClass['id']?>">Classwork</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Grades</a>
-                </li>
+                
                 
                
                 <!--right nav-->
