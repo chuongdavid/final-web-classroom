@@ -147,9 +147,6 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
             <li class="nav-item ">
                 <a class="nav-link" href="classwork.php">Classwork</a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="people.php">People</a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Grades</a>
             </li>

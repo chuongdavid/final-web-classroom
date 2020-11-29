@@ -61,15 +61,29 @@
                 <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
-                <!--Home sinh vien-->
-                <?php if(check_role($data_user['email'])==0){
+                <?php if(check_role($_SESSION['email'])==0){
                     ?>
-                <li class="nav-item active">
-                    <a class="nav-link anouncementnav" href="#">
-                       <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
-                       <?= $data_class['teacher'] ?>
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index-sinhvien.php"><b>Home</b></a>
                 </li>
+                <?php }
+                #--Home giao vien-->
+                    else {
+                ?>
+                        <li class="nav-item">
+                    <a class="nav-link" href="index-giaovien.php"><b>Home</b></a>
+                </li>
+                <?php }?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="stream.php?id=<?=$EditClass['id']?>">Stream</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="classwork.php?id=<?=$EditClass['id']?>">Classwork</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Grades</a>
+                </li>
+                
                
                 <!--right nav-->
                 
@@ -145,7 +159,7 @@
                         <input type='hidden' name='id_announce' value=<?=$detail_announcement['id']?>><br>
                         <i class='classcomment fas fa-graduation-cap'></i>
                         <input id='classcomment' type='text' placeholder='Add class comment' name='content'>
-                            <button type='submit' name='commentSubmit' id="commentbuttonsend">
+                            <button type='submit' name='commentSubmit'>
                                 <i class='far fa-paper-plane' ></i>
                             </button></br>
                     </form>
