@@ -125,8 +125,7 @@ $assignment = $db -> fetchAllCondition('assignment',"id_class = '". $id_class ."
             </div>
 
         </div>
-        <div class = "container-sm">
-            
+        <div class ="container-sm assignment-box">
             <?php foreach($assignment as  $item): ?>
             <div class="assignment-classwork col-lg-8" >             
                 <div id="assignment-classwork-content">

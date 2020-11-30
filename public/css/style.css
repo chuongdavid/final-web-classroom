@@ -658,8 +658,8 @@ label {
 }
 #datestream {
   font-size: 13px;
-  margin-left: 43px;
-  margin-top: -32px;
+  margin-left: 37px;
+  margin-top: -28px;
   line-height: 0px;
 }
 .fa-window-maximize {
@@ -956,6 +956,7 @@ table {
 .assignment-classwork {
   display: block;
   margin-top: 20px;
+  margin-right: 0px;
   height: 74px;
   width: auto;
   box-sizing: auto;
@@ -964,6 +965,9 @@ table {
   font-size: 24px;
   overflow: auto;
   display: inline-table;
+}
+.assignment-box{
+  margin-left: 500px;
 }
 
 .commentcontent {
@@ -984,6 +988,7 @@ table {
   margin-left: 25px;
   vertical-align: middle;
   color: rgb(93, 94, 93);
+  font-size: 20px;
 }
 #assignment-classwork-content {
   margin-top: 8px;
