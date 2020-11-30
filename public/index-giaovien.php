@@ -130,7 +130,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
             <?php if(check_role($data_user['email'])==0){
                 ?>
             <li class="nav-item active align-self-center">
-                <a class="nav-link" href="index-hocsinh.php">Home</a>
+                <a class="nav-link" href="index-sinhvien.php">Home</a>
             </li>
             <?php }
             #--Home giao vien-->

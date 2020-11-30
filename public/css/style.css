@@ -463,6 +463,7 @@ label {
 .formtext {
   margin-left: 20px;
   margin-top: 20px;
+  border: none;
 }
 .input {
   border: none;
@@ -538,10 +539,11 @@ label {
 }
 
 .createassign {
-  display: none;
+  display: block;
+  /*margin-top: 300px;*/
   margin: auto;
-  margin-top: 100px;
-  border: 1px solid rgb(165, 162, 162);
+  margin-top: 300px;
+  border: none;
   height: auto;
   width: auto;
   border-radius: 10px;
@@ -549,7 +551,8 @@ label {
   left: 0%;
   background-color: white;
   font-size: x-large;
-  padding-left: 50px;
+  padding-left: 150px;
+  
 }
 #file-assignment {
   margin-left: 50px;
@@ -655,8 +658,8 @@ label {
 }
 #datestream {
   font-size: 13px;
-  margin-left: 33px;
-  margin-top: -20px;
+  margin-left: 43px;
+  margin-top: -32px;
   line-height: 0px;
 }
 .fa-window-maximize {

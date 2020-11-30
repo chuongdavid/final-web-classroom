@@ -9,35 +9,7 @@ $assignment = $db -> fetchAllCondition('assignment',"id_class = '". $id_class ."
 
 
 //create assignment
-if(isset($_POST['title']) && isset($_POST['instruction']) && isset($_POST['dateStart']) && isset($_POST['dateEnd'])){
-    $title = $_POST['title'];
-    $instruction = $_POST['instruction'];
-    $date_start = strtotime($_POST['dateStart']);
-    $date_end = strtotime($_POST['dateEnd']);
 
-    if(($date_end-$date_start)<0){
-
-        $_SESSION['error'] = 'Assignment must be created before deadline !';
-    }else{
-        $data = ['title'=>$title,
-                'instruction'=> $instruction,
-                'id_class' => $id_class,
-                'date_start' => $_POST['dateStart'],
-                'date_end' => $_POST['dateEnd'],
-                'created_by_id' => $_SESSION['id_user']
-    ];
-        $insert_assignment = $db -> insert('assignment',$data);
-        if(count($insert_assignment)>0){
-            $_SESSION['success'] = 'Create assignment successfully';
-            header('refresh:0.7');
-        }
-        else{
-            $_SESSION['error'] = 'Create assignment fail';
-        }
-    }
-    
-
-}
 
 ?>
 <!DOCTYPE html>
@@ -139,8 +111,9 @@ if(isset($_POST['title']) && isset($_POST['instruction']) && isset($_POST['dateS
         
         <div class=" classworkindex container-sm">
             <div class="assign col-lg-8">
-                <button id="creatework"> <label for="showcreate"> <i class=" nutcreate fas fa-plus"> </i>  Create </label> </button>
-                    <div class="classwork" id="commute3">
+                <a href="assignment.php?id=<?=$_GET['id']?>"><button id="creatework" ><i class=" nutcreate fas fa-plus">&nbsp;Create</i></button></a>
+                <?php if (count($assignment)==0):?>    
+                <div class="classwork" id="commute3">
                         <p id="assignworktoyourclass">Assign work to your class here </p>
                         <div id="assignment">
                             <i class="far fa-folder"> </i>  Create assignments and questions </br>
@@ -148,35 +121,13 @@ if(isset($_POST['title']) && isset($_POST['instruction']) && isset($_POST['dateS
                             <i class="far fa-bookmark"> </i>  Order work the way you want students to see it </br>
                         </div>
                     </div> 
-                
+                <?php endif?>
             </div>
 
         </div>
-        
-        <div class="tableassignment col-lg-4">  
-            <table class="table1" >
-                <tr class="assignment">
-                    <td> <i class="fas fa-chalkboard-teacher"></i> <label for="showassignment">Assignment</label> </td> 
-                </tr>
-                <tr class="assignment">
-                    <td> <i class="fas fa-laptop-code"></i><label for="showassignment"> Quiz </label> </td>
-                </tr>
-                <tr class="assignment">
-                    <td> <i class="far fa-edit"></i> <label for="showassignment">Question</label> </td>
-                </tr>
-                <tr class="assignment">
-                    <td> <i class="fas fa-folder-open"></i> <label for="showassignment">Materials</label> </td>
-                </tr>
-                <tr class="assignment">
-                    <td> <i class="fas fa-thumbtack"></i> <label for="showassignment"> Reuse post</label> </td>
-                </tr>
-                    
-            </table>
-        </div>  
         <div class = "container-sm">
             
             <?php foreach($assignment as  $item): ?>
-                <a href="">
             <div class="assignment-classwork col-lg-8" >             
                 <div id="assignment-classwork-content">
                     <i class="far fa-window-maximize"></i> <?= $item['title'] ?></br>
@@ -193,30 +144,7 @@ if(isset($_POST['title']) && isset($_POST['instruction']) && isset($_POST['dateS
         
 
         
-        <div class=" createassign col-5">
-            <form class="formtext" method="POST">
-                <div>
-                    <label> <p id="assignmenclasswork"><b>Assignment</b> </p></label>
-                    <hr class="line"></br>
-                    <div class="titleintruction">
-                        <i id="titleicon" class="fas fa-mug-hot"></i> <input name="title" id="title" type = "text" placeholder="Title" ></br></br>
-                        <i id="instructionicon" class="fas fa-align-left"></i> <input name="instruction" id="instruction" type = "text" placeholder="Intructions"></br></br>
-                        <i id="instructionicon" class="far fa-calendar-alt" style="margin-right: 14px"></i> <input name="dateStart" type="datetime-local" id="startdate"></br></br>
-                        <i id="instructionicon" class="far fa-calendar-alt" style="margin-right: 14px"></i> <input name="dateEnd" type="datetime-local" id="deadline"> 
-                    </div>
-                </div>
-                <hr classs="line">
-                </br>
-                
-                <div class="btnsform-assign">
-                    
-                    <button class="btn btn-primary">Create</button>
-                    
-                    <a href="#" class="btn btn-warning">Cancle</a>
-                
-                </div>    
-            </form>
-        </div>
+        
         
         
     </body>
