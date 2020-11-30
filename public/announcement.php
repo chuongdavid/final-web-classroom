@@ -1,5 +1,5 @@
 <?php
-    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    // date_default_timezone_set('Asia/Ho_Chi_Minh');
     require_once __DIR__. "/../autoload/autoload.php";
     $id = $_GET['id'];
     $detail_announcement = $db -> fetchOne('announcement',"id = '".$id."'");
@@ -58,7 +58,7 @@
                     <a href="#" class="sidenav-item">Contact</a>
                 </div>
 
-                <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
+                <span class="align-self-center" onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
                 <?php if(check_role($_SESSION['email'])==0){
@@ -70,11 +70,11 @@
                 #--Home giao vien-->
                     else {
                 ?>
-                        <li class="nav-item">
+                        <li class="nav-item align-self-center">
                     <a class="nav-link" href="index-giaovien.php"><b>Home</b></a>
                 </li>
                 <?php }?>
-                <li class="nav-item active">
+                <li class="nav-item active align-self-center">
                     <a class="nav-link anouncementnav" href="stream.php?id=<?=$data_class['id']?>">
                        <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
                        <?= $data_class['teacher'] ?>
@@ -152,7 +152,6 @@
                     
                     <form action='add_comment.php' method='POST'>
                         <input type='hidden' name='created_by_who' value=<?=$_SESSION['email']?>><br>
-                        <input type='hidden' name='created_at' value=<?=date('d/m/Y h:i ')?>><br>
                         <input type='hidden' name='id_class' value=<?=$detail_announcement['id_class']?>><br>
                         <input type='hidden' name='id_announce' value=<?=$detail_announcement['id']?>><br>
                         <i class='classcomment fas fa-graduation-cap'></i>
