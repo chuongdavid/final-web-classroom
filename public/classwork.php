@@ -1,5 +1,44 @@
 <?php
 require_once __DIR__. "/../autoload/autoload.php";
+$id_class = $_GET['id'];
+if(!isset($_SESSION['email'])){
+    header("Location: login.php");
+}
+//get assignment
+$assignment = $db -> fetchAllCondition('assignment',"id_class = '". $id_class ."'");
+
+
+//create assignment
+if(isset($_POST['title']) && isset($_POST['instruction']) && isset($_POST['dateStart']) && isset($_POST['dateEnd'])){
+    $title = $_POST['title'];
+    $instruction = $_POST['instruction'];
+    $date_start = strtotime($_POST['dateStart']);
+    $date_end = strtotime($_POST['dateEnd']);
+
+    if(($date_end-$date_start)<0){
+
+        $_SESSION['error'] = 'Assignment must be created before deadline !';
+    }else{
+        $data = ['title'=>$title,
+                'instruction'=> $instruction,
+                'id_class' => $id_class,
+                'date_start' => $_POST['dateStart'],
+                'date_end' => $_POST['dateEnd'],
+                'created_by_id' => $_SESSION['id_user']
+    ];
+        $insert_assignment = $db -> insert('assignment',$data);
+        if(count($insert_assignment)>0){
+            $_SESSION['success'] = 'Create assignment successfully';
+            header('refresh:0.7');
+        }
+        else{
+            $_SESSION['error'] = 'Create assignment fail';
+        }
+    }
+    
+
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -81,6 +120,20 @@ require_once __DIR__. "/../autoload/autoload.php";
                 </a>
             </ul>
         </nav>
+        <div class="clearfix" >
+                    <?php if(isset($_SESSION['success'])): ?>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $_SESSION['success']; unset($_SESSION['success']) ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if(isset($_SESSION['error'])): ?>
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <?php echo $_SESSION['error']; unset($_SESSION['error']) ?>
+                        </div>
+                    <?php endif ?>
+        </div>
         <input type ="checkbox" id="showassignment">
         <input type ="checkbox" id="showcreate">
         
@@ -121,29 +174,35 @@ require_once __DIR__. "/../autoload/autoload.php";
             </table>
         </div>  
         <div class = "container-sm">
+            
+            <?php foreach($assignment as  $item): ?>
+                <a href="">
             <div class="assignment-classwork col-lg-8" >             
                 <div id="assignment-classwork-content">
-                    <i class="far fa-window-maximize"></i> 
-                    
-                    Thông báo assignment</br>
+                    <i class="far fa-window-maximize"></i> <?= $item['title'] ?></br>
                     <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
-                    <p id="datestream">ngày assignment </p>
+                    <p id="datestream"> Date start:&nbsp;<?= $item['date_start'] ?></p>
+                    <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
+                    <p id="datestream">Deadline:&nbsp;<?= $item['date_end'] ?> </p>
                 
                 </div>      
             </div> 
+            </a>
+            <?php endforeach   ?>
         </div>
         
 
         
         <div class=" createassign col-5">
-            <form class="formtext">
+            <form class="formtext" method="POST">
                 <div>
                     <label> <p id="assignmenclasswork"><b>Assignment</b> </p></label>
                     <hr class="line"></br>
                     <div class="titleintruction">
-                        <i id="titleicon" class="fas fa-mug-hot"></i> <input id="title" type = "text" placeholder="Title" ></br></br>
-                        <i id="instructionicon" class="fas fa-align-left"></i> <input id="instruction" type = "text" placeholder="Intructions"></br></br>
-                        <i id="instructionicon" class="far fa-calendar-alt" style="margin-right: 14px"></i> <input type="date" id="deadline"> 
+                        <i id="titleicon" class="fas fa-mug-hot"></i> <input name="title" id="title" type = "text" placeholder="Title" ></br></br>
+                        <i id="instructionicon" class="fas fa-align-left"></i> <input name="instruction" id="instruction" type = "text" placeholder="Intructions"></br></br>
+                        <i id="instructionicon" class="far fa-calendar-alt" style="margin-right: 14px"></i> <input name="dateStart" type="datetime-local" id="startdate"></br></br>
+                        <i id="instructionicon" class="far fa-calendar-alt" style="margin-right: 14px"></i> <input name="dateEnd" type="datetime-local" id="deadline"> 
                     </div>
                 </div>
                 <hr classs="line">
@@ -151,9 +210,9 @@ require_once __DIR__. "/../autoload/autoload.php";
                 
                 <div class="btnsform-assign">
                     
-                    <button class="btnform">Create</button>
+                    <button class="btn btn-primary">Create</button>
                     
-                    <button class="btnform" type="reset">Reset</button>
+                    <a href="#" class="btn btn-warning">Cancle</a>
                 
                 </div>    
             </form>

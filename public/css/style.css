@@ -551,7 +551,7 @@ label {
   font-size: x-large;
   padding-left: 50px;
 }
-#file-assignment{
+#file-assignment {
   margin-left: 50px;
 }
 #title {
@@ -648,20 +648,21 @@ label {
 #showaddannouncement {
   display: none;
 }
-.line{
-  width:80%; 
-  text-align:center; 
-  margin-left:0
+.line {
+  width: 80%;
+  text-align: center;
+  margin-left: 0;
 }
 #datestream {
   font-size: 13px;
   margin-left: 33px;
-  margin-top: -30px;
+  margin-top: -20px;
+  line-height: 0px;
 }
 .fa-window-maximize {
   margin-right: 10px;
 }
-#error-message-stream{
+#error-message-stream {
   width: 300px;
 }
 #showaddannouncement:checked ~ .content {
@@ -986,7 +987,6 @@ table {
   margin-left: 25px;
   vertical-align: middle;
   color: rgb(93, 94, 93);
-  
 }
 
 #classcomment {
@@ -1085,7 +1085,7 @@ table {
   margin-top: 0px;
   margin-right: -30px;
 }
-#commentbuttonsend{
+#commentbuttonsend {
   border: none;
 }
 /* -----------------------------------------------------------*/

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2020 lúc 11:36 AM
+-- Thời gian đã tạo: Th10 30, 2020 lúc 09:22 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -42,12 +42,39 @@ CREATE TABLE `announcement` (
 --
 
 INSERT INTO `announcement` (`id`, `title`, `news`, `id_class`, `created_by_id`, `created_at`, `updated_at`) VALUES
-('5fbe142c5db', 'Few days in Phu Quoc 2019 - Tú Võ', 'Bài tập lớn kì này gồm có :', '5fbdb0c3cab', 19, '2020-11-25 08:22:04', NULL),
-('5fbe16100ee', 'Something with title', 'Học bài nha', '5fbdb0c3cab', 19, '2020-11-25 08:30:08', NULL),
-('5fbf614d3de', 'Something with title', 'hoadfhadf', '5fbdb0c3cab', 19, '2020-11-26 08:03:25', NULL),
-('5fbf61c9861', 'Test tính năng download', 'Bài tập về nhà', '5fbdb0c3cab', 19, '2020-11-26 08:05:29', NULL),
-('5fbf61cd02b', 'Test tính năng download', 'Bài tập về nhà', '5fbdb0c3cab', 19, '2020-11-26 08:05:33', NULL),
-('5fbf80c43b2', 'Thắc mắc về bài tập', 'Thầy cho em hỏi về bài tập này ạ', '5fbdb0c3cab', 26, '2020-11-26 10:17:40', NULL);
+('5fbf80c43b2', 'Thắc mắc về bài tập', 'Thầy cho em hỏi về bài tập này ạ', '5fbdb0c3cab', 26, '2020-11-26 10:17:40', NULL),
+('5fbfcb161c1', 'Thắc mắc về bài tập', 'Giải giúp em vài bài', '5fbdb0c3cab', 19, '2020-11-26 15:34:46', NULL),
+('5fc0606beaf', 'Nhớ làm bài tuần này nha', 'Tập tin đính kèm ở đây', '5fbdb0b668d', 19, '2020-11-27 02:11:55', NULL),
+('5fc0f812264', 'Test tính năng ẩn', 'hhfhfdhhffsd', '5fbdb0c3cab', 26, '2020-11-27 12:58:58', NULL),
+('5fc12ca5973', 'Thắc mắc về bài tập', 'sdfasdfadf', '5fc07ad5319', 19, '2020-11-27 16:43:17', NULL),
+('5fc1cad4eea', 'Test tính năng download', 'asdfadfa', '5fc07ad5319', 21, '2020-11-28 03:58:12', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `assignment`
+--
+
+CREATE TABLE `assignment` (
+  `id` int(11) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `instruction` varchar(100) DEFAULT NULL,
+  `id_class` varchar(11) DEFAULT NULL,
+  `date_start` timestamp NULL DEFAULT NULL,
+  `date_end` timestamp NULL DEFAULT NULL,
+  `created_by_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `assignment`
+--
+
+INSERT INTO `assignment` (`id`, `title`, `instruction`, `id_class`, `date_start`, `date_end`, `created_by_id`, `created_at`, `updated_at`) VALUES
+(13, 'assignment 1', '1', '5fc07ad5319', '2020-11-24 07:01:00', '2020-12-03 07:01:00', 19, '2020-11-30 07:01:55', NULL),
+(14, 'assignment 2', '2', '5fc07ad5319', '2020-12-01 07:02:00', '2020-12-06 07:02:00', 19, '2020-11-30 07:02:18', NULL),
+(15, 'Test tính năng download', 'asd', '5fc07ad5319', '2020-12-01 07:02:00', '2020-12-03 07:02:00', 19, '2020-11-30 07:02:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -74,8 +101,8 @@ CREATE TABLE `class` (
 INSERT INTO `class` (`id`, `name`, `subject`, `teacher`, `room`, `image`, `created_by_who`, `created_by_id`, `updated_at`) VALUES
 ('5fbcb2efe10', 'Cấu trúc rời rạc', 'Công nghệ thông tin', 'Tấn Tài Lộc', 'A-0506', 'avatar.png', 'admin', 21, NULL),
 ('5fbd4451956', 'tên lớp 4', 'Công nghệ thông tin', 'Tấn Tài', 'B-0507', 'avatar4.png', 'admin', 21, NULL),
-('5fbdb0b668d', 'Giải thuật 2', 'Công nghệ thông tin', 'Cẩm Quang 123', 'phòng', 'avatar.jpg', 'Dương Thụy Chương', 19, NULL),
-('5fbdb0c3cab', 'tên lớp 3', 'Công nghệ thông tin 2', 'Cẩm Quang', 'B-05010', 'avatar.png', 'Dương Thụy Chương', 19, NULL);
+('5fbdb0c3cab', 'tên lớp 3', 'Công nghệ thông tin 2', 'Cẩm Quang', 'B-05010', 'avatar.png', 'Dương Thụy Chương', 19, NULL),
+('5fc07ad5319', 'Hệ thống thông tin kế toán', 'Kế toán', 'Nguyễn Nam', 'A-0506', 'avatar4.png', 'Dương Thụy Chương', 19, NULL);
 
 -- --------------------------------------------------------
 
@@ -92,6 +119,17 @@ CREATE TABLE `comment` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `comment`
+--
+
+INSERT INTO `comment` (`id`, `id_class`, `id_announce`, `content`, `created_by_who`, `created_at`, `updated_at`) VALUES
+('5fc0f0f5cd6', '5fbdb0c3cab', '5fbf80c43b2', 'Bài tập khó quá thầy ơi', 'admin@gmail.com', '2020-11-27 12:28:37', NULL),
+('5fc0f50cbb7', '5fbdb0c3cab', '5fbfcb161c1', 'Làm sao đây', 'admin@gmail.com', '2020-11-27 12:46:04', NULL),
+('5fc0f670a37', '5fbdb0c3cab', '5fbf80c43b2', 'hoàng hà', 'duongthuychuong@gmail.com', '2020-11-27 12:52:00', NULL),
+('5fc499e8103', '5fc07ad5319', '5fc12ca5973', 'Bài tập khó quá thầy ơi', 'cameraquangthuy@gmail.com', '2020-11-30 07:06:16', NULL),
+('5fc499efad1', '5fc07ad5319', '5fc12ca5973', 'Làm sao đây', 'cameraquangthuy@gmail.com', '2020-11-30 07:06:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -110,14 +148,16 @@ CREATE TABLE `file_upload_announce` (
 --
 
 INSERT INTO `file_upload_announce` (`id_file`, `id_announce`, `name`) VALUES
-(11, '5fbe142c5db', 'DSC_0005.JPG'),
-(12, '5fbe142c5db', 'DSC_0007.JPG'),
-(13, '5fbe142c5db', 'DSC_0009.JPG'),
-(14, '5fbf614d3de', 'w3logo.jpg'),
-(15, '5fbf61c9861', 'DoAnCuoiKi-v3.pdf'),
-(16, '5fbf61c9861', 'LABWEB (1).txt'),
 (17, '5fbf61cd02b', 'DoAnCuoiKi-v3.pdf'),
-(18, '5fbf61cd02b', 'LABWEB (1).txt');
+(18, '5fbf61cd02b', 'LABWEB (1).txt'),
+(19, '5fbf80c43b2', 'DSC_0916.jpg'),
+(33, '5fbfcb161c1', 'DSC_0032.JPG'),
+(34, '5fbfcb161c1', 'DSC_0213.NEF'),
+(35, '5fbfcb161c1', 'DSC_0214.NEF'),
+(36, '5fbfcd21550', 'DSC_0005.JPG'),
+(37, '5fc0606beaf', 'DSC_0240.JPG'),
+(38, '5fc12ca5973', 'sdfsdfsa.jpg'),
+(39, '5fc1cad4eea', 'sdfsdfsa.jpg');
 
 -- --------------------------------------------------------
 
@@ -154,7 +194,9 @@ CREATE TABLE `student_class` (
 --
 
 INSERT INTO `student_class` (`id_student`, `id_class`) VALUES
-(26, '5fbdb0c3cab');
+(26, '5fbcb2efe10'),
+(26, '5fbdb0c3cab'),
+(26, '5fc07ad5319');
 
 -- --------------------------------------------------------
 
@@ -200,6 +242,12 @@ ALTER TABLE `announcement`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `assignment`
+--
+ALTER TABLE `assignment`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `class`
 --
 ALTER TABLE `class`
@@ -234,10 +282,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT cho bảng `assignment`
+--
+ALTER TABLE `assignment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT cho bảng `file_upload_announce`
 --
 ALTER TABLE `file_upload_announce`
-  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_file` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
