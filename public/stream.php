@@ -193,7 +193,6 @@
                         <?php foreach ($load_announcement as $item):?>
                         <a href="announcement.php?id=<?php echo $item['id']?>">
                         <div class="hiddenstreamcontent" >
-                        
                             <div id="hiddenstreamcontent-content">
                                 <i class="far fa-window-maximize"></i>       
                                 <?php echo $item['title'] ?> 

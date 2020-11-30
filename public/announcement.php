@@ -61,27 +61,13 @@
                 <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
-                <?php if(check_role($_SESSION['email'])==0){
-                    ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="index-sinhvien.php"><b>Home</b></a>
-                </li>
-                <?php }
-                #--Home giao vien-->
-                    else {
-                ?>
-                        <li class="nav-item">
-                    <a class="nav-link" href="index-giaovien.php"><b>Home</b></a>
-                </li>
-                <?php }?>
+                
                 <li class="nav-item active">
                     <a class="nav-link anouncementnav" href="stream.php?id=<?=$data_class['id']?>">
                        <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
                        <?= $data_class['teacher'] ?>
                     </a>
                 </li>
-                
-                
                
                 <!--right nav-->
                 
