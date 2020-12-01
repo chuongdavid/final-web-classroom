@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__. "/../autoload/autoload.php";
-#var_dump($_SESSION)
     if (isset($_POST['commentSubmit'])){
         $id = uniqid();
     

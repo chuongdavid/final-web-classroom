@@ -14,40 +14,40 @@
                 'news'=>$_POST['news'],
                 'title' => $_POST['title']
         ];
-        // if(isset($_FILES['file'])){
-        //     $fileCount = count($_FILES['file']['name']);
-        //     if($fileCount>0){
-        //         var_dump($fileCount);
-        //         $delete_to_update = $db -> deleteQuery('file_upload_announce',"id_announce = '".$id."'");
-        //         for($i=0;$i<$fileCount;$i++){
-        //             $file_name = $_FILES['file']['name'][$i];
-        //             $file_tmp = $_FILES['file']['tmp_name'][$i];
-        //             $file_type = $_FILES['file']['type'][$i];
-        //             $file_error = $_FILES['file']['error'][$i];
-        //             if($file_error == 0){
-        //                 $part = ROOT ."announcement/";
-        //                 $data_file_up =[ 'id_announce' => $id,
-        //                                 'name' => $file_name
-        //             ];  
-        //                 move_uploaded_file($file_tmp,$part.$file_name);
-        //                 $id_insert = $db -> insert("file_upload_announce",$data_file_up);
-        //             }
-        //             else{
-        //                 $numberError = "error file number:".$i;
-        //                 $error = [ $numberError => $i ];
-        //             }
-        //         }
-        //     }
+        if(isset($_FILES['file'])){
+            $fileCount = count($_FILES['file']['name']);
+            if($fileCount>0){
+                var_dump($fileCount);
+                $delete_to_update = $db -> deleteQuery('file_upload_announce',"id_announce = '".$id."'");
+                for($i=0;$i<$fileCount;$i++){
+                    $file_name = $_FILES['file']['name'][$i];
+                    $file_tmp = $_FILES['file']['tmp_name'][$i];
+                    $file_type = $_FILES['file']['type'][$i];
+                    $file_error = $_FILES['file']['error'][$i];
+                    if($file_error == 0){
+                        $part = ROOT ."announcement/";
+                        $data_file_up =[ 'id_announce' => $id,
+                                        'name' => $file_name
+                    ];  
+                        move_uploaded_file($file_tmp,$part.$file_name);
+                        $id_insert = $db -> insert("file_upload_announce",$data_file_up);
+                    }
+                    else{
+                        $numberError = "error file number:".$i;
+                        $error = [ $numberError => $i ];
+                    }
+                }
+            }
             
-        // }
+        }
         $update_announce = $db -> update("announcement",$data_announcement,array('id'=>$id));
         if(count($update_announce>0)){
             $_SESSION['success'] = "Update announcemnet successfully";
-            //header("Location:stream.php?id=".$EditAnnouncement['id_class']."");  
+            header("Location:stream.php?id=".$EditAnnouncement['id_class']."");  
         }
         else{
             $_SESSION['error'] = "Nothing change";
-            //header("Location:stream.php?id=".$EditAnnouncement['id_class'].""); 
+            header("Location:stream.php?id=".$EditAnnouncement['id_class'].""); 
         }
         
     }
