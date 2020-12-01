@@ -88,16 +88,16 @@
 
                 <!--left nav-->
                 <!--Home sinh vien-->
-                <?php if(check_role($data_user['email'])==0){
+                <?php if(check_role($_SESSION['email'])==0){
                     ?>
-                <li class="nav-item active align-self-center">
+                <li class="nav-item align-self-center">
                     <a class="nav-link" href="index-hocsinh.php">Home</a>
                 </li>
                 <?php }
                 #--Home giao vien-->
                     else {
                 ?>
-                        <li class="nav-item active align-self-center">
+                        <li class="nav-item align-self-center">
                     <a class="nav-link" href="index-giaovien.php">Home</a>
                 </li>
                 <?php }?>
