@@ -411,6 +411,10 @@ input[type="password"]:focus,
 label {
   cursor: pointer;
 }
+.classwork-box{
+  margin: auto;
+
+}
 
 #creatework {
   margin-top: 30px;
@@ -955,8 +959,6 @@ table {
 }
 .assignment-classwork {
   display: block;
-  margin-top: 20px;
-  margin-right: 0px;
   height: 74px;
   width: auto;
   box-sizing: auto;
@@ -969,7 +971,9 @@ table {
 .assignment-box{
   margin-left: 500px;
 }
-
+.test{
+  margin: auto;
+}
 .commentcontent {
   display: block;
   margin-top: 20px;
@@ -1095,6 +1099,9 @@ table {
 }
 #commentbuttonsend {
   border: none;
+}
+.assignment-classwork{
+  margin: auto;
 }
 /* -----------------------------------------------------------*/
 

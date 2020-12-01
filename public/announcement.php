@@ -61,19 +61,7 @@
                 <span class="align-self-center" onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
-                <?php if(check_role($_SESSION['email'])==0){
-                    ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="index-sinhvien.php"><b>Home</b></a>
-                </li>
-                <?php }
-                #--Home giao vien-->
-                    else {
-                ?>
-                        <li class="nav-item align-self-center">
-                    <a class="nav-link" href="index-giaovien.php"><b>Home</b></a>
-                </li>
-                <?php }?>
+                
                 <li class="nav-item active align-self-center">
                     <a class="nav-link anouncementnav" href="stream.php?id=<?=$data_class['id']?>">
                        <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
@@ -133,7 +121,7 @@
                                             <a class="dropdown-item" href="./delete_comment.php?id=<?=$item['id']?>&id_announce=<?=$item['id_announce']?>" onclick="return confirm('Are you sure you want to delete this comment?');">Delete </a>
                                         </div>
                                         <?php endif ?>
-                                    </div>
+                                    </div>  
                                 </div>    
                             </p>  
                             

@@ -125,18 +125,18 @@ $assignment = $db -> fetchAllCondition('assignment',"id_class = '". $id_class ."
             </div>
 
         </div>
-        <div class ="container-sm assignment-box">
+        <div class ="container-sm ">
             <?php foreach($assignment as  $item): ?>
-            <div class="assignment-classwork col-lg-8" >             
+            <div class=" assignment-classwork col-lg-6" >             
                 <div id="assignment-classwork-content">
                     <i class="far fa-window-maximize"></i> <?= $item['title'] ?></br>
                     <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
                     <p id="datestream"> Date start:&nbsp;<?= $item['date_start'] ?></p>
                     <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
-                    <p id="datestream">Deadline:&nbsp;<?= $item['date_end'] ?> </p>
-                
+                    <p id="datestream">Deadline:&nbsp;<?= $item['date_end'] ?> </p>  
                 </div>      
             </div> 
+        
             </a>
             <?php endforeach   ?>
         </div>
