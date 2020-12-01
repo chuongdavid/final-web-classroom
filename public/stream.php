@@ -52,8 +52,15 @@
             }
             $insert_announce = $db -> insert("announcement",$data_announcement);
             if(count($insert_announce>0)){
+                if(check_role($_SESSION['email'])==1){
+                    $student_arr = $db -> fetchAllCondition('student_class, user', "user.id = student_class.id_student AND student_class.id_class ='".$_GET['id']."'");
+                    foreach($student_arr as $each_student){
+                        send_notification($EditClass['teacher'],$EditClass['name'],$each_student['email']);
+                    }
+                    
+                }
                 $_SESSION['success'] = "Upload announcemnet successfully";
-                header("refresh: 0.5"); 
+                header("refresh: 0.75"); 
             }
             else{
                 $_SESSION['error'] = "Upload annoucemnet fail";
