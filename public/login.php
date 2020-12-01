@@ -6,28 +6,34 @@
         "email" => postInput('email'),
         "password" => postInput('psw')
       ];
-      $data_user = $db -> fetchOne('user',"email = '".$data['email']."'");  
-      if($data_user['verified']==0){
-        $_SESSION['error'] = "Your account hasn't verified yet. Please check your email to verified your account";
+      $data_user = $db -> fetchOne('user',"email = '".$data['email']."'");
+      if(count($data_user)>0){
+        if($data_user['verified']==0){
+          $_SESSION['error'] = "Your account hasn't verified yet. Please check your email to verified your account";
+        }
+        else{
+          if (password_verify($data['password'],$data_user['password'])) {
+            if(check_role($data['email'])==0){
+              $_SESSION['email'] = $data_user['email'];
+              $_SESSION['id_user'] = $data_user['id'];
+              header('Location:index-sinhvien.php');
+            }
+            else{
+              $_SESSION['email'] = $data_user['email'];
+              $_SESSION['id_user'] = $data_user['id'];
+              header('Location:index-giaovien.php');
+            }
+  
+            
+        } else {
+          $error = "Email or password is incorrect. Please enter again";
+        }
+        }
       }
       else{
-        if (password_verify($data['password'],$data_user['password'])) {
-          if(check_role($data['email'])==0){
-            $_SESSION['email'] = $data_user['email'];
-            $_SESSION['id_user'] = $data_user['id'];
-            header('Location:index-sinhvien.php');
-          }
-          else{
-            $_SESSION['email'] = $data_user['email'];
-            $_SESSION['id_user'] = $data_user['id'];
-            header('Location:index-giaovien.php');
-          }
-
-          
-      } else {
-        $error = "Email or password is incorrect. Please enter again";
+        $error = " Please sign up before log in";
       }
-      }
+      
       
     }
     
