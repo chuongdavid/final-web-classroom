@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__. "/../autoload/autoload.php";
-var_dump($_SESSION);
 $id_class = $_GET['id'];
 if(isset($_POST['title']) && isset($_POST['instruction']) && isset($_POST['dateStart']) && isset($_POST['dateEnd'])){
     $title = $_POST['title'];

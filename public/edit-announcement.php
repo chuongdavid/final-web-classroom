@@ -17,7 +17,6 @@
         if(isset($_FILES['file'])){
             $fileCount = count($_FILES['file']['name']);
             if($fileCount>0){
-                var_dump($fileCount);
                 $delete_to_update = $db -> deleteQuery('file_upload_announce',"id_announce = '".$id."'");
                 for($i=0;$i<$fileCount;$i++){
                     $file_name = $_FILES['file']['name'][$i];
