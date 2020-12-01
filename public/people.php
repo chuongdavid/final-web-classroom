@@ -1,6 +1,10 @@
 <?php
     include './connect_db.php';
     require_once __DIR__. "/../autoload/autoload.php";
+    // check login
+    if(!isset($_SESSION['email'])){
+        header("Location: login.php");
+    }
     $student_arr = $db -> fetchAllCondition('student_class, user', "user.id = student_class.id_student AND student_class.id_class ='".$_GET['id']."'");
     $class_code = $_GET['id'];
     $create_class_by = $db -> fetchOne('user',"id = '".$_SESSION['id_user']."'");

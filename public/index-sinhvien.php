@@ -1,6 +1,10 @@
 <?php 
 
 require_once __DIR__. "/../autoload/autoload.php";
+// check login
+if(!isset($_SESSION['email'])){
+    header("Location: login.php");
+}
 $data_user = $db -> fetchOne('user',"email = '".$_SESSION['email']."'"); 
 $id_student = $data_user['id'];
 //get information class student did join
