@@ -104,16 +104,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     <a href="#" class="sidenav-item">Log out</a>
                 </div>
 
-                <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
+                <span class="align-self-center" onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home</a>
+                <!--Home sinh vien-->
+                <?php if(check_role($data_user['email'])==0){
+                    ?>
+                <li class="nav-item active align-self-center">
+                    <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
-                <li class="nav-item">
+                <?php }
+                #--Home giao vien-->
+                    else {
+                ?>
+                        <li class="nav-item active align-self-center">
+                    <a class="nav-link" href="index-giaovien.php">Home</a>
+                </li>
+                <?php }?>
+                <li class="nav-item align-self-center">
                     <a class="nav-link" href="#">To-do</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item align-self-center">
                     <a class="nav-link" href="#">Calendar</a>
                 </li>
 
