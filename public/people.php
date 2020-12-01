@@ -151,7 +151,10 @@
                        
                     </tr>   
                     <tr>
-                        <h2 id="student"> Students <span class="ml-auto"><a href="#" id="teacheradd"> <label for="showinvite"> <i id="buttonteacher"  class="fa fa-user-plus"></i> </lablel> </a> </span></h2>
+                        <h2 id="student"> Students 
+                        <?php if(check_role($_SESSION['email'])!=0):?>
+                        <span class="ml-auto"><a href="#" id="teacheradd"> <label for="showinvite"> <i id="buttonteacher"  class="fa fa-user-plus"></i> </lablel> </a> </span></h2>
+                        <?php endif ?>
                         <hr class="line w-100">
                     </tr>
                     <tr>
@@ -166,7 +169,9 @@
                                     ?>
                                     <tr class=" border-bottom">
                                         <td class="text-left"><i class="fas fa-user"></i>   <?= $student['fullname']?></td>
+                                        <?php if(check_role($_SESSION['email'])!=0):?>
                                         <td class="text-right pr-5"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are you sure you want to delete this student?');"></i></a></td>
+                                        <?php endif ?>
                                     </tr>
                                 <?php } ?>
                             </table>
