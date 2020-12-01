@@ -34,18 +34,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 $_SESSION['error'] ='You have already joined this class';
             }      
             else{
-                //get information who created this class
-                // var_dump($code);
-                // $create_class_by = $db -> fetchOne('user',"id = '".$code['created_by_id']."'");
-                // send_join_request($id_student,$data_user['name'],$class_code,$create_class_by['email']);
-                // $insert_class = $db -> insert('student_class',$data);
-                // if(count($insert_class)>0){
-                //     $_SESSION['success']='Join class successfully!';
-                //     header("refresh: 0.5"); 
-                // }
-                // else{
-                //     $_SESSION['error'] ='Join class fail!';
-                // }
+                $create_class_by = $db -> fetchOne('user',"id = '".$code['created_by_id']."'");
+                $checkSent = send_join_request($id_student,$class_code,$create_class_by['email']);
+                if($checkSent){
+                    $_SESSION['success'] ='Your request has been sent. Please wait for your teacher to accept your request';
+                }
+                else{
+                    $_SESSION['error'] ='Send invitation fail';
+                }
             }
         }
         else{
@@ -216,7 +212,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <form method="POST">
                 <div class="formcode">
                     <label> <p id="assignmenclasswork"><b>Join Class</b> </p></label>
-                    <hr style="width:90%; text-align:left; margin-left:10"></br>
+                    <hr class="line"></br>
                     <div class="titleintruction">
                     <h4> Class code</h4>
                     <p> Ask your teacher for the class code </p>
@@ -231,7 +227,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 </div> 
             </form>
         </div>
-                <hr style="width:90%; text-align:left; margin-left:10">   
+                <hr class="line">   
     
     </body>
 </html>

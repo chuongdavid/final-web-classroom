@@ -130,7 +130,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
             <?php if(check_role($data_user['email'])==0){
                 ?>
             <li class="nav-item active align-self-center">
-                <a class="nav-link" href="index-hocsinh.php">Home</a>
+                <a class="nav-link" href="index-sinhvien.php">Home</a>
             </li>
             <?php }
             #--Home giao vien-->
@@ -257,7 +257,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
         <form method="post" action="#" onsubmit= "return validateInputaddClass()" enctype="multipart/form-data" >
             <div class="formcreate">
                 <label> <p id="assignmenclasswork"><b>Create Class</b> </p></label>
-                <hr style="width:60%; text-align:center; margin-left:0"></br>
+                <hr class="line"></br>
                 <div class="class-info">
                     <input class="class-info-box" id="class-name" type = "text" placeholder="Class name (required)" name="class_name"></br>
                     <input class="class-info-box" id="class-subject" type = "text" placeholder="Subject" name="class_subject"></br>
@@ -284,7 +284,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
         <form method="post" action="#" onsubmit= "return validateInputphanquyen()">
             <div class="formcreate">
                 <label> <p id="assignmenclasswork"><b>Decentralization</b> </p></label>
-                <hr style="width:60%; text-align:center; margin-left:0"></br>
+                <hr class="line"></br>
                 <input type="text" class="form-control col-md-4 mb-2" 
                 placeholder="Enter email to give permission" id="email-phanquyen" name="email_permission">
                 <div class="form-group row">
@@ -308,7 +308,7 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
         </form>
     </div>
 
-            <hr style="width:60%; text-align:center; margin-left:0">
+            <hr class="line">
     </div>
 </body>
 </html>

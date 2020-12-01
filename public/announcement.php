@@ -1,5 +1,5 @@
 <?php
-    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    // date_default_timezone_set('Asia/Ho_Chi_Minh');
     require_once __DIR__. "/../autoload/autoload.php";
     $id = $_GET['id'];
     $detail_announcement = $db -> fetchOne('announcement',"id = '".$id."'");
@@ -58,12 +58,11 @@
                     <a href="#" class="sidenav-item">Contact</a>
                 </div>
 
-                <span onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
+                <span class="align-self-center" onclick="openNav()"><img class="logo" src="image/logov2.png"></span>
 
                 <!--left nav-->
                 
-                
-                <li class="nav-item active">
+                <li class="nav-item active align-self-center">
                     <a class="nav-link anouncementnav" href="stream.php?id=<?=$data_class['id']?>">
                        <b id="tenlopannounce"><?= $data_class['name'] ?></b> </br>
                        <?= $data_class['teacher'] ?>
@@ -103,7 +102,7 @@
                     
                     <p id="teachercontent"> 
                     <?php echo $detail_announcement['news'] ?>
-                    <hr style="width:80%; text-align:center; margin-left:0"> 
+                    <hr class="line"> 
                     <p>class comment</p>
                     <?php foreach($comment as $item): ?>
                     <div id="announce">
@@ -122,7 +121,7 @@
                                             <a class="dropdown-item" href="./delete_comment.php?id=<?=$item['id']?>&id_announce=<?=$item['id_announce']?>" onclick="return confirm('Are you sure you want to delete this comment?');">Delete </a>
                                         </div>
                                         <?php endif ?>
-                                    </div>
+                                    </div>  
                                 </div>    
                             </p>  
                             
@@ -139,7 +138,6 @@
                     
                     <form action='add_comment.php' method='POST'>
                         <input type='hidden' name='created_by_who' value=<?=$_SESSION['email']?>><br>
-                        <input type='hidden' name='created_at' value=<?=date('d/m/Y h:i ')?>><br>
                         <input type='hidden' name='id_class' value=<?=$detail_announcement['id_class']?>><br>
                         <input type='hidden' name='id_announce' value=<?=$detail_announcement['id']?>><br>
                         <i class='classcomment fas fa-graduation-cap'></i>
@@ -154,7 +152,8 @@
                     <div class="upload-announce">
                         </br>
                         <p><b>Uploaded files</b></p>
-                        <hr style="width:100%; text-align:center; margin-left:0">
+                        <hr class ="line">
+                        
                         <?php foreach ($uploaded_files as $item):?>
                             <p> <a href="<?php echo base_url() ?>/public/uploads/announcement/<?php echo $item['name'] ?>" download ><?php echo $item['name'] ?></a> </p>
                         <?php endforeach ?>

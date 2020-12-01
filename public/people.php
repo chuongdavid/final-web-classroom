@@ -140,7 +140,7 @@
                 <table >
                     <tr>
                         <h2 >Teachers <a id="teacheradd"> <label for="showinvite"> </label> </a> </h2>
-                        <hr style="width:100%; text-align:left; margin-left:0">
+                        <hr class="line">
                     </tr>
                     <tr>
                        <i class="studentlist fas fa-user-graduate"></i> <?php echo $data_class['teacher'] ?>
@@ -148,7 +148,7 @@
                     </tr>   
                     <tr>
                         <h2 id="student"> Students <a href="#" id="teacheradd"> <label for="showinvite"> <i id="buttonteacher"  class="fa fa-user-plus"></i> </lablel> </a> </h2>
-                        <hr style="width:100%; text-align:left; margin-left:0">
+                        <hr class="line">
                     </tr>
                     <tr>
                         <!---->
@@ -179,7 +179,7 @@
                         <label> <b>Invite</b> </label></br>
                         <input class="input" name="email_student" type = "text" placeholder="Type a name or email">
                     </div>
-                    <hr style="width:60%; text-align:center; margin-left:0">
+                    <hr class="line">
                     </br>
                     </br>
                     </br>
