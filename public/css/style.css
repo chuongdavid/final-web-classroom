@@ -411,9 +411,8 @@ input[type="password"]:focus,
 label {
   cursor: pointer;
 }
-.classwork-box{
+.classwork-box {
   margin: auto;
-
 }
 
 #creatework {
@@ -556,7 +555,6 @@ label {
   background-color: white;
   font-size: x-large;
   padding-left: 150px;
-  
 }
 #file-assignment {
   margin-left: 50px;
@@ -958,7 +956,6 @@ table {
   display: inline-table;
 }
 .assignment-classwork {
-  display: block;
   height: 74px;
   width: auto;
   box-sizing: auto;
@@ -968,10 +965,10 @@ table {
   overflow: auto;
   display: inline-table;
 }
-.assignment-box{
+.assignment-box {
   margin-left: 500px;
 }
-.test{
+.test {
   margin: auto;
 }
 .commentcontent {
@@ -1100,7 +1097,7 @@ table {
 #commentbuttonsend {
   border: none;
 }
-.assignment-classwork{
+.assignment-classwork {
   margin: auto;
 }
 /* -----------------------------------------------------------*/

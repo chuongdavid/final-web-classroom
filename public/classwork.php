@@ -110,8 +110,10 @@ $assignment = $db -> fetchAllCondition('assignment',"id_class = '". $id_class ."
         <input type ="checkbox" id="showcreate">
         
         <div class=" classworkindex container-sm">
-            <div class="assign col-lg-8">
-                <a href="assignment.php?id=<?=$_GET['id']?>"><button id="creatework" ><i class=" nutcreate fas fa-plus">&nbsp;Create</i></button></a>
+            <div class="assign col-lg-12">
+            <!-- button CREATE -->
+                <a href="assignment.php?id=<?=$_GET['id']?>"><button id="creatework" ><i class=" nutcreate fas fa-plus">&nbsp;Create</i></button></a><br></br>
+
                 <?php if (count($assignment)==0):?>    
                 <div class="classwork" id="commute3">
                         <p id="assignworktoyourclass">Assign work to your class here </p>
@@ -125,9 +127,10 @@ $assignment = $db -> fetchAllCondition('assignment',"id_class = '". $id_class ."
             </div>
 
         </div>
+        <!-- get ASSIGNMENT -->
         <div class ="container-sm ">
             <?php foreach($assignment as  $item): ?>
-            <div class=" assignment-classwork col-lg-6" >             
+            <div class=" assignment-classwork col-lg-4" >             
                 <div id="assignment-classwork-content">
                     <i class="far fa-window-maximize"></i> <?= $item['title'] ?></br>
                     <label > <i class="fa fa-ellipsis-v" id="more"></i></label>
@@ -136,7 +139,7 @@ $assignment = $db -> fetchAllCondition('assignment',"id_class = '". $id_class ."
                     <p id="datestream">Deadline:&nbsp;<?= $item['date_end'] ?> </p>  
                 </div>      
             </div> 
-        
+            <br></br>
             </a>
             <?php endforeach   ?>
         </div>

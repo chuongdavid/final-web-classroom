@@ -91,7 +91,7 @@
                 <?php if(check_role($_SESSION['email'])==0){
                     ?>
                 <li class="nav-item align-self-center">
-                    <a class="nav-link" href="index-hocsinh.php">Home</a>
+                    <a class="nav-link" href="index-sinhvien.php">Home</a>
                 </li>
                 <?php }
                 #--Home giao vien-->
@@ -140,15 +140,15 @@
                 <table >
                     <tr>
                         <h2 >Teachers <a id="teacheradd"> <label for="showinvite"> </label> </a> </h2>
-                        <hr class="line">
+                        <hr class="line w-100">
                     </tr>
                     <tr>
                        <i class="studentlist fas fa-user-graduate"></i> <?php echo $data_class['teacher'] ?>
                        
                     </tr>   
                     <tr>
-                        <h2 id="student"> Students <a href="#" id="teacheradd"> <label for="showinvite"> <i id="buttonteacher"  class="fa fa-user-plus"></i> </lablel> </a> </h2>
-                        <hr class="line">
+                        <h2 id="student"> Students <span class="ml-auto"><a href="#" id="teacheradd"> <label for="showinvite"> <i id="buttonteacher"  class="fa fa-user-plus"></i> </lablel> </a> </span></h2>
+                        <hr class="line w-100">
                     </tr>
                     <tr>
                         <!---->
@@ -162,7 +162,7 @@
                                     ?>
                                     <tr class=" border-bottom">
                                         <td class="text-left"><i class="fas fa-user"></i>   <?= $student['fullname']?></td>
-                                        <td class="text-right pr-2"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are you sure you want to delete this student?');"></i></a></td>
+                                        <td class="text-right pr-5"><a href="./delete_student.php?student=<?= $student['id'] ?>&id=<?= $_GET['id'] ?>"><i id="buttonstudent"  class="fas fa-minus" onclick="return confirm('Are you sure you want to delete this student?');"></i></a></td>
                                     </tr>
                                 <?php } ?>
                             </table>
@@ -187,7 +187,7 @@
                         
                         <button class="btn btn-primary">Invite</button>
                         
-                        <a href="people.php?id=<?php $_GET['id']?>" class="btn btn-warning">Cancel</a>
+                        <a href="people.php?id=<?=$_GET['id']?>" class="btn btn-warning">Cancel</a>
                     
                     </div>    
                 </form>
