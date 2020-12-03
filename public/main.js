@@ -470,7 +470,6 @@ function validateInputchangePass2() {
   }
 }
 
-
 //validate input của stream
 
 function hideErrorStream() {
@@ -486,7 +485,6 @@ function displayErrorStream(message) {
 window.addEventListener("load", () => {
   hideErrorStream();
 });
-
 
 function validateInputannouncement() {
   try {
@@ -515,6 +513,16 @@ function validateInputannouncement() {
     return false;
   }
 }
-
-//add comment
-
+function search(text) {
+  $(document).ready(function () {
+    if (text.length != 0) {
+      $.post("ajax.php", { data: text }, function (data) {
+        $(".class-place").html(data);
+      });
+    } else {
+      $.post("ajax-search-empty.php", { data: text }, function (data) {
+        $(".class-place").html(data);
+      });
+    }
+  });
+}

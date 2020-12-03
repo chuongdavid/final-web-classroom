@@ -85,7 +85,6 @@ if(isset($_POST['class_name']) && isset($_POST['class_subject']) && isset($_POST
 
     <!--js file-->
     <script src="main.js"></script>
-
     <!--Bootstrap 4-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
